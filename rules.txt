@@ -1,0 +1,32 @@
+fonctions attendues:
+
+mode 1 player only
+démarer directement dans un niveau
+lire des sprite de 16*16 pixels sur l'image fournis (pas d'autres formats demandés)
+5 map demandée
+
+règles du jeu:
+
+update toutes les 0.5 ou 1sec ?
+update du timer toute les 1sec
+update du score à chaque diamond
+Les éléments mobiles gigotent au rythme de la clock
+Les énemis suivent le mur droit
+Si les énemis se trouvent a moins d'une case du personnage ils iront sur lui
+Si un énemi rencontre un autre énemi, ils se traient mutuellement comme des murs
+Si un rocher ou diamond tombe sur le personnage il meurt
+Si un énemi touche le personnage il meurt
+
+	physique du jeu:
+		si on libère un rocher/diamond il ne bouge pas tant que le perso n'as pas bougé ET si il y a un stack de 2 le perso n'es pas écrase
+		au moment ou le perso bouge la gravité s'applique sur eux, ils s'update à tous les ticks de clock
+		si un élément mobile se trouve au dessus d'un autre et a la possibilité de tomber à sa droite ou à sa gauche il ira dans le sens de son dernier déplacement horizontal (~conservation of momentum), si il n'en a pas la direction est aléatoire
+		si un élément mobile tombe sur énemi, cela produit une explosion dans une zone 3*3 puis laisse 9 diamonds dans la zone de l'explosion, la gravité s'y applique au tour suivant
+
+	caméra:
+		écran de 16*14
+			mouvement en x:
+				si on est à 5 cases du centre la caméra ne bouge pas, à partir de la transition 5 à 6 elle se déplace de 1case en même temps que le personnage
+			mouvement en y:
+				si on est à 2 cases du centre la caméra ne bouge pas, à partir de la transition 2 à 3 elle se déplace de 1 case en même temps que le personnage		
+		
