@@ -1,5 +1,7 @@
 package model.element.motionless;
 
-public abstract class MotionlessElement {
+import model.element.Element;
+
+public abstract class MotionlessElement extends Element {
 
 }
