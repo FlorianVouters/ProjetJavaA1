@@ -19,7 +19,7 @@ public interface IMap {
     
     IElement getElementByName(String name) throws SQLException;
     
-    void setMobileHasChanged();
+    void setMapHasChanged();
     
     Observable getObservable();
     

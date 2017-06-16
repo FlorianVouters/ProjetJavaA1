@@ -31,8 +31,8 @@ public class Sprite {
      *            the image name
      */
     public Sprite(final char character, final String imageName) {
-        this.setConsoleImage(character);
-        this.setImageName(imageName);
+//        this.setConsoleImage(character);
+//        this.setImageName(imageName);
     }
 
     /**
@@ -42,7 +42,7 @@ public class Sprite {
      *            the character
      */
     public Sprite(final char character) {
-        this(character, "noimage.jpg");
+   //     this(character, "noimage.jpg");
     }
 
     /**
@@ -51,7 +51,8 @@ public class Sprite {
      * @return the image
      */
     public final Image getImage() {
-        return this.image;
+    	return null;
+    	//return this.image;
     }
 
     /**
@@ -61,7 +62,7 @@ public class Sprite {
      *             Signals that an I/O exception has occurred.
      */
     public final void loadImage() throws IOException {
-        this.setImage(ImageIO.read(new File("images/" + this.getImageName())));
+        //this.setImage(ImageIO.read(new File("images/" + this.getImageName())));
     }
 
     /**
@@ -70,7 +71,8 @@ public class Sprite {
      * @return the consoleImage
      */
     public final char getConsoleImage() {
-        return this.consoleImage;
+       return ' ';
+       //return this.consoleImage;
     }
 
     /**
@@ -80,7 +82,7 @@ public class Sprite {
      *            the new image
      */
     private void setImage(final Image image) {
-        this.image = image;
+       // this.image = image;
     }
 
     /**
@@ -90,7 +92,7 @@ public class Sprite {
      *            the consoleImage to set
      */
     private void setConsoleImage(final char consoleImage) {
-        this.consoleImage = consoleImage;
+        //this.consoleImage = consoleImage;
     }
 
     /**
@@ -99,7 +101,8 @@ public class Sprite {
      * @return the imageName
      */
     public final String getImageName() {
-        return this.imageName;
+        return null;
+    	//return this.imageName;
     }
 
     /**
@@ -109,7 +112,7 @@ public class Sprite {
      *            the imageName to set
      */
     private void setImageName(final String imageName) {
-        this.imageName = imageName;
+        //this.imageName = imageName;
     }
 
     /**
@@ -118,7 +121,8 @@ public class Sprite {
      * @return true, if is image loaded
      */
     public final boolean isImageLoaded() {
-        return this.imageLoaded;
+        return false;
+    	//return this.imageLoaded;
     }
 
     /**
@@ -128,6 +132,6 @@ public class Sprite {
      *            the new image loaded
      */
     public final void setImageLoaded(final boolean isImageLoaded) {
-        this.imageLoaded = isImageLoaded;
+        //this.imageLoaded = isImageLoaded;
     }
 }
