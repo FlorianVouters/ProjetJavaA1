@@ -10,6 +10,14 @@ public interface IElement extends ISquare{ //extends ISquare so it can be displa
     *//** The name. *//*
    public String    name;*/
 
+	
+	
+	/**
+     * Checks if is alive.
+     *
+     * @return the alive
+     */
+    public Boolean isAlive();
  
    
     /**
@@ -48,6 +56,6 @@ public interface IElement extends ISquare{ //extends ISquare so it can be displa
     @Override
     public String toString();
     
-    Permeabilty getPermeability();
+   public Permeabilty getPermeability();
     
 }

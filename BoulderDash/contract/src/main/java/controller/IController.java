@@ -1,5 +1,6 @@
 package controller;
 
+
 /**
  * <h1>The Interface IController.</h1>
  * 
@@ -8,4 +9,8 @@ package controller;
  */
 public interface IController {
 
+	  void play() throws InterruptedException;
+	  
+	  IOrderPerformer getOrderPeformer();
+	
 }
