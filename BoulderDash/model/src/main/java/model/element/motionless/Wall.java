@@ -12,4 +12,10 @@ public class Wall implements IDestructible, ITangible{
 		
 	}
 
+	@Override
+	public void die() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
