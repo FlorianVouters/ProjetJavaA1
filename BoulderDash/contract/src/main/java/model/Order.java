@@ -2,6 +2,6 @@ package model;
 
 public enum Order {
 	
-	UP, DOWN, RIGHT, LEFT;
+	UP, DOWN, RIGHT, LEFT, NOP;
 
 }

@@ -9,6 +9,8 @@ package model;
  * @version 1.0
  */
 public class ModelFacade implements IModel {
+	
+	private IMap map;
 
     /**
      * Instantiates a new model facade.

@@ -1,7 +1,9 @@
 package controller;
 
 import java.sql.SQLException;
+
 import model.IModel;
+import model.Order;
 import view.IView;
 
 /**
@@ -13,10 +15,13 @@ import view.IView;
 public class ControllerFacade implements IController {
 
     /** The view. */
-    private final IView  view;
+    private IView  view;
 
     /** The model. */
-    private final IModel model;
+    private IModel model;
+    
+    /**Order to execute */
+    private Order order;
 
     /**
      * Instantiates a new controller facade.
@@ -32,14 +37,26 @@ public class ControllerFacade implements IController {
         this.model = model;
     }
 
+    
+    
     /**
      * Start.
      *
      * @throws SQLException
      *             the SQL exception
      */
+    @Override
+    public void play() throws SQLException {
+    	// TODO Auto-generated method stub
+    	
+    }
+    
+    
+   /*	actually is the play method
+    * 
+    * 
     public void start() throws SQLException {
-     /*   this.getView().displayMessage(this.getModel().getElementById(1).toString());
+        this.getView().displayMessage(this.getModel().getElementById(1).toString());
 
         this.getView().displayMessage(this.getModel().getElementByName("Example 2").toString());
 
@@ -50,8 +67,8 @@ public class ControllerFacade implements IController {
             message.append(element);
             message.append('\n');
         }
-        this.getView().displayMessage(message.toString());*/
-    }
+        this.getView().displayMessage(message.toString());
+    }*/
 
     /**
      * Gets the view.
@@ -59,7 +76,11 @@ public class ControllerFacade implements IController {
      * @return the view
      */
     public IView getView() {
-        return this.view;
+        return null; //this.view;
+    }
+    
+    public void setView(IView view){
+    	//this.view = view;
     }
 
     /**
@@ -68,14 +89,27 @@ public class ControllerFacade implements IController {
      * @return the model
      */
     public IModel getModel() {
-        return this.model;
+        return null;// this.model;
+    }
+    
+    public void setModel(IModel model){
+    	//this.model = model;
     }
 
-	@Override
-	public void play() throws InterruptedException {
-		// TODO Auto-generated method stub
+    
+    
+	public Order getOrder() {
+		return null;//order;
+	}
+
+	public void setOrder(Order order) {
+		//this.order = order;
+	}
+	
+	public void clearOrder(){
 		
 	}
+
 
 	@Override
 	public IOrderPerformer getOrderPeformer() {

@@ -1,5 +1,6 @@
 package controller;
 
+import java.sql.SQLException;
 
 /**
  * <h1>The Interface IController.</h1>
@@ -9,7 +10,7 @@ package controller;
  */
 public interface IController {
 
-	  void play() throws InterruptedException;
+	  void play() throws InterruptedException, SQLException;
 	  
 	  IOrderPerformer getOrderPeformer();
 	
