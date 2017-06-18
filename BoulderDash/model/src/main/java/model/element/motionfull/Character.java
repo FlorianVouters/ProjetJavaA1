@@ -9,6 +9,13 @@ import model.Sprite;
 
 public class Character extends MotionfullElement implements IDestructible{
 
+	private static final Sprite CHARACTER = new Sprite('H', "Character.jpg");
+	
+	
+	public Character() {
+		super(CHARACTER, Permeabilty.BLOCKING);
+	}
+
 	@Override
 	public void moveUp() {
 		// TODO Auto-generated method stub

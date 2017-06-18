@@ -5,6 +5,17 @@ import model.Permeabilty;
 import model.Sprite;
 
 public abstract class Element implements IElement {
+	
+	 /** The sprite. */
+    private Sprite       sprite;
+
+    /** The permeability. */
+    private Permeabilty permeability;
+
+	public Element(Sprite sprite, Permeabilty permeability) {
+		this.setSprite(sprite);
+		this.setPermeability(permeability);
+	}
 
 	@Override
 	public int getId() {
@@ -25,6 +36,10 @@ public abstract class Element implements IElement {
 	public Sprite getSprite() {
 		return null;
 	}
+	
+	public void setSprite(Sprite sprite){
+		//this.sprite = sprite;
+	}
 
 	@Override
 	public String toString() {
@@ -34,6 +49,10 @@ public abstract class Element implements IElement {
 	@Override
 	public Permeabilty getPermeability() {
 		return null;
+	}
+
+	public void setPermeability(Permeabilty permeability) {
+		//this.permeability = permeability;
 	}
 
 }

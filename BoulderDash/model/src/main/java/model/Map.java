@@ -72,7 +72,7 @@ public class Map extends Observable implements IMap {
 	}
 
 	@Override
-	public void setMobileHasChanged() {
+	public void setMapHasChanged() {
 		// TODO Auto-generated method stub
 		
 	}

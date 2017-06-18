@@ -1,6 +1,16 @@
 package model.element.motionfull;
 
+import model.Sprite;
+
 public class Amoeba extends Enemy{
+
+	private static final Sprite AMOEBA = new Sprite('A', "Amoeba.jpg");
+
+	
+	public Amoeba(Sprite sprite) {
+		super(sprite);
+		// TODO Auto-generated constructor stub
+	}
 
 	int timer; //multiply at some point and turns into a rock at the end
 	

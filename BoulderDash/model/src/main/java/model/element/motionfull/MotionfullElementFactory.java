@@ -8,10 +8,10 @@ public class MotionfullElementFactory {
     private static final Character          Character    = new Character();
 	
     /** The Constant pointEnemy. */
-    private static final PointEnemy         PointEnemy   = new PointEnemy();
+    private static final PointEnemy         PointEnemy   = new PointEnemy(null);
     
     /** The Constant pointEnemy. */
-    private static final DiamondEnemy       DiamondEnemy = new DiamondEnemy();
+    private static final DiamondEnemy       DiamondEnemy = new DiamondEnemy(null);
     
     
     public static MotionlessElement createCharacter(){

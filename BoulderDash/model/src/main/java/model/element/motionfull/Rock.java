@@ -3,7 +3,16 @@ package model.element.motionfull;
 import java.awt.Image;
 import java.awt.Point;
 
+import model.Permeabilty;
+import model.Sprite;
+
 public class Rock extends MotionfullElement implements IGravitable{
+	
+	private static final Sprite ROCK = new Sprite('O', "Rock.jpg");
+
+	public Rock() {
+		super(ROCK, Permeabilty.BLOCKING);
+	}
 
 	@Override
 	public void moveUp() {
