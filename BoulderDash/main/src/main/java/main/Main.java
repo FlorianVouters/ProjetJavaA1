@@ -24,9 +24,11 @@ public abstract class Main {
         final ControllerFacade controller = new ControllerFacade(new ViewFacade(), new ModelFacade());
 
         try {
-            controller.play();
+            controller.start();
         } catch (final SQLException exception) {
             exception.printStackTrace();
+        } catch (InterruptedException e) {
+        	e.printStackTrace();
         }
     }
 
