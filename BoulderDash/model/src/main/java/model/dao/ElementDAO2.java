@@ -8,15 +8,15 @@ public class ElementDAO2 {
 	String getMap;
 	
 	
-	int getMapHeight(int level){
+	public static int getMapHeight(int level){
 		return 0;
 	}
 	
-	int getMapWidth(int level){
+	public static int getMapWidth(int level){
 		return 0;
 	}
 	
-	char[][] getMap(int level){
+	public static char[][] getMap(int level){
 		return null;
 	}
 

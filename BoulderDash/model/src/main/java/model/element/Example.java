@@ -4,7 +4,7 @@ import model.IElement;
 import model.Permeabilty;
 import model.Sprite;
 
-public abstract class Element implements IElement {
+public abstract class Example implements IElement {
 	
 	 /** The sprite. */
     private Sprite       sprite;
@@ -12,7 +12,7 @@ public abstract class Element implements IElement {
     /** The permeability. */
     private Permeabilty permeability;
 
-	public Element(Sprite sprite, Permeabilty permeability) {
+	public Example(Sprite sprite, Permeabilty permeability) {
 		this.setSprite(sprite);
 		this.setPermeability(permeability);
 	}

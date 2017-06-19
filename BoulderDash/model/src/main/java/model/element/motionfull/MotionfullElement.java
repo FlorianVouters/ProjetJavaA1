@@ -5,9 +5,9 @@ import java.awt.Point;
 import model.IMotionfullElement;
 import model.Permeabilty;
 import model.Sprite;
-import model.element.Element;
+import model.element.Example;
 
-public abstract class MotionfullElement extends Element implements IMotionfullElement {
+public abstract class MotionfullElement extends Example implements IMotionfullElement {
 
 	
 	  public MotionfullElement(Sprite sprite, Permeabilty permeability) {
