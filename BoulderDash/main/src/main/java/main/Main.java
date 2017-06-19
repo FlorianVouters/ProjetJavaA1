@@ -27,6 +27,8 @@ public abstract class Main {
             controller.play();
         } catch (final SQLException exception) {
             exception.printStackTrace();
+        } catch (InterruptedException e) {
+        	e.printStackTrace();
         }
     }
 
