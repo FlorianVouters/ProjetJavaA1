@@ -1,7 +1,9 @@
 package controller;
 
 import java.sql.SQLException;
+import java.util.List;
 
+import model.Example;
 import model.IModel;
 import model.Order;
 import view.IView;
@@ -52,23 +54,22 @@ public class ControllerFacade implements IController {
     }
     
     
-   /*	actually is the play method
-    * 
-    * 
+   //	actually is the play method
+   
     public void start() throws SQLException {
-        this.getView().displayMessage(this.getModel().getElementById(1).toString());
+        this.getView().displayMessage(this.getModel().getExampleById(1).toString());
 
-        this.getView().displayMessage(this.getModel().getElementByName("Example 2").toString());
+        this.getView().displayMessage(this.getModel().getExampleByName("Example 2").toString());
 
-        final List<IElement> elements = this.getModel().getAllElements();
+        final List<Example> examples = this.getModel().getAllExamples();
         final StringBuilder message = new StringBuilder();
         // a.append(" bar);
-        for (final IElement element : elements) {
-            message.append(element);
+        for (final Example example : examples) {
+            message.append(example);
             message.append('\n');
         }
         this.getView().displayMessage(message.toString());
-    }*/
+    }
 
     /**
      * Gets the view.
@@ -76,11 +77,11 @@ public class ControllerFacade implements IController {
      * @return the view
      */
     public IView getView() {
-        return null; //this.view;
+        return this.view;
     }
     
     public void setView(IView view){
-    	//this.view = view;
+    	this.view = view;
     }
 
     /**
@@ -89,21 +90,21 @@ public class ControllerFacade implements IController {
      * @return the model
      */
     public IModel getModel() {
-        return null;// this.model;
+        return this.model;
     }
     
     public void setModel(IModel model){
-    	//this.model = model;
+    	this.model = model;
     }
 
     
     
 	public Order getOrder() {
-		return null;//order;
+		return order;
 	}
 
 	public void setOrder(Order order) {
-		//this.order = order;
+		this.order = order;
 	}
 	
 	public void clearOrder(){

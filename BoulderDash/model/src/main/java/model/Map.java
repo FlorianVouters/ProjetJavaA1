@@ -1,8 +1,14 @@
 package model;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Observable;
+
+import model.dao.ElementDAO2;
 
 public class Map extends Observable implements IMap {
 
@@ -82,5 +88,36 @@ public class Map extends Observable implements IMap {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	
+	@Deprecated //only used to push the maps in the database
+	 public void loadFile(final String fileName) throws IOException {
+	        final BufferedReader buffer = new BufferedReader(new InputStreamReader(new FileInputStream(fileName)));
+	        String line;
+	        int y = 0;
+	        line = buffer.readLine();
+	        this.setHeight(Integer.parseInt(line));
+	        line = buffer.readLine();
+	        this.setWidth(Integer.parseInt(line));
+	        line = buffer.readLine();
+	        int level = Integer.parseInt(line);
+	        line = buffer.readLine();
+	        char map[][] = new char[this.getWidth()][this.getHeight()];
+	        while (line != null) {
+	            for (int x = 0; x < line.toCharArray().length; x++) {
+	            	
+	            	map [x][y] = line.toCharArray()[x]; //mettre le char lu ici
+	            	
+	               
+	            }
+	            line = buffer.readLine();
+	            y++;
+	        }
+	        buffer.close();
+	        
+	            
+	       ElementDAO2.saveMap(map, level, this.getHeight(), this.getWidth());       
+	      
+	    }
 	
 }

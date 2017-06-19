@@ -1,9 +1,12 @@
 package main;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
 import controller.ControllerFacade;
+import model.Map;
 import model.ModelFacade;
+import model.dao.ElementDAO2;
 import view.ViewFacade;
 
 /**
@@ -14,22 +17,27 @@ import view.ViewFacade;
  */
 public abstract class Main {
 
-    /**
+	/**
      * The main method.
      *
      * @param args
      *            the arguments
+     * @throws SQLException 
      */
-    public static void main(final String[] args) {
-        final ControllerFacade controller = new ControllerFacade(new ViewFacade(), new ModelFacade());
+    public static void main(final String[] args) throws SQLException {
+       /* final ControllerFacade controller = new ControllerFacade(new ViewFacade(), new ModelFacade());
 
         try {
             controller.start();
         } catch (final SQLException exception) {
             exception.printStackTrace();
-        } catch (InterruptedException e) {
-        	e.printStackTrace();
-        }
-    }
+        }*/
+    	Map map = new Map(1);
+  
+			//map.loadFile("Level1.txt"); //saves the file
+			System.out.println(ElementDAO2.getMapHeight(1));
+			System.out.println(ElementDAO2.getMapWidth(1));
+
+    	}
 
 }
