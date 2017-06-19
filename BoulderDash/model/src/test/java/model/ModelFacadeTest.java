@@ -10,6 +10,10 @@ import org.junit.Test;
 
 public class ModelFacadeTest {
 
+	private Map map;
+	
+	private IMotionFullElement character;
+	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 	}
@@ -27,28 +31,15 @@ public class ModelFacadeTest {
 	}
 
 	@Test
-	public void testGetExampleById() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetExampleByName() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	public void testGetAllExamples() {
-		fail("Not yet implemented");
-	}
-
-	@Test
 	public void testGetMap() {
-		fail("Not yet implemented");
+		private final expected = map;
+		assertEquals(expected, this.map.getMap());
 	}
 
 	@Test
 	public void testGetCharacter() {
-		fail("Not yet implemented");
+		private final expected = character;
+		assertEquals(expected, this.character.getCharacter());
 	}
 
 }

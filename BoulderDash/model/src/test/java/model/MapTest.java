@@ -2,13 +2,24 @@ package model;
 
 import static org.junit.Assert.*;
 
+import java.util.List;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import controller.IController;
+
 public class MapTest {
+	
+	private int height; //height of the map
+	private int width; // width of the map
+	
+	private Map map;
+	
+	private Observable observable;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -20,6 +31,7 @@ public class MapTest {
 
 	@Before
 	public void setUp() throws Exception {
+		this.map = new Map(1);
 	}
 
 	@After
@@ -28,62 +40,78 @@ public class MapTest {
 
 	@Test
 	public void testGetHeight() {
-		fail("Not yet implemented");
+		private final int expected = 21;
+		assertEquals(expected, this.map.getHeight());
 	}
 
 	@Test
 	public void testSetHeight() {
-		fail("Not yet implemented");
+		final int expected = 21;
+		this.map.setHeight(expected);
+		assertEquals(expected, this.map.getHeight());
 	}
 
 	@Test
 	public void testGetWidth() {
-		fail("Not yet implemented");
+		private final int expected = 40;
+		assertEquals(expected, this.map.getWidth);
 	}
 
 	@Test
 	public void testSetWidth() {
-		fail("Not yet implemented");
+		final int expected = 40;
+		this.map.setWidth(expected);
+		assertEquals(expected, this.map.getWidth());
 	}
 
 	@Test
 	public void testGetMap() {
-		fail("Not yet implemented");
+		private final expected = map;
+		assertEquals(expected, this.map.getMap());
 	}
 
 	@Test
 	public void testSetMap() {
-		fail("Not yet implemented");
+		private final expected = map;
+		this.map.setMap(expected);
+		assertEquals(expected, this.map.getMap());
 	}
 
 	@Test
 	public void testGetAllElements() {
-		fail("Not yet implemented");
+		private final expected = List<IElement>;
+		assertEquals(expected, this.List<IElement>.getAllElements());
 	}
 
 	@Test
 	public void testGetElementByPosition() {
-		fail("Not yet implemented");
+		private final expected = IElement;
+		assertEquals(expected, this.IElement.getElementByPosition());
 	}
 
 	@Test
 	public void testGetElementByID() {
-		fail("Not yet implemented");
+		private final expected = IElement;
+		assertEquals(expected, this.IElement.getElementByID());
 	}
 
 	@Test
 	public void testGetElementByName() {
-		fail("Not yet implemented");
+		private final expected = IElement;
+		assertEquals(expected, this.IElement.getElementByName());
 	}
 
 	@Test
-	public void testSetMobileHasChanged() {
-		fail("Not yet implemented");
+	public void testSetMapHasChanged() {
+		private final expected = map;
+		this.map.setMap(expected);
+		assertEquals(expected, this.map.getMap());
 	}
 
 	@Test
 	public void testGetObservable() {
-		fail("Not yet implemented");
+		private final expected = observable;
+		assertEquals(expected, this.observable.getObservable())
 	}
 
 }
