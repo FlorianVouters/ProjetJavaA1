@@ -12,7 +12,7 @@ public class ElementDAO2 extends AbstractDAO {
 	char[][] map;
 	public static String mapHeightQuerry = "{call getMapHeight(?)}";
 	public static String mapWidthQuerry = "{call getMapWidth(?)}";
-	public static String getMap;
+	public static String getMap; // TODO write this stored procedure
 	/*int height;
 	int width;*/
 	

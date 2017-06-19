@@ -106,7 +106,7 @@ public class Map extends Observable implements IMap {
 	        while (line != null) {
 	            for (int x = 0; x < line.toCharArray().length; x++) {
 	            	
-	            	map [x][y] = line.toCharArray()[x]; //mettre le char lu ici
+	            	map [x][y] = line.toCharArray()[x];
 	            	
 	               
 	            }
