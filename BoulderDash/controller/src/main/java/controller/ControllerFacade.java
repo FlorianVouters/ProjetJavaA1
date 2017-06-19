@@ -1,5 +1,6 @@
 package controller;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
 import model.IModel;
@@ -12,7 +13,7 @@ import view.IView;
  * @author Jean-Aymeric DIET jadiet@cesi.fr
  * @version 1.0
  */
-public class ControllerFacade implements IController {
+public class ControllerFacade implements IController, IOrderPerformer {
 
     /** The view. */
     private IView  view;
@@ -22,6 +23,8 @@ public class ControllerFacade implements IController {
     
     /**Order to execute */
     private Order order;
+    
+    private static final int 	speedCharacter = 300;
 
     /**
      * Instantiates a new controller facade.
@@ -32,9 +35,10 @@ public class ControllerFacade implements IController {
      *            the model
      */
     public ControllerFacade(final IView view, final IModel model) {
-        super();
-        this.view = view;
-        this.model = model;
+//        super();
+        this.setView(view);
+        this.setModel(model);
+        this.clearOrder();
     }
 
     
@@ -44,11 +48,37 @@ public class ControllerFacade implements IController {
      *
      * @throws SQLException
      *             the SQL exception
+     * @throws InterruptedException 
      */
     @Override
-    public void play() throws SQLException {
-    	// TODO Auto-generated method stub
-    	
+    public void play() throws SQLException, InterruptedException {
+    	// TODO Rempir la méthode play
+    	while (this.getModel().getCharacter().isAlive()) {
+    		Thread.sleep(speedCharacter);
+    		switch (this.getOrder()) {
+    			case UP :
+    				this.getModel().getCharacter().moveUp();
+    				break;
+    			case DOWN :
+    				this.getModel().getCharacter().moveDown();
+    				break;
+    			case RIGHT :
+    				this.getModel().getCharacter().moveRight();
+    				break;
+    			case LEFT :
+    				this.getModel().getCharacter().moveLeft();
+    			case NOP :
+    			default :
+    				this.getModel().getCharacter().doNothing();
+    				break;	
+    		}
+    		this.clearOrder();
+    		if(this.getModel().getCharacter().isAlive()) {
+    			this.getModel().getCharacter().doNothing();
+    		}
+    		this.getView().cameraMove();
+    	}
+    	this.getView().displayMessage("Game Over !");
     }
     
     
@@ -76,11 +106,11 @@ public class ControllerFacade implements IController {
      * @return the view
      */
     public IView getView() {
-        return null; //this.view;
+        return this.view; //this.view;
     }
     
     public void setView(IView view){
-    	//this.view = view;
+    	this.view = view;
     }
 
     /**
@@ -89,31 +119,61 @@ public class ControllerFacade implements IController {
      * @return the model
      */
     public IModel getModel() {
-        return null;// this.model;
+        return this.model;
     }
     
+    /**
+     * Sets the Model
+     * 
+     * @param model of the game
+     */
     public void setModel(IModel model){
-    	//this.model = model;
+    	this.model = model;
     }
 
     
-    
+    /**
+     * 	Gets the order
+     * 
+     * @return an order
+     */
 	public Order getOrder() {
-		return null;//order;
-	}
-
-	public void setOrder(Order order) {
-		//this.order = order;
+		return order;
 	}
 	
+	/**
+	 * 
+	 * @param order
+	 * 			Send order to the Setter
+	 */
+	public void setOrder(Order order) {
+		this.order = order;
+	}
+	
+	/**
+	 * Clear the order
+	 */
 	public void clearOrder(){
-		
+		this.order = Order.NOP;
+	}
+	
+	/**
+	 * 
+	 * @param order
+	 * 			Send Order to the Setter
+	 * @throws IOException
+	 */
+	@Override
+	public void orderPerform(Order order) throws IOException {
+		this.setOrder(order);
 	}
 
-
+	/**
+	 * Gets the Order Performer who return this control
+	 */
 	@Override
 	public IOrderPerformer getOrderPeformer() {
 		// TODO Auto-generated method stub
-		return null;
+		return this;
 	}
 }
