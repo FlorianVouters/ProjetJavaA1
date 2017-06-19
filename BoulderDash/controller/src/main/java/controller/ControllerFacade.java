@@ -43,8 +43,13 @@ public class ControllerFacade implements IController, IOrderPerformer {
 
     
     
+    public void start() throws SQLException, InterruptedException {
+    	
+    }
+    
+    
     /**
-     * Start.
+     * Beggining of the character thread
      *
      * @throws SQLException
      *             the SQL exception
@@ -80,6 +85,7 @@ public class ControllerFacade implements IController, IOrderPerformer {
     	}
     	this.getView().displayMessage("Game Over !");
     }
+    
     
     
    /*	actually is the play method
