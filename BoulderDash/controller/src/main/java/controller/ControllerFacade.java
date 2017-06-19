@@ -43,9 +43,10 @@ public class ControllerFacade implements IController, IOrderPerformer {
 
     
     
-    public void start() throws SQLException, InterruptedException {
-    	
-    }
+//    public void start() throws SQLException, InterruptedException {
+//    	
+//    	
+//    }
     
     
     /**
