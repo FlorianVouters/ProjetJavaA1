@@ -8,7 +8,12 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import model.Sprite;
+
 public class ExitDoorTest {
+	
+	private ExitDoor exitDoor;
+	private Sprite image;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -27,8 +32,14 @@ public class ExitDoorTest {
 	}
 
 	@Test
-	public void testAnimate() {
-		fail("Not yet implemented");
+	public void testIsAlive() {
+		assertNotNull(exitDoor);
+	}
+
+	@Test
+	public void testGetImage() {
+		final Sprite expected = image;
+		assertEquals(expected, this.image.getImage());
 	}
 
 }

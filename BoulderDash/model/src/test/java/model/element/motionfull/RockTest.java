@@ -15,13 +15,11 @@ import model.Sprite;
 
 public class RockTest {
 
-	private Example id;
-	private Example name;
-	private IElement sprite;
-	private IElement permeability;
 	private Character character;
 	private IMotionfullElement x;
 	private IMotionfullElement y;
+	private int xDimension;
+	private int yDimension;
 	private Sprite image;
 
 	@BeforeClass
@@ -42,27 +40,38 @@ public class RockTest {
 
 	@Test
 	public void testMoveUp() {
-		assertNotNull(character);
+		final int expected = yDimension;
+		yDimension--;
+		assertEquals(expected, this.y.getY());
 	}
 
 	@Test
 	public void testMoveLeft() {
-		assertNotNull(character);
+		final int expected = xDimension;
+		xDimension--;
+		assertEquals(expected, this.x.getX());
 	}
 
 	@Test
 	public void testMoveDown() {
-		assertNotNull(character);
+		final int expected = yDimension;
+		yDimension++;
+		assertEquals(expected, this.y.getY());
 	}
 
 	@Test
 	public void testMoveRight() {
-		assertNotNull(character);
+		final int expected = xDimension;
+		xDimension++;
+		assertEquals(expected, this.x.getX());
 	}
 
 	@Test
 	public void testDoNothing() {
-		assertNotNull(character);
+		final int expected = xDimension;
+		final int expected2 = yDimension;
+		assertEquals(expected, this.x.getX());
+		assertEquals(expected2, this.y.getY());
 	}
 
 	@Test
@@ -98,7 +107,7 @@ public class RockTest {
 
 	@Test
 	public void testFall() {
-		fail("Not yet implemented");
+		//Unknown implementation yet
 	}
 
 }

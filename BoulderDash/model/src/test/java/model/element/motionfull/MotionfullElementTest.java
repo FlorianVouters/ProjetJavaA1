@@ -2,7 +2,6 @@ package model.element.motionfull;
 
 import static org.junit.Assert.*;
 
-import java.awt.Image;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -11,14 +10,13 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import model.IMotionfullElement;
-import model.Permeabilty;
-import model.Sprite;
 
 public class MotionfullElementTest {
 
-	private MotionfullElement element;
 	private IMotionfullElement x;
 	private IMotionfullElement y;
+	private int xDimension;
+	private int yDimension;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -38,27 +36,38 @@ public class MotionfullElementTest {
 
 	@Test
 	public void testMoveUp() {
-		assertNotNull(element);
+		final int expected = yDimension;
+		yDimension--;
+		assertEquals(expected, this.y.getY());
 	}
 
 	@Test
 	public void testMoveLeft() {
-		assertNotNull(element);
+		final int expected = xDimension;
+		xDimension--;
+		assertEquals(expected, this.x.getX());
 	}
 
 	@Test
 	public void testMoveDown() {
-		assertNotNull(element);
+		final int expected = yDimension;
+		yDimension++;
+		assertEquals(expected, this.y.getY());
 	}
 
 	@Test
 	public void testMoveRight() {
-		assertNotNull(element);
+		final int expected = xDimension;
+		xDimension++;
+		assertEquals(expected, this.x.getX());
 	}
 
 	@Test
 	public void testDoNothing() {
-		assertNotNull(element);
+		final int expected = xDimension;
+		final int expected2 = yDimension;
+		assertEquals(expected, this.x.getX());
+		assertEquals(expected2, this.y.getY());
 	}
 
 	@Test

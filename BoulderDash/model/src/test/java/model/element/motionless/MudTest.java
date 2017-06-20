@@ -8,7 +8,12 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import model.Sprite;
+
 public class MudTest {
+	
+	private Mud mud;
+	private Sprite image;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -27,8 +32,19 @@ public class MudTest {
 	}
 
 	@Test
-	public void testAnimate() {
-		fail("Not yet implemented");
+	public void testIsAlive() {
+		assertNotNull(mud);
+	}
+
+	@Test
+	public void testGetImage() {
+		final Sprite expected = image;
+		assertEquals(expected, this.image.getImage());
+	}
+
+	@Test
+	public void testDie() {
+		//Unknown implementation yet
 	}
 
 }

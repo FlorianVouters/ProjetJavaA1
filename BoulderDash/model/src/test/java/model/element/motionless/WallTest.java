@@ -8,7 +8,12 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import model.Sprite;
+
 public class WallTest {
+	
+	private Wall wall;
+	private Sprite image;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -28,7 +33,23 @@ public class WallTest {
 
 	@Test
 	public void testCheckColision() {
-		fail("Not yet implemented");
+		//Unknown implementation yet
+	}
+
+	@Test
+	public void testDie() {
+		//Unknown implementation yet
+	}
+
+	@Test
+	public void testIsAlive() {
+		assertNotNull(wall);
+	}
+
+	@Test
+	public void testGetImage() {
+		final Sprite expected = image;
+		assertEquals(expected, this.image.getImage());
 	}
 
 }

@@ -20,6 +20,8 @@ public class DiamondTest {
 	private IMotionfullElement x;
 	private IMotionfullElement y;
 	private Sprite image;
+	private int xDimension;
+	private int yDimension;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -39,27 +41,38 @@ public class DiamondTest {
 
 	@Test
 	public void testMoveUp() {
-		assertNotNull(diamond);
+		final int expected = yDimension;
+		yDimension--;
+		assertEquals(expected, this.y.getY());
 	}
 
 	@Test
 	public void testMoveLeft() {
-		assertNotNull(diamond);
+		final int expected = xDimension;
+		xDimension--;
+		assertEquals(expected, this.x.getX());
 	}
 
 	@Test
 	public void testMoveDown() {
-		assertNotNull(diamond);
+		final int expected = yDimension;
+		yDimension++;
+		assertEquals(expected, this.y.getY());
 	}
 
 	@Test
 	public void testMoveRight() {
-		assertNotNull(diamond);
+		final int expected = xDimension;
+		xDimension++;
+		assertEquals(expected, this.x.getX());
 	}
 
 	@Test
 	public void testDoNothing() {
-		assertNotNull(diamond);
+		final int expected = xDimension;
+		final int expected2 = yDimension;
+		assertEquals(expected, this.x.getX());
+		assertEquals(expected2, this.y.getY());
 	}
 
 	@Test
@@ -95,12 +108,12 @@ public class DiamondTest {
 	
 	@Test
 	public void testFall(){
-		assertNotNull(diamond);
+		//Unknown implementation yet
 	}
 
 	@Test
 	public void testDie() {
-		assertNotNull(diamond);
+		//Unknown implementation yet
 	}
 
 }

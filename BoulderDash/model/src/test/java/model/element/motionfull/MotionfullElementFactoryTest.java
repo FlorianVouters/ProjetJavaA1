@@ -41,8 +41,7 @@ public class MotionfullElementFactoryTest {
 
 	@Test
 	public void testCreatePoint() {
-		final PointEnemy expected = pointEnemy;
-		assertEquals(expected, pointEnemy);
+		assertNotNull(pointEnemy);
 	}
 
 	@Test

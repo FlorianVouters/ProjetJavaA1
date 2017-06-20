@@ -30,17 +30,17 @@ public class AmoebaTest {
 
 	@Test
 	public void testDie() {
-		assertNotNull(amoeba);
+		//Unknown implementation yet
 	}
 
 	@Test
 	public void testKill() {
-		assertNotNull(amoeba);
+		//Unknown implementation yet
 	}
 
 	@Test
 	public void testMultiply() {
-		assertNotNull(amoeba);
+		//Unknown implementation yet
 	}
 
 }

@@ -8,7 +8,12 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import model.Sprite;
+
 public class BorderTest {
+	
+	private Border border;
+	private Sprite image;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -27,13 +32,13 @@ public class BorderTest {
 	}
 
 	@Test
-	public void testCheckColision() {
-		fail("Not yet implemented");
+	public void testIsAlive() {
+		assertNotNull(border);
 	}
 
 	@Test
-	public void testAnimate() {
-		fail("Not yet implemented");
+	public void testGetImage() {
+		final Sprite expected = image;
+		assertEquals(expected, this.image.getImage());
 	}
-
 }

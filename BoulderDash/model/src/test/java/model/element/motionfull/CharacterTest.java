@@ -26,6 +26,8 @@ public class CharacterTest {
 	private IMotionfullElement x;
 	private IMotionfullElement y;
 	private Sprite image;
+	private int xDimension;
+	private int yDimension;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -76,27 +78,38 @@ public class CharacterTest {
 
 	@Test
 	public void testMoveUp() {
-		assertNotNull(character);
+		final int expected = yDimension;
+		yDimension--;
+		assertEquals(expected, this.y.getY());
 	}
 
 	@Test
 	public void testMoveLeft() {
-		assertNotNull(character);
+		final int expected = xDimension;
+		xDimension--;
+		assertEquals(expected, this.x.getX());
 	}
 
 	@Test
 	public void testMoveDown() {
-		assertNotNull(character);
+		final int expected = yDimension;
+		yDimension++;
+		assertEquals(expected, this.y.getY());
 	}
 
 	@Test
 	public void testMoveRight() {
-		assertNotNull(character);
+		final int expected = xDimension;
+		xDimension++;
+		assertEquals(expected, this.x.getX());
 	}
 
 	@Test
 	public void testDoNothing() {
-		assertNotNull(character);
+		final int expected = xDimension;
+		final int expected2 = yDimension;
+		assertEquals(expected, this.x.getX());
+		assertEquals(expected2, this.y.getY());
 	}
 
 	@Test
@@ -120,11 +133,6 @@ public class CharacterTest {
 	}
 
 	@Test
-	public void testCharacter() {
-		assertNotNull(character);
-	}
-
-	@Test
 	public void testIsAlive() {
 		assertNotNull(character);
 	}
@@ -137,7 +145,7 @@ public class CharacterTest {
 
 	@Test
 	public void testDie() {
-		assertNotNull(character);
+		//Unknown implementation yet
 	}
 
 }
