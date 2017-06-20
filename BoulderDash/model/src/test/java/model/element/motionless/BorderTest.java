@@ -33,12 +33,14 @@ public class BorderTest {
 
 	@Test
 	public void testIsAlive() {
+		fail("Not yet implemented");
 		assertNotNull(border);
 	}
 
 	@Test
 	public void testGetImage() {
 		final Sprite expected = image;
+		fail("Not yet implemented");
 		assertEquals(expected, this.image.getImage());
 	}
 }

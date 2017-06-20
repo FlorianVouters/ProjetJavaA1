@@ -1,5 +1,7 @@
 package model.element.motionfull;
 
+import static org.junit.Assert.fail;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -26,16 +28,19 @@ public class AmoebaTest {
 
 	@Test
 	public void testDie() {
+		fail("Not yet implemented");
 		//Unknown implementation yet
 	}
 
 	@Test
 	public void testKill() {
+		fail("Not yet implemented");
 		//Unknown implementation yet
 	}
 
 	@Test
 	public void testMultiply() {
+		fail("Not yet implemented");
 		//Unknown implementation yet
 	}
 

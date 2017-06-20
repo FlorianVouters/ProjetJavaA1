@@ -34,16 +34,19 @@ public class MotionfullElementFactoryTest {
 
 	@Test
 	public void testCreateCharacter() {
+		fail("Not yet implemented");
 		assertNotNull(character);
 	}
 
 	@Test
 	public void testCreatePoint() {
+		fail("Not yet implemented");
 		assertNotNull(pointEnemy);
 	}
 
 	@Test
 	public void testCreateDiamondEnemy() {
+		fail("Not yet implemented");
 		assertNotNull(diamondEnemy);
 	}
 

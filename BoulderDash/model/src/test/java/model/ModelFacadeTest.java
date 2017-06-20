@@ -33,12 +33,14 @@ public class ModelFacadeTest {
 	@Test
 	public void testGetMap() {
 		Map expected = map;
+		fail("Not yet implemented");
 		assertEquals(expected, this.map.getMap());
 	}
 
 	@Test
 	public void testGetCharacter() {
 		IModel expected = character;
+		fail("Not yet implemented");
 		assertEquals(expected, this.character.getCharacter());
 	}
 

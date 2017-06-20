@@ -33,17 +33,20 @@ public class StarTest {
 
 	@Test
 	public void testCheckColision() {
+		fail("Not yet implemented");
 		//I don't know how to test this
 	}
 
 	@Test
 	public void testIsAlive() {
+		fail("Not yet implemented");
 		assertNotNull(star);
 	}
 
 	@Test
 	public void testGetImage() {
 		final Sprite expected = image;
+		fail("Not yet implemented");
 		assertEquals(expected, this.image.getImage());
 	}
 }

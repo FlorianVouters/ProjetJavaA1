@@ -36,36 +36,43 @@ public class MotionlessElementFactoryTest {
 
 	@Test
 	public void testCreateBackground() {
+		fail("Not yet implemented");
 		assertNotNull(background);
 	}
 
 	@Test
 	public void testCreateBorder() {
+		fail("Not yet implemented");
 		assertNotNull(border);
 	}
 
 	@Test
 	public void testCreateExitDoor() {
+		fail("Not yet implemented");
 		assertNotNull(exitDoor);
 	}
 
 	@Test
 	public void testCreateMud() {
+		fail("Not yet implemented");
 		assertNotNull(mud);
 	}
 
 	@Test
 	public void testCreateSpecialStoneWall() {
+		fail("Not yet implemented");
 		assertNotNull(stoneWall);
 	}
 
 	@Test
 	public void testCreateStar() {
+		fail("Not yet implemented");
 		assertNotNull(star);
 	}
 
 	@Test
 	public void testCreateWall() {
+		fail("Not yet implemented");
 		assertNotNull(wall);
 	}
 

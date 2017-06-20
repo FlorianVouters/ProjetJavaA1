@@ -40,12 +40,14 @@ public class ElementTest {
 	@Test
 	public void testGetId() {
 		final Example expected = id;
+		fail("Not yet implemented");
 		assertEquals(expected, this.id.getId());
 	}
 
 	@Test
 	public void testGetName() {
 		final Example expected = name;
+		fail("Not yet implemented");
 		assertEquals(expected, this.name.getName());
 	}
 
@@ -53,12 +55,14 @@ public class ElementTest {
 	public void testSetName(final String name) {
 		final String expected = name;
 		this.name.getName();
+		fail("Not yet implemented");
 		assertEquals(expected, this.name.getName());
 	}
 
 	@Test
 	public void testGetSprite() {
 		IElement  expected = sprite;
+		fail("Not yet implemented");
 		assertEquals(expected, this.sprite.getSprite());
 	}
 	
@@ -66,17 +70,20 @@ public class ElementTest {
 	public void testSetSprite(Sprite sprite){
 		final Sprite expected = sprite;
 		this.sprite.getSprite();
+		fail("Not yet implemented");
 		assertEquals(expected, this.sprite.getSprite());
 	}
 
 	@Test
 	public void testToString() {
+		fail("Not yet implemented");
 		assertNotNull(string);
 	}
 
 	@Test
 	public void testGetPermeability() {
 		final IElement expected = permeabilty;
+		fail("Not yet implemented");
 		assertEquals(expected, this.permeabilty.getPermeability());
 	}
 
@@ -84,6 +91,7 @@ public class ElementTest {
 	public void testSetPermeability(Permeabilty permeability) {
 		final IElement expected = permeabilty;
 		this.permeabilty.getPermeability();
+		fail("Not yet implemented");
 		assertEquals(expected, this.permeabilty.getPermeability());
 	}
 }
