@@ -10,19 +10,22 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import model.Example;
+import model.IElement;
+import model.IMotionfullElement;
 import model.Permeabilty;
 import model.Sprite;
 
 public class CharacterTest {
 	
-	private int id;
-	private String name;
-	private Sprite sprite;
-	private Permeabilty permeability;
+	private Example id;
+	private Example name;
+	private IElement sprite;
+	private IElement permeability;
 	private Character character;
-	private int x;
-	private int y;
-	private Image image;
+	private IMotionfullElement x;
+	private IMotionfullElement y;
+	private Sprite image;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -42,32 +45,32 @@ public class CharacterTest {
 
 	@Test
 	public void testGetId() {
-		final int expected = id;
+		final Example expected = id;
 		assertEquals(expected, this.id.getId());
 	}
 
 	@Test
 	public void testGetName() {
-		final String expected = name;
+		final Example expected = name;
 		assertEquals(expected, this.name.getName());
 	}
 
 	@Test
 	public void testSetName() {
-		final String expected = name;
+		final Example expected = name;
 		this.name.getName();
 		assertEquals(expected, this.name.getName());
 	}
 
 	@Test
 	public void testGetSprite() {
-		final Sprite expected = sprite;
+		final IElement expected = sprite;
 		assertEquals(expected, this.sprite.getSprite());
 	}
 
 	@Test
 	public void testGetPermeability() {
-		final Permeabilty expected = permeability;
+		final IElement expected = permeability;
 		assertEquals(expected, this.permeability.getPermeability());
 	}
 
@@ -98,21 +101,21 @@ public class CharacterTest {
 
 	@Test
 	public void testGetX() {
-		final int expected = x;
+		final IMotionfullElement expected = x;
 		assertEquals(expected, this.x.getX());
 	}
 
 	@Test
 	public void testGetY() {
-		final int expected = y;
+		final IMotionfullElement expected = y;
 		assertEquals(expected, this.y.getY());
 	}
 
 	@Test
 	public void testGetPosition() {
-		final int expected = x;
+		final IMotionfullElement expected = x;
 		assertEquals(expected, this.x.getX());
-		final int expected2 = y;
+		final IMotionfullElement expected2 = y;
 		assertEquals(expected2, this.y.getY());
 	}
 
@@ -128,7 +131,7 @@ public class CharacterTest {
 
 	@Test
 	public void testGetImage() {
-		final Image expected = image;
+		final Sprite expected = image;
 		assertEquals(expected, this.image.getImage());
 	}
 

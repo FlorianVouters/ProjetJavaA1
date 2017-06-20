@@ -14,7 +14,7 @@ public class ModelFacadeTest {
 
 	private Map map;
 	
-	private MotionfullElement character;
+	private IModel character;
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -40,7 +40,7 @@ public class ModelFacadeTest {
 
 	@Test
 	public void testGetCharacter() {
-		MotionfullElement expected = character;
+		IModel expected = character;
 		assertEquals(expected, this.character.getCharacter());
 	}
 

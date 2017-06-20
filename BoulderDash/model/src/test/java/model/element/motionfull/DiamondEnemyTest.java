@@ -9,6 +9,8 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class DiamondEnemyTest {
+	
+	private DiamondEnemy diamond;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -27,8 +29,8 @@ public class DiamondEnemyTest {
 	}
 
 	@Test
-	public void testAnimate() {
-		fail("Not yet implemented");
+	public void testDie() {
+		assertNotNull(diamond);
 	}
 
 }

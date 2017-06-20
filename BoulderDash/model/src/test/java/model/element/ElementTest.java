@@ -8,15 +8,18 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import model.Example;
+import model.IElement;
 import model.Permeabilty;
 import model.Sprite;
 
-public class ExampleTest {
+public class ElementTest {
 	
-	private int id;
-	private String name;
-	private Sprite sprite;
-	private Permeabilty permeabilty;
+	private Example id;
+	private Example name;
+	private IElement sprite;
+	private IElement permeabilty;
+	private String string;
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -35,51 +38,51 @@ public class ExampleTest {
 	}
 
 	@Test
-	public int testGetId() {
-		final int expected = id;
+	public void testGetId() {
+		final Example expected = id;
 		assertEquals(expected, this.id.getId());
 	}
 
 	@Test
-	public String getName() {
-		final String expected = name;
+	public void testGetName() {
+		final Example expected = name;
 		assertEquals(expected, this.name.getName());
 	}
 
 	@Test
-	public void setName(final String name) {
+	public void testSetName(final String name) {
 		final String expected = name;
 		this.name.getName();
 		assertEquals(expected, this.name.getName());
 	}
 
 	@Test
-	public Sprite getSprite() {
-		Sprite  expected = sprite;
+	public void testGetSprite() {
+		IElement  expected = sprite;
 		assertEquals(expected, this.sprite.getSprite());
 	}
 	
 	@Test
-	public void setSprite(Sprite sprite){
+	public void testSetSprite(Sprite sprite){
 		final Sprite expected = sprite;
 		this.sprite.getSprite();
 		assertEquals(expected, this.sprite.getSprite());
 	}
 
 	@Test
-	public String toString() {
-		assertNotNull();
+	public void testToString() {
+		assertNotNull(string);
 	}
 
 	@Test
-	public Permeabilty getPermeability() {
-		final Permeabilty expected = permeabilty;
+	public void testGetPermeability() {
+		final IElement expected = permeabilty;
 		assertEquals(expected, this.permeabilty.getPermeability());
 	}
 
 	@Test
-	public void setPermeability(Permeabilty permeability) {
-		final Permeabilty expected = permeabilty;
+	public void testSetPermeability(Permeabilty permeability) {
+		final IElement expected = permeabilty;
 		this.permeabilty.getPermeability();
 		assertEquals(expected, this.permeabilty.getPermeability());
 	}

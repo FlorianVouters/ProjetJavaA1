@@ -10,6 +10,8 @@ import org.junit.Test;
 
 public class PointEnemyTest {
 
+	private PointEnemy pointEnemy;
+	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 	}
@@ -27,8 +29,7 @@ public class PointEnemyTest {
 	}
 
 	@Test
-	public void testAnimate() {
-		fail("Not yet implemented");
+	public void testDie() {
+		assertNotNull(pointEnemy);
 	}
-
 }

@@ -2,8 +2,11 @@ package model;
 
 import static org.junit.Assert.*;
 
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Observable;
+
+import javax.swing.text.html.parser.Element;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -20,10 +23,13 @@ public class MapTest {
 	
 	private Map map;
 	
+	private int id;
 	private Observable observable;
 	private int List;
 	private IElement[][] sizeMap;
-	private IElement element;
+	private IMap map2;
+	private String name;
+	
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -82,27 +88,27 @@ public class MapTest {
 	}
 
 	@Test
-	public void testGetAllElements() {
-		IElement expected = element;
-		assertEquals(expected, this.element.getAllElements());
+	public void testGetAllElements() throws SQLException {
+		IMap expected = map2;
+		assertEquals(expected, this.map2.getAllElements());
 	}
 
 	@Test
 	public void testGetElementByPosition() {
-		IElement expected = element;
-		assertEquals(expected, this.element.getElementByPosition());
+		IMap expected = map2;
+		assertEquals(expected, this.map2.getElementByPosition(height, width));
 	}
 
 	@Test
 	public void testGetElementByID() {
-		IElement expected = element;
-		assertEquals(expected, this.element.getElementByID());
+		IMap expected = map2;
+		assertEquals(expected, this.map2.getElementByID(id));
 	}
 
 	@Test
-	public void testGetElementByName() {
-		IElement expected = element;
-		assertEquals(expected, this.element.getElementByName());
+	public void testGetElementByName() throws SQLException {
+		IMap expected = map2;
+		assertEquals(expected, this.map2.getElementByName(name));
 	}
 
 	@Test
