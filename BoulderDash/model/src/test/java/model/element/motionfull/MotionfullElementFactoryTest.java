@@ -8,8 +8,6 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import model.Sprite;
-
 public class MotionfullElementFactoryTest {
 
 	private DiamondEnemy diamondEnemy;

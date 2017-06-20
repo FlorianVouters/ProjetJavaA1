@@ -8,8 +8,6 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import model.Example;
-import model.IElement;
 import model.IMotionfullElement;
 import model.Sprite;
 

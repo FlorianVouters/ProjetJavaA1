@@ -3,18 +3,13 @@ package model;
 import static org.junit.Assert.*;
 
 import java.sql.SQLException;
-import java.util.List;
 import java.util.Observable;
-
-import javax.swing.text.html.parser.Element;
 
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-
-import controller.IController;
 
 public class MapTest {
 	

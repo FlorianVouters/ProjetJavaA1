@@ -2,8 +2,6 @@ package model.element.motionfull;
 
 import static org.junit.Assert.*;
 
-import java.awt.Image;
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -11,7 +9,6 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import model.IMotionfullElement;
-import model.Permeabilty;
 import model.Sprite;
 
 public class DiamondTest {
