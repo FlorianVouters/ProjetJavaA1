@@ -1,5 +1,7 @@
 package model.element.motionfull;
 
+import static org.junit.Assert.fail;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -26,6 +28,7 @@ public class PointEnemyTest {
 
 	@Test
 	public void testDie() {
+		fail("Not yet implemented");
 		//Unknown implementation yet
 	}
 }

@@ -33,17 +33,20 @@ public class SpecialStoneWallTest {
 
 	@Test
 	public void testIsAlive() {
+		fail("Not yet implemented");
 		assertNotNull(specialStoneWall);
 	}
 
 	@Test
 	public void testGetImage() {
 		final Sprite expected = image;
+		fail("Not yet implemented");
 		assertEquals(expected, this.image.getImage());
 	}
 
 	@Test
 	public void testDie() {
+		fail("Not yet implemented");
 		//Unknown implementation yet
 	}
 

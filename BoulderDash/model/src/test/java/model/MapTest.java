@@ -46,6 +46,7 @@ public class MapTest {
 	@Test
 	public void testGetHeight() {
 		final int expected = 21;
+		fail("Not yet implemented");
 		assertEquals(expected, this.map.getHeight());
 	}
 
@@ -53,12 +54,14 @@ public class MapTest {
 	public void testSetHeight() {
 		final int expected = 21;
 		this.map.setHeight(expected);
+		fail("Not yet implemented");
 		assertEquals(expected, this.map.getHeight());
 	}
 
 	@Test
 	public void testGetWidth() {
 		final int expected = 40;
+		fail("Not yet implemented");
 		assertEquals(expected, this.map.getWidth());
 	}
 
@@ -72,6 +75,7 @@ public class MapTest {
 	@Test
 	public void testGetMap() {
 		final Map expected = map;
+		fail("Not yet implemented");
 		assertEquals(expected, this.map.getMap());
 	}
 
@@ -79,30 +83,35 @@ public class MapTest {
 	public void testSetMap() {
 		final Map expected = map;
 		this.map.setMap(sizeMap);
+		fail("Not yet implemented");
 		assertEquals(expected, this.map.getMap());
 	}
 
 	@Test
 	public void testGetAllElements() throws SQLException {
 		IMap expected = map2;
+		fail("Not yet implemented");
 		assertEquals(expected, this.map2.getAllElements());
 	}
 
 	@Test
 	public void testGetElementByPosition() {
 		IMap expected = map2;
+		fail("Not yet implemented");
 		assertEquals(expected, this.map2.getElementByPosition(height, width));
 	}
 
 	@Test
 	public void testGetElementByID() {
 		IMap expected = map2;
+		fail("Not yet implemented");
 		assertEquals(expected, this.map2.getElementByID(id));
 	}
 
 	@Test
 	public void testGetElementByName() throws SQLException {
 		IMap expected = map2;
+		fail("Not yet implemented");
 		assertEquals(expected, this.map2.getElementByName(name));
 	}
 
@@ -110,12 +119,14 @@ public class MapTest {
 	public void testSetMapHasChanged() {
 		final Map expected = map;
 		this.map.setMap(sizeMap);
+		fail("Not yet implemented");
 		assertEquals(expected, this.map.getMap());
 	}
 
 	@Test
 	public void testGetObservable() {
 		Observable expected = observable;
+		fail("Not yet implemented");
 		assertEquals(expected, ((Map) this.observable).getObservable());
 	}
 

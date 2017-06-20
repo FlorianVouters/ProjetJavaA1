@@ -40,6 +40,7 @@ public class DiamondTest {
 	public void testMoveUp() {
 		final int expected = yDimension;
 		yDimension--;
+		fail("Not yet implemented");
 		assertEquals(expected, this.y.getY());
 	}
 
@@ -47,6 +48,7 @@ public class DiamondTest {
 	public void testMoveLeft() {
 		final int expected = xDimension;
 		xDimension--;
+		fail("Not yet implemented");
 		assertEquals(expected, this.x.getX());
 	}
 
@@ -54,6 +56,7 @@ public class DiamondTest {
 	public void testMoveDown() {
 		final int expected = yDimension;
 		yDimension++;
+		fail("Not yet implemented");
 		assertEquals(expected, this.y.getY());
 	}
 
@@ -61,6 +64,7 @@ public class DiamondTest {
 	public void testMoveRight() {
 		final int expected = xDimension;
 		xDimension++;
+		fail("Not yet implemented");
 		assertEquals(expected, this.x.getX());
 	}
 
@@ -68,6 +72,7 @@ public class DiamondTest {
 	public void testDoNothing() {
 		final int expected = xDimension;
 		final int expected2 = yDimension;
+		fail("Not yet implemented");
 		assertEquals(expected, this.x.getX());
 		assertEquals(expected2, this.y.getY());
 	}
@@ -75,41 +80,48 @@ public class DiamondTest {
 	@Test
 	public void testGetX() {
 		final IMotionfullElement expected = x;
+		fail("Not yet implemented");
 		assertEquals(expected, this.x.getX());
 	}
 
 	@Test
 	public void testGetY() {
 		final IMotionfullElement expected = y;
+		fail("Not yet implemented");
 		assertEquals(expected, this.y.getY());
 	}
 
 	@Test
 	public void testGetPosition() {
 		final IMotionfullElement expected = x;
-		assertEquals(expected, this.x.getX());
 		final IMotionfullElement expected2 = y;
+		fail("Not yet implemented");
+		assertEquals(expected, this.x.getX());
 		assertEquals(expected2, this.y.getY());
 	}
 
 	@Test
 	public void testIsAlive() {
+		fail("Not yet implemented");
 		assertNotNull(diamond);
 	}
 
 	@Test
 	public void testGetImage() {
 		final Sprite expected = image;
+		fail("Not yet implemented");
 		assertEquals(expected, this.image.getImage());
 	}
 	
 	@Test
 	public void testFall(){
+		fail("Not yet implemented");
 		//Unknown implementation yet
 	}
 
 	@Test
 	public void testDie() {
+		fail("Not yet implemented");
 		//Unknown implementation yet
 	}
 
