@@ -3,6 +3,7 @@ package model;
 import static org.junit.Assert.*;
 
 import java.util.List;
+import java.util.Observable;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -20,6 +21,9 @@ public class MapTest {
 	private Map map;
 	
 	private Observable observable;
+	private int List;
+	private IElement[][] sizeMap;
+	private IElement element;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -31,7 +35,7 @@ public class MapTest {
 
 	@Before
 	public void setUp() throws Exception {
-		this.map = new Map(1);
+		this.map = new Map(List);
 	}
 
 	@After
@@ -40,7 +44,7 @@ public class MapTest {
 
 	@Test
 	public void testGetHeight() {
-		private final int expected = 21;
+		final int expected = 21;
 		assertEquals(expected, this.map.getHeight());
 	}
 
@@ -53,8 +57,8 @@ public class MapTest {
 
 	@Test
 	public void testGetWidth() {
-		private final int expected = 40;
-		assertEquals(expected, this.map.getWidth);
+		final int expected = 40;
+		assertEquals(expected, this.map.getWidth());
 	}
 
 	@Test
@@ -66,52 +70,52 @@ public class MapTest {
 
 	@Test
 	public void testGetMap() {
-		private final expected = map;
+		final Map expected = map;
 		assertEquals(expected, this.map.getMap());
 	}
 
 	@Test
 	public void testSetMap() {
-		private final expected = map;
-		this.map.setMap(expected);
+		final Map expected = map;
+		this.map.setMap(sizeMap);
 		assertEquals(expected, this.map.getMap());
 	}
 
 	@Test
 	public void testGetAllElements() {
-		private final expected = List<IElement>;
-		assertEquals(expected, this.List<IElement>.getAllElements());
+		IElement expected = element;
+		assertEquals(expected, this.element.getAllElements());
 	}
 
 	@Test
 	public void testGetElementByPosition() {
-		private final expected = IElement;
-		assertEquals(expected, this.IElement.getElementByPosition());
+		IElement expected = element;
+		assertEquals(expected, this.element.getElementByPosition());
 	}
 
 	@Test
 	public void testGetElementByID() {
-		private final expected = IElement;
-		assertEquals(expected, this.IElement.getElementByID());
+		IElement expected = element;
+		assertEquals(expected, this.element.getElementByID());
 	}
 
 	@Test
 	public void testGetElementByName() {
-		private final expected = IElement;
-		assertEquals(expected, this.IElement.getElementByName());
+		IElement expected = element;
+		assertEquals(expected, this.element.getElementByName());
 	}
 
 	@Test
 	public void testSetMapHasChanged() {
-		private final expected = map;
-		this.map.setMap(expected);
+		final Map expected = map;
+		this.map.setMap(sizeMap);
 		assertEquals(expected, this.map.getMap());
 	}
 
 	@Test
 	public void testGetObservable() {
-		private final expected = observable;
-		assertEquals(expected, this.observable.getObservable())
+		Observable expected = observable;
+		assertEquals(expected, ((Map) this.observable).getObservable());
 	}
 
 }

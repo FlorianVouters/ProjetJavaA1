@@ -8,11 +8,13 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import model.element.motionfull.MotionfullElement;
+
 public class ModelFacadeTest {
 
 	private Map map;
 	
-	private IMotionFullElement character;
+	private MotionfullElement character;
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -32,13 +34,13 @@ public class ModelFacadeTest {
 
 	@Test
 	public void testGetMap() {
-		private final expected = map;
+		Map expected = map;
 		assertEquals(expected, this.map.getMap());
 	}
 
 	@Test
 	public void testGetCharacter() {
-		private final expected = character;
+		MotionfullElement expected = character;
 		assertEquals(expected, this.character.getCharacter());
 	}
 
