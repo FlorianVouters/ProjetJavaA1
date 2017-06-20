@@ -34,9 +34,25 @@ public abstract class Main {
         }*/
     	Map map = new Map(1);
   
-			//map.loadFile("Level1.txt"); //saves the file
-			System.out.println(ElementDAO2.getMapHeight(1));
+		/*	try {
+				map.loadFile("Level1.txt"); //saves the file
+			} catch (IOException e) {
+				e.printStackTrace();
+			} 
+		*/
+    	
+    	System.out.println(ElementDAO2.getMapHeight(1));
 			System.out.println(ElementDAO2.getMapWidth(1));
+			
+			char[][] level= ElementDAO2.getMap(1);
+			
+			for(int x=0; x<48; x++){
+				for(int y=0; y<28; y++){
+					System.out.print(level[y][x]);
+				}
+				System.out.println();
+			}
+			
 
     	}
 

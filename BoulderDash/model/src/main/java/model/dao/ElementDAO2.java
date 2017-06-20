@@ -12,7 +12,7 @@ public class ElementDAO2 extends AbstractDAO {
 	char[][] map;
 	public static String mapHeightQuerry = "{call getMapHeight(?)}";
 	public static String mapWidthQuerry = "{call getMapWidth(?)}";
-	public static String getMap; // TODO write this stored procedure
+	public static String getMap = "{call getElement(?,?,?)}";
 	/*int height;
 	int width;*/
 	
@@ -44,8 +44,27 @@ public class ElementDAO2 extends AbstractDAO {
 		return width;
 	}
 
-	public static char[][] getMap(int level) {
-		return null;
+	public static char[][] getMap(int level) throws SQLException {
+		int width = getMapWidth(level);
+		int height = getMapHeight(level);
+		char[][] map = new char[width][height];
+		for(int x=1; x<=width; x++){
+			for(int y =1; y<=height; y++){
+				CallableStatement callStatement = prepareCall(getMap);
+				callStatement.setInt(1, level);
+				callStatement.setInt(2, x);
+				callStatement.setInt(3, y);
+				
+				if(callStatement.execute()){
+					ResultSet result = callStatement.getResultSet();
+					if(result.next()){
+					map[x-1][y-1] = result.getString(1).charAt(0);
+					}
+					result.close();
+				}
+			}
+		}
+		return map;
 	}
 
 	@Deprecated  //only used to push the maps in the database
