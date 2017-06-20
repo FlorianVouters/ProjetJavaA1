@@ -1,14 +1,17 @@
 package model.element.motionfull;
 
+import model.Map;
 import model.Sprite;
 
 public class Amoeba extends Enemy{
 
-	private static final Sprite AMOEBA = new Sprite('A', "Amoeba.jpg");
+	private static int LEVEL;
+	private static final Sprite AMOEBA = new Sprite('A',LEVEL);
 
 	
-	public Amoeba(Sprite sprite) {
-		super(sprite);
+	public Amoeba(Sprite sprite, Map map) {
+		super(sprite, map);
+		this.LEVEL = map.getLevel();
 		// TODO Auto-generated constructor stub
 	}
 

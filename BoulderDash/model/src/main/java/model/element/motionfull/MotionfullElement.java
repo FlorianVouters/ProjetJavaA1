@@ -3,50 +3,66 @@ package model.element.motionfull;
 import java.awt.Point;
 
 import model.IMotionfullElement;
+import model.Map;
 import model.Permeabilty;
 import model.Sprite;
-import model.element.Example;
+import model.element.Element;
 
-public abstract class MotionfullElement extends Example implements IMotionfullElement {
+public abstract class MotionfullElement extends Element implements IMotionfullElement {
 
+	Point position;
+	Map map;
 	
-	  public MotionfullElement(Sprite sprite, Permeabilty permeability) {
+	  public MotionfullElement(Sprite sprite, Permeabilty permeability,Map map, int x, int y) {
 		super(sprite, permeability);
+		this.setMap(map);
+		this.setX(x);
+		this.setY(y);
 	}
 
+	 public MotionfullElement(Sprite sprite, Permeabilty permeability, Map map) {
+	        super(sprite, permeability);
+	        this.setMap(map);
+	        this.position = new Point();
+	    }
+	  
 	/**
      * Move up.
      */
     public void moveUp(){
-    	// TODO Auto-generated method stub
+    	   this.setY(this.getY() + 1);
+           this.setHasMoved();
     }
 
     /**
      * Move left.
      */
     public void moveLeft(){
-    	
+    	this.setY(this.getX() - 1);
+        this.setHasMoved();
     }
 
     /**
      * Move down.
      */
     public void moveDown(){
-    	
+    	this.setY(this.getY() - 1);
+        this.setHasMoved();	
     }
 
     /**
      * Move right.
      */
     public void moveRight(){
-    	
+    	this.setY(this.getX() + 1);
+        this.setHasMoved();
     }
 
     /**
      * Do nothing.
      */
     public void doNothing(){
-    	
+    	this.doNothing();
     }
 
     /**
@@ -56,7 +72,12 @@ public abstract class MotionfullElement extends Example implements IMotionfullEl
      */
     @Override
     public int getX(){
-    	return 0;
+    	return this.getPosition().x;
+    }
+    
+    public void setX(int x){
+    	this.getPosition().x = x;
+    	//check collisions
     }
 
     /**
@@ -66,10 +87,13 @@ public abstract class MotionfullElement extends Example implements IMotionfullEl
      */
     @Override
     public int getY(){
-    	return 0;
+    	return this.getPosition().y;
     }
 
-    
+    public void setY(int y){
+    	this.getPosition().y = y;
+    	//checkcollisions
+    }
     
     
     /*
@@ -78,6 +102,29 @@ public abstract class MotionfullElement extends Example implements IMotionfullEl
      */
     @Override
     public Point getPosition(){
-    	return null;
+    	return this.position;
     }
+    
+    
+    public Map getMap() {
+		return map;
+	}
+
+	public void setMap(Map map) {
+		this.map = map;
+	}
+
+	private void setHasMoved() {
+        this.getMap().setMapHasChanged();
+        
+    }
+	
+	public void applyPhysics(){
+		//not sure it will be here but
+		// will make all object fall
+	}
+	
+	public void moveEnemy(){
+		//all enemies move according to their patern
+	}
 }

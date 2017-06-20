@@ -1,11 +1,14 @@
 package model.element.motionfull;
 
+import model.Map;
 import model.element.motionless.MotionlessElement;
 
 public class MotionfullElementFactory {
-
+	
+	private static Map MAP;
+	
 	 /** The Constant character. */
-    private static final Character          Character    = new Character();
+    private static final Character          Character    = new Character(MAP); //must be set before
 	
     /** The Constant pointEnemy. */
     private static final PointEnemy         PointEnemy   = new PointEnemy(null);

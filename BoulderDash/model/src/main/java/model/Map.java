@@ -12,6 +12,7 @@ import model.dao.ElementDAO2;
 
 public class Map extends Observable implements IMap {
 
+	private int level;
 	private int height; //height of the map
 	private int width; // width of the map
 	private IElement[][] map; //double array of element which constitute the map
@@ -21,15 +22,32 @@ public class Map extends Observable implements IMap {
 	public int objective;
 	
 	public Map(int level){
-		loadLevel(level);
+		super(); //for observable ?
+		this.setLevel(level);
+		this.loadLevel(getLevel());
 	}
 
+	
 	
 	private void loadLevel(int level) {
 		// TODO Auto-generated method stub
 		//goes get the map in the DB
 	}
 	
+	
+	
+	public int getLevel() {
+		return level;
+	}
+
+
+
+	public void setLevel(int level) {
+		this.level = level;
+	}
+
+
+
 	void setElementPosition(int x,int y) {  
 		
 	}

@@ -1,5 +1,6 @@
 package model;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -14,26 +15,35 @@ import model.dao.ExampleDAO;
 public class ModelFacade implements IModel {
 	
 	private IMap map;
+	
+	private IMotionfullElement character;
 
     /**
      * Instantiates a new model facade.
      */
-    public ModelFacade() {
-        super();
+    public ModelFacade(int level) {
+       this.setMap(new Map(level));
+       this.setCharacter(new Character(map));
     }
-
+    
+    
 	@Override
 	public IMap getMap() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.map;
+	}
+	
+	public void setMap(IMap map){
+		this.map = map;
 	}
 
 	@Override
 	public IMotionfullElement getCharacter() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.character;
 	}
 
+	public void setCharacter(IMotionfullElement character){
+		this.character = character;
+	}
 	
 	
 	//to be deleted
