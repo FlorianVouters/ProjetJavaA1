@@ -10,6 +10,8 @@ import java.sql.Statement;
 public class ElementDAO2 extends AbstractDAO {
 
 	char[][] map;
+	public static String saveMapSize = "{call saveMapSize(?,?,?}";
+	public static String saveMapElement = "{call saveMapElement(?,?,?,?)";
 	public static String mapHeightQuerry = "{call getMapHeight(?)}";
 	public static String mapWidthQuerry = "{call getMapWidth(?)}";
 	public static String getMap = "{call getElement(?,?,?)}";
@@ -67,6 +69,39 @@ public class ElementDAO2 extends AbstractDAO {
 		return map;
 	}
 
+	@Deprecated
+	public static void saveMapHeight(int level, int height, int width) throws SQLException{
+		CallableStatement callStatement = prepareCall(saveMapSize);
+		callStatement.setInt(1, level);
+		callStatement.setInt(2, height);
+		callStatement.setInt(3, width);
+		
+		callStatement.execute();
+			
+	}
+	
+	@Deprecated
+	public static void saveMapElement(int level, int height, int width, char element) throws SQLException{ //doesn't work because it wants a char not a string
+		CallableStatement callStatement = prepareCall(saveMapElement);
+		
+		for(int x= 1; x<=width;x++){
+			for(int y =1; y<height; y++){
+
+				callStatement.setInt(1, level);
+				callStatement.setInt(2, y);
+				callStatement.setInt(3, x);
+				String buffer = ""+element;
+				callStatement.setString(4, buffer); //there's no method to send a single char
+				
+				callStatement.execute();
+				
+			}
+		}
+		
+		
+	}
+	
+	
 	@Deprecated  //only used to push the maps in the database
 	public static void saveMap(char[][] map, int level, int height, int width) {
 				

@@ -41,6 +41,9 @@ public abstract class Main {
 			} 
 		*/
     	
+    
+    	
+    	
     	System.out.println(ElementDAO2.getMapHeight(1));
 			System.out.println(ElementDAO2.getMapWidth(1));
 			
@@ -54,6 +57,7 @@ public abstract class Main {
 			}
 			
 
+    	
     	}
 
 }
