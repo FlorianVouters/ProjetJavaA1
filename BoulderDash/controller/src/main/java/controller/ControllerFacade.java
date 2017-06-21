@@ -80,10 +80,8 @@ public class ControllerFacade implements IController, IOrderPerformer {
     				break;	
     		}
     		this.clearOrder();
-    		if(this.getModel().getCharacter().isAlive()) {
-    			this.getModel().getCharacter().doNothing();
-    		}
     		this.getModel().getMap().lookForAndMoveEnemy();
+    		this.getModel().getMap().applyPhysics();
     		this.getView().cameraMove();
     	}
     	this.getView().displayMessage("Game Over !");
