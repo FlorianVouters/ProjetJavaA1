@@ -123,6 +123,16 @@ public class Map extends Observable implements IMap {
 		}
 		return false;
 	}
+	public lookForAndMoveEnemy() {
+		IElement[][] elem = getMap();
+    		for (int j = 0; j <elem.length; j++) {
+    			for (int i = 0; i < elem[i].length; i++) {
+    				if (getMap().getElementByPosition(i, j).getClass().equals(Enemy.class) {
+    					moveEnemy(getMap().getElementByPosition(i, j));
+    				}
+    			}
+    		}
+				    }
 	
 	public void moveEnemy(MotionfullElement element) {
 		int x = 0; int y = 0;
