@@ -3,6 +3,7 @@ package controller;
 import java.io.IOException;
 import java.sql.SQLException;
 
+import model.IElement;
 import model.IModel;
 import model.Order;
 import view.IView;
@@ -24,7 +25,7 @@ public class ControllerFacade implements IController, IOrderPerformer {
     /**Order to execute */
     private Order order;
     
-    private static final int 	speedCharacter = 300;
+    private static final int 	speedCharacter = 250;
 
     /**
      * Instantiates a new controller facade.
@@ -82,30 +83,12 @@ public class ControllerFacade implements IController, IOrderPerformer {
     		if(this.getModel().getCharacter().isAlive()) {
     			this.getModel().getCharacter().doNothing();
     		}
+    		this.getModel().getMap().lookForAndMoveEnemy();
     		this.getView().cameraMove();
     	}
     	this.getView().displayMessage("Game Over !");
     }
     
-    
-    
-   /*	actually is the play method
-    * 
-    * 
-    public void start() throws SQLException {
-        this.getView().displayMessage(this.getModel().getElementById(1).toString());
-
-        this.getView().displayMessage(this.getModel().getElementByName("Example 2").toString());
-
-        final List<IElement> elements = this.getModel().getAllElements();
-        final StringBuilder message = new StringBuilder();
-        // a.append(" bar);
-        for (final IElement element : elements) {
-            message.append(element);
-            message.append('\n');
-        }
-        this.getView().displayMessage(message.toString());
-    }*/
 
     /**
      * Gets the view.
@@ -113,7 +96,7 @@ public class ControllerFacade implements IController, IOrderPerformer {
      * @return the view
      */
     public IView getView() {
-        return this.view; //this.view;
+        return this.view;
     }
     
     public void setView(IView view){
