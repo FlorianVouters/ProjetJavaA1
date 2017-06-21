@@ -126,4 +126,8 @@ public abstract class MotionfullElement extends Element implements IMotionfullEl
 		// will make all object fall
 	}
 	
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> branch 'model' of https://github.com/FlorianVouters/ProjetJavaA1
