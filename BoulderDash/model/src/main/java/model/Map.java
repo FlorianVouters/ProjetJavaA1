@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Observable;
 
 import model.dao.ElementDAO2;
+import model.element.motionfull.MotionfullElement;
 
 public class Map extends Observable implements IMap {
 
@@ -17,13 +18,13 @@ public class Map extends Observable implements IMap {
 	private int height; //height of the map
 	private int width; // width of the map
 	private IElement[][] map; //double array of element which constitute the map
-	private ArrayList<IElement>;
+	private ArrayList<IElement> elements;
 	private ICAD cad;
 	public int score;
 	private int timer;
 	public int objective;
 	
-	public Map(int level){
+	public Map(int level) throws SQLException{
 		super(); //for observable ?
 		this.setLevel(level);
 		this.loadLevel(getLevel());
@@ -31,9 +32,16 @@ public class Map extends Observable implements IMap {
 
 	
 	
-	private void loadLevel(int level) {
-		// TODO Auto-generated method stub
-		//goes get the map in the DB
+	private void loadLevel(int level) throws SQLException {
+		this.setHeight(ElementDAO2.getMapHeight(level));
+		this.setWidth(ElementDAO2.getMapWidth(level));
+		
+		char[][] consoleMap  =ElementDAO2.getMap(level);
+		for(int y=0; y<this.getHeight();y++){
+    		for(int x=0; x<this.getWidth();x++){
+    			 this.setElementPosition(ElementFactory.getFromFileSymbol(consoleMap[x][y]), x, y);
+    		}
+		
 	}
 	
 	
@@ -51,8 +59,8 @@ public class Map extends Observable implements IMap {
 
 
 
-	void setElementPosition(int x,int y) {  
-		
+	void setElementPosition(IElement element,int x,int y) {  
+		this.map[x][y]= element;
 	}
 
 	public int getHeight() {
@@ -76,15 +84,12 @@ public class Map extends Observable implements IMap {
 
 	@Override
 	public List<IElement> getAllElements() throws SQLException {
-		return null;
+		return this.elements;
 	}
 
 	@Override
 	public IElement getElementByPosition(int x, int y) {
-		for (IElement[] iElements : map) {
-			
-		}
-		return null;
+		return map[x][y];
 	}
 
 	@Override
@@ -101,14 +106,13 @@ public class Map extends Observable implements IMap {
 
 	@Override
 	public void setMapHasChanged() {
-		// TODO Auto-generated method stub
-		
+		 this.setChanged();
+	     this.notifyObservers();		
 	}
 
 	@Override
 	public Observable getObservable() {
-		// TODO Auto-generated method stub
-		return null;
+		return this;
 	}
 	
 	
