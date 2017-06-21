@@ -129,7 +129,7 @@ public abstract class MotionfullElement extends Element implements IMotionfullEl
 	public Direction getDirection() {
 		return EDirection;
 	}
-	public Direction setDirection(Direction direction) {
+	public void setDirection(Direction direction) {
 		this.EDirection = direction;
 	}
 }
