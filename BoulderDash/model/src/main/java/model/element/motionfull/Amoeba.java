@@ -4,7 +4,7 @@ import model.Sprite;
 
 public class Amoeba extends Enemy{
 
-	private static final Sprite AMOEBA = new Sprite('A', "Amoeba.jpg");
+	private static final Sprite AMOEBA = new Sprite('A');
 
 	
 	public Amoeba(Sprite sprite) {

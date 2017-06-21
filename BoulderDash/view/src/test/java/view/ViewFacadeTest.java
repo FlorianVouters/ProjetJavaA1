@@ -50,7 +50,7 @@ public class ViewFacadeTest {
 	@Test
 	public void testKeyTyped() {
 		Order expectedOrder = Order.UP;
-		view.keyTyped(expectedOrder);
+//		view.keyTyped(expectedOrder);  TODO
 		fail("Not yet implemented");
 		assertEquals(expectedOrder, Order.UP);
 	}
@@ -58,7 +58,7 @@ public class ViewFacadeTest {
 	@Test
 	public void testKeyPressed() {
 		Order expectedOrder = Order.UP;
-		view.keyTyped(expectedOrder);
+//		view.keyTyped(expectedOrder);  TODO
 		fail("Not yet implemented");
 		assertEquals(expectedOrder, Order.UP);
 	}
@@ -66,7 +66,7 @@ public class ViewFacadeTest {
 	@Test
 	public void testKeyReleased() {
 		Order expectedOrder = Order.UP;
-		view.keyTyped(expectedOrder);
+//		view.keyTyped(expectedOrder);    TODO
 		fail("Not yet implemented");
 		assertEquals(expectedOrder, Order.UP);
 	}

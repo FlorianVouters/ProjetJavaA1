@@ -8,7 +8,7 @@ import model.Sprite;
 
 public class ExitDoor extends MotionlessElement implements INotTangible{
 	
-	private static final Sprite EXIT_DOOR = new Sprite('E', "Exit.jpg");
+	private static final Sprite EXIT_DOOR = new Sprite('E');
 	
 	public ExitDoor(){
 		super(EXIT_DOOR, Permeabilty.PENETRABLE);

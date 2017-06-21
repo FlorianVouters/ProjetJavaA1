@@ -11,6 +11,7 @@ public abstract class Element implements IElement {
 
     /** The permeability. */
     private Permeabilty permeability;
+    
 
 	public Element(Sprite sprite, Permeabilty permeability) {
 		this.setSprite(sprite);
@@ -22,23 +23,23 @@ public abstract class Element implements IElement {
 		return 0;
 	}
 
-	@Override
+	@Override //shan't be used
 	public String getName() {
 		return null;
 	}
 
-	@Override
+	@Override // shan't be used
 	public void setName(final String name) {
 
 	}
 
 	@Override
 	public Sprite getSprite() {
-		return null;
+		return sprite;
 	}
 	
 	public void setSprite(Sprite sprite){
-		//this.sprite = sprite;
+		this.sprite = sprite;
 	}
 
 	@Override
@@ -48,11 +49,11 @@ public abstract class Element implements IElement {
 
 	@Override
 	public Permeabilty getPermeability() {
-		return null;
+		return this.permeability;
 	}
 
 	public void setPermeability(Permeabilty permeability) {
-		//this.permeability = permeability;
+		this.permeability = permeability;
 	}
 
 }

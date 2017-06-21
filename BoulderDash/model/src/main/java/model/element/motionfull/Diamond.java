@@ -10,7 +10,7 @@ import model.Sprite;
 
 public class Diamond extends MotionfullElement implements IGravitable, IDestructible{
 
-	private static final Sprite DIAMOND = new Sprite('D', "Rock.jpg");
+	private static final Sprite DIAMOND = new Sprite('D');
 
 	
 	public Diamond() {

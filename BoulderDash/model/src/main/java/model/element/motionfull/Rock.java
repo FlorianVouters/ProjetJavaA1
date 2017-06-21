@@ -8,7 +8,7 @@ import model.Sprite;
 
 public class Rock extends MotionfullElement implements IGravitable{
 	
-	private static final Sprite ROCK = new Sprite('O', "Rock.jpg");
+	private static final Sprite ROCK = new Sprite('O');
 
 	public Rock() {
 		super(ROCK, Permeabilty.BLOCKING);

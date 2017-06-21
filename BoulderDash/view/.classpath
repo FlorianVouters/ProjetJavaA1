@@ -22,10 +22,7 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Nico/git/ProjetJavaA1/BoulderDash/lib/showboard.jar">
-		<attributes>
-			<attribute name="javadoc_location" value="jar:file:/C:/Users/Nico/git/ProjetJavaA1/BoulderDash/lib/showboard.doc.jar!/"/>
-		</attributes>
-	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Tarhker-Port/Documents/Cesi Exia/Exia 2016-2017/Projets/Projet Java/showboard.doc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Tarhker-Port/Documents/Cesi Exia/Exia 2016-2017/Projets/Projet Java/showboard.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
