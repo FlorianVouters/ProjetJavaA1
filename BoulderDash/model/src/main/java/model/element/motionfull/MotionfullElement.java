@@ -13,7 +13,6 @@ public abstract class MotionfullElement extends Element implements IMotionfullEl
 	Point position;
 	Map map;
 	Boolean alive;
-	Direction EDirection = Direction.NORD;
 	
 	  public MotionfullElement(Sprite sprite, Permeabilty permeability,Map map, int x, int y) {
 		super(sprite, permeability);
