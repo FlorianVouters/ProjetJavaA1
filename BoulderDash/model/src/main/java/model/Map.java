@@ -130,19 +130,15 @@ public class Map extends Observable implements IMap {
 		y = element.getY();
 		
 		if (isEmpty(x+1, y)) {
-			element.setDirection(element.setDirection(Direction.EAST));
 			element.setX(x+1);
 			element.setY(y);
 		}else if (isEmpty(x, y-1) && !isEmpty(x+1, y)) {
-			element.setDirection(element.setDirection(Direction.NORTH));
 			element.setX(x);
 			element.setY(y-1);
 		}else if (isEmpty(x-1, y) && !isEmpty(x, y-1) && !isEmpty(x+1, y)) {
-			element.setDirection(element.setDirection(Direction.WEST));
 			element.setX(x-1);
 			element.setY(y);
 		}else if (isEmpty(x, y-1) && !isEmpty(x-1, y) && !isEmpty(x, y-1) && !isEmpty(x+1, y)) {
-			element.setDirection(element.setDirection(Direction.SOUTH));
 			element.setX(x);
 			element.setY(y-1);
 		}else {
