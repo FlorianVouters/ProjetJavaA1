@@ -19,8 +19,9 @@ public class ModelFacade implements IModel {
 
     /**
      * Instantiates a new model facade.
+     * @throws SQLException 
      */
-    public ModelFacade(int level) {
+    public ModelFacade(int level) throws SQLException {
        this.setMap(new Map(level));
        this.setCharacter(new MainCharacter(getMap()));
     }

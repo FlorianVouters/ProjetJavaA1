@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Observable;
 
 import model.dao.ElementDAO2;
+import model.element.ElementFactory;
 import model.element.motionfull.MotionfullElement;
 
 public class Map extends Observable implements IMap {
@@ -41,7 +42,7 @@ public class Map extends Observable implements IMap {
     		for(int x=0; x<this.getWidth();x++){
     			 this.setElementPosition(ElementFactory.getFromFileSymbol(consoleMap[x][y]), x, y);
     		}
-		
+		}
 	}
 	
 	
