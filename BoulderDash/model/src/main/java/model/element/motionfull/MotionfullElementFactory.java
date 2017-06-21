@@ -1,31 +1,37 @@
 package model.element.motionfull;
 
 import model.Map;
-import model.element.motionless.MotionlessElement;
+
 
 public class MotionfullElementFactory {
 	
 	private static Map MAP;
 	
 	 /** The Constant character. */
-    private static final Character          Character    = new Character(MAP); //must be set before
+    private static final MainCharacter          Character    = new MainCharacter(MAP); //must be set before
 	
     /** The Constant pointEnemy. */
-    private static final PointEnemy         PointEnemy   = new PointEnemy(null);
+    private static final PointEnemy         PointEnemy   = new PointEnemy(MAP);
     
     /** The Constant pointEnemy. */
-    private static final DiamondEnemy       DiamondEnemy = new DiamondEnemy(null);
+    private static final DiamondEnemy       DiamondEnemy = new DiamondEnemy(MAP);
     
+    public static void setMap(Map map){
+    	MAP = map;
+    }
     
-    public static MotionlessElement createCharacter(){
-		 return null; //will simply return the constant character
+    public static MotionfullElement createCharacter(Map map){
+    	setMap(map);
+		return Character;
 	 }
     
-    public static MotionlessElement createPoint(){
-		 return null; //will simply return the constant pointEnemy
+    public static MotionfullElement createPoint(Map map){
+    	setMap(map);
+		return PointEnemy;
 	 }
     
-    public static MotionlessElement createDiamondEnemy(){
-		 return null; //will simply return the constant diamondEnemy
+    public static MotionfullElement createDiamondEnemy(Map map){
+    	setMap(map);
+		return DiamondEnemy;
 	 }
 }

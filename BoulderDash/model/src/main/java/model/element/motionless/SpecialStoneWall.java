@@ -8,7 +8,7 @@ import model.Sprite;
 
 public class SpecialStoneWall extends MotionlessElement implements IDestructible {
 
-	private static final Sprite SPECIAL_STONE_WALL = new Sprite('S', "SpecialStoneWall.jpg");
+	private static final Sprite SPECIAL_STONE_WALL = new Sprite('S');
 
 	public SpecialStoneWall() {
 		super(SPECIAL_STONE_WALL, Permeabilty.PENETRABLE);

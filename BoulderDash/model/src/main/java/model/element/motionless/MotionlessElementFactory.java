@@ -2,6 +2,8 @@ package model.element.motionless;
 
 
 public class MotionlessElementFactory {
+	
+	private static int LEVEL;
 
 	/** The Constant background. */
 	private static final Background 		Background = new Background();
@@ -25,31 +27,35 @@ public class MotionlessElementFactory {
 	private static final Wall 				Wall = new Wall();
 	
 	
-	 public static MotionlessElement createBackground(){
+	 public static void setLevel(int level){
+		 LEVEL = level;
+	 }
+	
+	 public static MotionlessElement createBackground(int level){
 		 return null; //will simply return the constant backgroud
 	 }
 	
-	 public static MotionlessElement createBorder(){
+	 public static MotionlessElement createBorder(int level){
 		 return null; //will simply return the constant border
 	 }
 	 
-	 public static MotionlessElement createExitDoor(){
+	 public static MotionlessElement createExitDoor(int level){
 		 return null; //will simply return the constant exitDoor
 		 }
 	 
-	 public static MotionlessElement createMud(){
+	 public static MotionlessElement createMud(int level){
 		 return null; //will simply return the constant mud
 	 }
 	 
-	 public static MotionlessElement createSpecialStoneWall(){
+	 public static MotionlessElement createSpecialStoneWall(int level){
 		 return null; //will simply return the constant specialStoneWall
 	 }
 	 
-	 public static MotionlessElement createStar(){
+	 public static MotionlessElement createStar(int level){
 		 return null; //will simply return the constant star
 		 }
 	 
-	 public static MotionlessElement createWall(){
+	 public static MotionlessElement createWall(int level){
 		 return null; //will simply return the constant wall
 	 }
 	 

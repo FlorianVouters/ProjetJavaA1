@@ -5,10 +5,10 @@ import model.Sprite;
 
 public class DiamondEnemy extends Enemy{
 	
-	private static final Sprite DIAMOND = new Sprite('D', 1);
+	private static final Sprite DIAMOND_ENEMY = new Sprite('E');
 	
-	public DiamondEnemy(Sprite sprite, Map map) {
-		super(sprite, map);
+	public DiamondEnemy(Map map) {
+		super(DIAMOND_ENEMY, map);
 	}
 
 	public void die(){

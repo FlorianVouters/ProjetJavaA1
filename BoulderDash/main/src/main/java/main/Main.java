@@ -34,13 +34,13 @@ public abstract class Main {
         }*/
     	Map map = new Map(1);
   
-		/*	try {
+			/*try {
 				map.loadFile("Level1.txt"); //saves the file
 			} catch (IOException e) {
 				e.printStackTrace();
 			} 
-		*/
-    	
+		
+    	*/
     
     	
     	

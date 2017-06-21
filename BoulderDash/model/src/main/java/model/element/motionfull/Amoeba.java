@@ -6,7 +6,7 @@ import model.Sprite;
 public class Amoeba extends Enemy{
 
 	private static int LEVEL;
-	private static final Sprite AMOEBA = new Sprite('A',LEVEL);
+	private static final Sprite AMOEBA = new Sprite('A');
 
 	
 	public Amoeba(Sprite sprite, Map map) {

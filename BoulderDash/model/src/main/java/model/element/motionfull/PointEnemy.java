@@ -1,11 +1,14 @@
 package model.element.motionfull;
 
+import model.Map;
 import model.Sprite;
 
 public class PointEnemy extends Enemy {
 	
-	public PointEnemy(Sprite sprite) {
-		super(sprite);
+	private static final Sprite POINT_ENEMY = new Sprite('P');
+	
+	public PointEnemy(Map map) {
+		super(POINT_ENEMY, map);
 	}
 
 	@Override

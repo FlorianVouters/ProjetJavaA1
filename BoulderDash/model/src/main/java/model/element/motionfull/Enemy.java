@@ -15,53 +15,7 @@ public class Enemy extends MotionfullElement implements IDestructible{
 		
 	}
 
-	@Override
-	public void moveUp() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void moveLeft() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void moveDown() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void moveRight() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void doNothing() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public int getX() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int getY() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public Point getPosition() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 	@Override
 	public Boolean isAlive() {

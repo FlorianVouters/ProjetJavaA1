@@ -25,19 +25,11 @@ public class Sprite {
 
 	public static int SPRITE_SIZE = 16;
 
-	/**
-	 * Instantiates a new sprite.
-	 *
-	 * @param consoleImage
-	 *            the character
-	 * @param imageName
-	 *            the image name
-	 */
-	public Sprite(final char consoleImage, int level) {
+
+	public Sprite(final char consoleImage) {
 
 		this.setConsoleImage(consoleImage);
 		// this.setImageName(imageName);
-		this.setLevel(level);
 	}
 
 	/**
@@ -46,9 +38,7 @@ public class Sprite {
 	 * @param character
 	 *            the character
 	 */
-	public Sprite(final char character) {
-		// this(character, "noimage.jpg");
-	}
+
 
 	/**
 	 * Gets the image.

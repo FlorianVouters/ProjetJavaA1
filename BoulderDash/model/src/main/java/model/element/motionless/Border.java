@@ -9,7 +9,7 @@ import model.Sprite;
 
 public class Border extends MotionlessElement implements ITangible{
 	
-	private static final Sprite BORDER = new Sprite('|', "Border.jpg");
+	private static final Sprite BORDER = new Sprite('|');
 
 	public Border() {
 		super(BORDER, Permeabilty.BLOCKING);

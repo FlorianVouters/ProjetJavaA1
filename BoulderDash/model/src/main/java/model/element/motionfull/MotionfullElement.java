@@ -12,6 +12,7 @@ public abstract class MotionfullElement extends Element implements IMotionfullEl
 
 	Point position;
 	Map map;
+	Boolean alive;
 	
 	  public MotionfullElement(Sprite sprite, Permeabilty permeability,Map map, int x, int y) {
 		super(sprite, permeability);

@@ -9,7 +9,7 @@ import model.Sprite;
 
 public class Star extends MotionlessElement implements ITangible{
 
-	private static final Sprite STAR = new Sprite('*', "Star.jpg");
+	private static final Sprite STAR = new Sprite('*');
 	
 	public Star() {
 		super(STAR, Permeabilty.BLOCKING);

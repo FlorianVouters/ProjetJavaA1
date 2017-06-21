@@ -8,13 +8,13 @@ import model.Map;
 import model.Permeabilty;
 import model.Sprite;
 
-public class Character extends MotionfullElement implements IDestructible{
+public class MainCharacter extends MotionfullElement implements IDestructible{
 
-	private static final Sprite CHARACTER = new Sprite('H');
+	private static final Sprite MAIN_CHARACTER = new Sprite('H');
 	
 	
-	public Character(Map map){
-		super(CHARACTER, Permeabilty.BLOCKING, map);
+	public MainCharacter(Map map){
+		super(MAIN_CHARACTER, Permeabilty.BLOCKING, map);
 	}
 
 	

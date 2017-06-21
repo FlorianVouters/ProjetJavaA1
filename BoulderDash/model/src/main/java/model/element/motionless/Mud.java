@@ -10,7 +10,7 @@ import model.Sprite;
 public class Mud extends MotionlessElement implements IDestructible, INotTangible {
 	
 	
-	 private static final Sprite MUD = new Sprite('M', "Mud.jpg");
+	 private static final Sprite MUD = new Sprite('M');
 
 	public Mud() {
 		super(MUD, Permeabilty.PENETRABLE);

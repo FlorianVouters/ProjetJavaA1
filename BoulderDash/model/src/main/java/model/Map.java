@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
 
@@ -16,6 +17,7 @@ public class Map extends Observable implements IMap {
 	private int height; //height of the map
 	private int width; // width of the map
 	private IElement[][] map; //double array of element which constitute the map
+	private ArrayList<IElement>;
 	private ICAD cad;
 	public int score;
 	private int timer;
@@ -44,6 +46,7 @@ public class Map extends Observable implements IMap {
 
 	public void setLevel(int level) {
 		this.level = level;
+		Sprite.LEVEL = level;
 	}
 
 
@@ -73,13 +76,14 @@ public class Map extends Observable implements IMap {
 
 	@Override
 	public List<IElement> getAllElements() throws SQLException {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public IElement getElementByPosition(int x, int y) {
-		// TODO Auto-generated method stub
+		for (IElement[] iElements : map) {
+			
+		}
 		return null;
 	}
 

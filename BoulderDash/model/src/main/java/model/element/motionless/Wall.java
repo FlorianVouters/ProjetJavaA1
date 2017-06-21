@@ -10,7 +10,7 @@ import model.Sprite;
 
 public class Wall extends MotionlessElement implements IDestructible, ITangible{
 
-	private static final Sprite WALL = new Sprite('W', "Wall.jpg");
+	private static final Sprite WALL = new Sprite('W');
 	
 	public Wall() {
 		super(WALL, Permeabilty.BLOCKING);

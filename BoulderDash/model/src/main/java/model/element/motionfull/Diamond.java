@@ -4,17 +4,18 @@ import java.awt.Image;
 import java.awt.Point;
 
 import model.IDestructible;
+import model.Map;
 import model.Permeabilty;
 import model.Sprite;
 
 
 public class Diamond extends MotionfullElement implements IGravitable, IDestructible{
 
-	private static final Sprite DIAMOND = new Sprite('D', "Rock.jpg");
+	private static final Sprite DIAMOND = new Sprite('D');
 
 	
-	public Diamond() {
-		super(DIAMOND, Permeabilty.BLOCKING);
+	public Diamond(Map map) {
+		super(DIAMOND, Permeabilty.BLOCKING, map);
 	}
 
 	@Override
