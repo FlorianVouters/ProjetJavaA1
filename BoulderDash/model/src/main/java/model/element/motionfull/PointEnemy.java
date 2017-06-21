@@ -13,7 +13,8 @@ public class PointEnemy extends Enemy {
 
 	@Override
 	public void die(){
-		//add points to the score
+		this.alive= false;
+		this.getMap().setScore(this.getMap().getScore()+10);
 	}
 
 }

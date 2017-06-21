@@ -20,8 +20,7 @@ public class Enemy extends MotionfullElement implements IDestructible{
 
 	@Override
 	public Boolean isAlive() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.alive;
 	}
 
 	@Override
@@ -32,8 +31,6 @@ public class Enemy extends MotionfullElement implements IDestructible{
 
 	@Override
 	public void die() {
-		// TODO Auto-generated method stub
-		
 	}
 
 }

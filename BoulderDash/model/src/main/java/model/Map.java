@@ -233,4 +233,22 @@ public class Map extends Observable implements IMap {
 		}
 	}
 
+	public int getScore() {
+		return score;
+	}
+
+	public void setScore(int score) {
+		this.score = score;
+	}
+
+	public int getObjective() {
+		return objective;
+	}
+
+	public void setObjective(int objective) {
+		this.objective = objective;
+	}
+	
+	
+
 }
