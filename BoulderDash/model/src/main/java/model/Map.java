@@ -115,6 +115,10 @@ public class Map extends Observable implements IMap {
 		return this;
 	}
 	
+	public void moveEnemy(){
+		//all enemies move according to their patern
+	}
+	
 	
 	@Deprecated //only used to push the maps in the database
 	 public void loadFile(final String fileName) throws IOException {

@@ -126,10 +126,6 @@ public abstract class MotionfullElement extends Element implements IMotionfullEl
 		// will make all object fall
 	}
 	
-	public void moveEnemy(){
-		//all enemies move according to their patern
-	}
-	
 	public Direction getDirection() {
 		return EDirection;
 	}

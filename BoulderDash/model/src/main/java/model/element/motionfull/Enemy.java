@@ -10,6 +10,7 @@ import model.Sprite;
 
 public class Enemy extends MotionfullElement implements IDestructible{
 
+	
 	public Enemy(Sprite sprite, Map map) {
 		super(sprite, Permeabilty.BLOCKING, map );
 		
