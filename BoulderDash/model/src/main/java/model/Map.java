@@ -10,7 +10,9 @@ import java.util.List;
 import java.util.Observable;
 
 import model.dao.ElementDAO2;
+import model.element.motionfull.Direction;
 import model.element.motionfull.MotionfullElement;
+import model.element.motionless.Background;
 
 public class Map extends Observable implements IMap {
 
@@ -115,9 +117,39 @@ public class Map extends Observable implements IMap {
 		return this;
 	}
 	
-	public void moveEnemy(){
-		//all enemies move according to their patern
+	public boolean isEmpty(int x, int y) {
+		if (getElementByPosition(x, y).getClass().equals(Background.class)){
+			return true;
+		}
+		return false;
 	}
+	
+	public void moveEnemy(MotionfullElement element) {
+		int x = 0; int y = 0;
+		x = element.getX();
+		y = element.getY();
+		
+		if (isEmpty(x+1, y)) {
+			element.setDirection(element.setDirection(Direction.EAST));
+			element.setX(x+1);
+			element.setY(y);
+		}else if (isEmpty(x, y-1) && !isEmpty(x+1, y)) {
+			element.setDirection(element.setDirection(Direction.NORTH));
+			element.setX(x);
+			element.setY(y-1);
+		}else if (isEmpty(x-1, y) && !isEmpty(x, y-1) && !isEmpty(x+1, y)) {
+			element.setDirection(element.setDirection(Direction.WEST));
+			element.setX(x-1);
+			element.setY(y);
+		}else if (isEmpty(x, y-1) && !isEmpty(x-1, y) && !isEmpty(x, y-1) && !isEmpty(x+1, y)) {
+			element.setDirection(element.setDirection(Direction.SOUTH));
+			element.setX(x);
+			element.setY(y-1);
+		}else {
+			element.doNothing();
+		}
+	}
+	
 	
 	
 	@Deprecated //only used to push the maps in the database

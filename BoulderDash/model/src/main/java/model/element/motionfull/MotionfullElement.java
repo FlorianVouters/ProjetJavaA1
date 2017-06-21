@@ -126,10 +126,4 @@ public abstract class MotionfullElement extends Element implements IMotionfullEl
 		// will make all object fall
 	}
 	
-	public Direction getDirection() {
-		return EDirection;
-	}
-	public void setDirection(Direction direction) {
-		this.EDirection = direction;
-	}
 }
