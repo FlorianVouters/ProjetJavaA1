@@ -62,6 +62,8 @@ public class Map extends Observable implements IMap {
 
 	void setElementPosition(IElement element, int x, int y) {
 		this.map[x][y] = element;
+		element.setX(x);
+		element.setY(y);
 	}
 
 	public int getHeight() {

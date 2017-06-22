@@ -12,6 +12,8 @@ import javax.swing.SwingUtilities;
 
 import controller.IOrderPerformer;
 import fr.exia.showboard.BoardFrame;
+import fr.exia.showboard.IPawn;
+import model.IElement;
 import model.IMap;
 import model.Order;
 import model.IMotionfullElement;
@@ -45,30 +47,24 @@ public class ViewFacade implements IView, Runnable, KeyListener {
 	// The Order Performer
 	private IOrderPerformer orderPerformer;
 
-	private int viewMapX = 15;
+	private int mapViewSizeX = 15;
 
-	private int viewMapY = 15;
+	private int mapViewSizeY = 15;
 
 	/**
 	 * Instantiates a new view facade.
+	 * 
+	 * @throws IOException
 	 */
-	public ViewFacade(final IMap map, final IMotionfullElement character) {
+	public ViewFacade(final IMap map, final IMotionfullElement character) throws IOException {
 		// this.setView(viewMap); set la camera size , ne sert plus vu qu'on a
 		// 2d on use les constantes
-		try {
-			this.setMap(map);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+
+		this.setMap(map);
+
 		this.setMainCharacter(character);
-		try {
-			this.getMainCharacter().getSprite().loadImage();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		this.setCloseView(new Rectangle(0, this.getMainCharacter().getY(), viewMapX, viewMapY));
+		this.getMainCharacter().getSprite().loadImage();
+		this.setCloseView(new Rectangle(0, this.getMainCharacter().getY(), mapViewSizeX, mapViewSizeY));
 		SwingUtilities.invokeLater(this);
 	}
 
@@ -108,19 +104,22 @@ public class ViewFacade implements IView, Runnable, KeyListener {
 	@Override
 	public void run() {
 		// TODO Fonction run de la vue, c'est le thread de l'IHM
-		final BoardFrame boardFrame = new BoardFrame("Close View");
-		boardFrame.setDimension(
-				new Dimension(this.getMap().getWidth() * SIZESPRITE, this.getMap().getHeight() * SIZESPRITE));
+		final BoardFrame boardFrame = new BoardFrame("BoulderDash");
+		boardFrame.setDimension(new Dimension(this.getMap().getWidth(), this.getMap().getHeight()));
 		boardFrame.setDisplayFrame(closeView);
-		boardFrame.setSize(this.closeView.width * SIZESPRITE, this.closeView.height * SIZESPRITE);
+		boardFrame.setSize(this.closeView.width *SIZESPRITE*2, this.closeView.height * SIZESPRITE*2);
 		boardFrame.addKeyListener(this);
 		boardFrame.setFocusable(true);
 		boardFrame.setFocusTraversalKeysEnabled(false);
 
 		for (int x = 0; x < this.getMap().getWidth(); x++) {
 			for (int y = 0; y < this.getMap().getHeight(); y++) {
-				boardFrame.addSquare(this.map.getElementByPosition(x, y), x, y);
-				}
+				IElement temp = this.map.getElementByPosition(x, y);
+				boardFrame.addSquare(this.map.getElementByPosition(x, y),x,y);
+				boardFrame.addPawn((IPawn)this.getMap().getElementByPosition(x, y));
+						/*,this.map.getElementByPosition(x, y).getX() 
+						,this.map.getElementByPosition(x, y).getY());*/
+			}
 		}
 
 		boardFrame.addPawn(this.getMainCharacter());
@@ -132,40 +131,42 @@ public class ViewFacade implements IView, Runnable, KeyListener {
 	}
 
 	public void show() {
-//		// TODO Remplir la fonction show qui ne renvoie rien, mais print les
-//		// sprites
-//		System.out.println("afficher");
-//		int y = yStart % this.getMap().getHeight();
-//		for (int view = 0; view < this.getViewMapX(); view++) {
-//			for (int x = 0; x < this.getViewMapY(); x++) {
-//				if ((x == this.getMainCharacter().getX()) && (y == yStart)) {
-//					System.out.print(this.getMainCharacter().getSprite().getConsoleImage());
-//				} else {
-//					System.out.print(this.getMap().getElementByPosition(x, y).getSprite().getConsoleImage());
-//				}
-//			}
-//			y = (y + 1) % this.getMap().getHeight();
-//			System.out.print("\n");
-//		}
+		// // TODO Remplir la fonction show qui ne renvoie rien, mais print les
+		// // sprites
+		// System.out.println("afficher");
+		// int y = yStart % this.getMap().getHeight();
+		// for (int view = 0; view < this.getViewMapX(); view++) {
+		// for (int x = 0; x < this.getViewMapY(); x++) {
+		// if ((x == this.getMainCharacter().getX()) && (y == yStart)) {
+		// System.out.print(this.getMainCharacter().getSprite().getConsoleImage());
+		// } else {
+		// System.out.print(this.getMap().getElementByPosition(x,
+		// y).getSprite().getConsoleImage());
+		// }
+		// }
+		// y = (y + 1) % this.getMap().getHeight();
+		// System.out.print("\n");
+		// }
 	}
 
 	@Override
 	public void cameraMove() {
 		// TODO CameraMove, cette méthode permet de déplacer la vue en fonction
 		// des déplacements du personnage
-		int x; int y;
-        x = (int) this.getCharacterPosition().getX();
-        y = (int) this.getCharacterPosition().getY();
-        if (x < this.getCloseView().x + 5) {
-            this.getCloseView().x--;
-        } else if (x > this.getCloseView().x + 10) {
-            this.getCloseView().x++;
-        }
-        if (y < this.getCloseView().y + 4) {
-            this.getCloseView().y--;
-        } else if (y > this.getCloseView().y + 10) {
-            this.getCloseView().y++;
-        }
+		int x;
+		int y;
+		x = (int) this.getCharacterPosition().getX();
+		y = (int) this.getCharacterPosition().getY();
+		if (x < this.getCloseView().x + 5) {
+			this.getCloseView().x--;
+		} else if (x > this.getCloseView().x + 10) {
+			this.getCloseView().x++;
+		}
+		if (y < this.getCloseView().y + 4) {
+			this.getCloseView().y--;
+		} else if (y > this.getCloseView().y + 10) {
+			this.getCloseView().y++;
+		}
 	}
 
 	/**
@@ -242,19 +243,19 @@ public class ViewFacade implements IView, Runnable, KeyListener {
 	}
 
 	public int getViewMapX() {
-		return viewMapX;
+		return mapViewSizeX;
 	}
 
 	public void setViewMapX(int viewMapX) {
-		this.viewMapX = viewMapX;
+		this.mapViewSizeX = viewMapX;
 	}
 
 	public int getViewMapY() {
-		return viewMapY;
+		return mapViewSizeY;
 	}
 
 	public void setViewMapY(int viewMapY) {
-		this.viewMapY = viewMapY;
+		this.mapViewSizeY = viewMapY;
 	}
 
 }

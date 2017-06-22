@@ -1,8 +1,11 @@
 package model;
 
+import java.awt.Point;
+
+import fr.exia.showboard.IPawn;
 import fr.exia.showboard.ISquare;
 
-public interface IElement extends ISquare{ //extends ISquare so it can be displayed on a IBoard
+public interface IElement extends ISquare, IPawn { //extends ISquare so it can be displayed on a IBoard
 	
 /*	*//** The id. *//*
    public int id;
@@ -57,5 +60,33 @@ public interface IElement extends ISquare{ //extends ISquare so it can be displa
     public String toString();
     
    public Permeabilty getPermeability();
+   
+   /**
+    * Gets the x.
+    *
+    * @return the x
+    */
+   @Override
+   int getX();
+
+   /**
+    * Gets the y.
+    *
+    * @return the y
+    */
+   @Override
+   int getY();
+
+   void setX(int x);
+   
+   void setY(int y);
+   
+   
+   /*
+    * (non-Javadoc)
+    * @see fr.exia.showboard.IPawn#getPosition()
+    */
+   @Override
+   Point getPosition();
     
 }

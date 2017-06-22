@@ -27,7 +27,7 @@ public abstract class Main {
 	 * @throws SQLException
 	 * @throws IOException
 	 */
-	public static void main(final String[] args) {
+	public static void main(final String[] args) throws IOException, SQLException {
 		final ModelFacade model = new ModelFacade(1);
 		final ViewFacade view = new ViewFacade(model.getMap(), model.getCharacter());
 		final ControllerFacade controller = new ControllerFacade(view, model);

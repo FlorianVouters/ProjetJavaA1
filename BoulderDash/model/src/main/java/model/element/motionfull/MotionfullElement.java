@@ -10,7 +10,7 @@ import model.element.Element;
 
 public abstract class MotionfullElement extends Element implements IMotionfullElement {
 
-	Point position;
+	
 	Map map;
 	Boolean alive;
 	
@@ -24,7 +24,7 @@ public abstract class MotionfullElement extends Element implements IMotionfullEl
 	 public MotionfullElement(Sprite sprite, Permeabilty permeability, Map map) {
 	        super(sprite, permeability);
 	        this.setMap(map);
-	        this.position = new Point();
+	        
 	    }
 	  
 	/**
@@ -66,45 +66,7 @@ public abstract class MotionfullElement extends Element implements IMotionfullEl
     	this.doNothing();
     }
 
-    /**
-     * Gets the x.
-     *
-     * @return the x
-     */
-    @Override
-    public int getX(){
-    	return this.getPosition().x;
-    }
-    
-    public void setX(int x){
-    	this.getPosition().x = x;
-    	//check collisions
-    }
-
-    /**
-     * Gets the y.
-     *
-     * @return the y
-     */
-    @Override
-    public int getY(){
-    	return this.getPosition().y;
-    }
-
-    public void setY(int y){
-    	this.getPosition().y = y;
-    	//checkcollisions
-    }
-    
-    
-    /*
-     * (non-Javadoc)
-     * @see fr.exia.showboard.IPawn#getPosition()
-     */
-    @Override
-    public Point getPosition(){
-    	return this.position;
-    }
+   
     
     
     public Map getMap() {

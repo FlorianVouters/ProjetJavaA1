@@ -3,6 +3,7 @@ package model;
 import static org.junit.Assert.*;
 
 import java.util.List;
+import java.util.Observable;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -20,6 +21,8 @@ public class MapTest {
 	private Map map;
 	
 	private Observable observable;
+	
+	private ModelFacade model;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -31,6 +34,7 @@ public class MapTest {
 
 	@Before
 	public void setUp() throws Exception {
+		
 		this.map = new Map(1);
 	}
 
@@ -40,7 +44,7 @@ public class MapTest {
 
 	@Test
 	public void testGetHeight() {
-		private final int expected = 21;
+		final int expected = 21;
 		assertEquals(expected, this.map.getHeight());
 	}
 
@@ -53,7 +57,7 @@ public class MapTest {
 
 	@Test
 	public void testGetWidth() {
-		private final int expected = 40;
+		final int expected = 40;
 		assertEquals(expected, this.map.getWidth);
 	}
 

@@ -98,7 +98,7 @@ public class Sprite {
 				buffer = buffer.getSubimage(5*SPRITE_SIZE,SPRITE_SIZE*4*(LEVEL-1) , SPRITE_SIZE, SPRITE_SIZE);			
 				break;
 			case 'X':
-				buffer = buffer.getSubimage(6*SPRITE_SIZE,SPRITE_SIZE*4*(LEVEL-1) , SPRITE_SIZE, SPRITE_SIZE);			
+				buffer = buffer.getSubimage(6*SPRITE_SIZE,SPRITE_SIZE*4*(LEVEL-1) , SPRITE_SIZE, SPRITE_SIZE);
 				break;
 			case 'A':
 				buffer = buffer.getSubimage(7*SPRITE_SIZE,SPRITE_SIZE*4*(LEVEL-1) , SPRITE_SIZE, SPRITE_SIZE);			
