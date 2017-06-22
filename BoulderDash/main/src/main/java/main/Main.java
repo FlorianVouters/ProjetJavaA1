@@ -4,9 +4,11 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 import controller.ControllerFacade;
+import model.IMotionfullElement;
 import model.Map;
 import model.ModelFacade;
 import model.dao.ElementDAO2;
+import model.element.motionfull.MainCharacter;
 import view.ViewFacade;
 
 /**
@@ -18,46 +20,23 @@ import view.ViewFacade;
 public abstract class Main {
 
 	/**
-     * The main method.
-     *
-     * @param args
-     *            the arguments
-     * @throws SQLException 
-     */
-    public static void main(final String[] args) throws SQLException {
-       /* final ControllerFacade controller = new ControllerFacade(new ViewFacade(), new ModelFacade());
+	 * The main method.
+	 *
+	 * @param args
+	 *            the arguments
+	 * @throws SQLException
+	 * @throws IOException
+	 */
+	public static void main(final String[] args) {
+		final ModelFacade model = new ModelFacade(1);
+		final ViewFacade view = new ViewFacade(model.getMap(), model.getCharacter());
+		final ControllerFacade controller = new ControllerFacade(view, model);
+		//view.setOrderPerformer(controller.getOrderPeformer());
 
-        try {
-            controller.start();
-        } catch (final SQLException exception) {
-            exception.printStackTrace();
-        }*/
-    	Map map = new Map(1);
-  
-			/*try {
-				map.loadFile("Level1.txt"); //saves the file
-			} catch (IOException e) {
-				e.printStackTrace();
-			} 
-		
-    	*/
-    
-    	
-    	
-    	System.out.println(ElementDAO2.getMapHeight(1));
-			System.out.println(ElementDAO2.getMapWidth(1));
-			
-			char[][] level= ElementDAO2.getMap(1);
-			
-			for(int x=0; x<48; x++){
-				for(int y=0; y<28; y++){
-					System.out.print(level[y][x]);
-				}
-				System.out.println();
-			}
-			
+		//controller.play();
 
-    	
-    	}
+	}
+	
+	
 
 }

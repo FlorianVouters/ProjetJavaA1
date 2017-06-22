@@ -15,6 +15,9 @@ public class ElementDAO2 extends AbstractDAO {
 	public static String mapHeightQuerry = "{call getMapHeight(?)}";
 	public static String mapWidthQuerry = "{call getMapWidth(?)}";
 	public static String getMap = "{call getElement(?,?,?)}";
+	public static String getLine = "{call getLine(?,?)}";
+	public static String saveLine = "{call saveLine(?,?)}";
+	
 	/*int height;
 	int width;*/
 	
@@ -50,8 +53,8 @@ public class ElementDAO2 extends AbstractDAO {
 		int width = getMapWidth(level);
 		int height = getMapHeight(level);
 		char[][] map = new char[width][height];
-		for(int x=1; x<=width; x++){
 			for(int y =1; y<=height; y++){
+				for(int x=1; x<=width; x++){
 				CallableStatement callStatement = prepareCall(getMap);
 				callStatement.setInt(1, level);
 				callStatement.setInt(2, x);
@@ -112,15 +115,19 @@ public class ElementDAO2 extends AbstractDAO {
 		
 
 			String setNbLigneEtColone ="INSERT INTO `infolevel`(`Level`, `Height`, `Width`) VALUES ("+level+"," + width + ", " + height + ")";
-			st.executeUpdate(setNbLigneEtColone);
+		//	st.executeUpdate(setNbLigneEtColone);
 
-			for (int i = 0; i < height; i++) {
-				for (int j = 0; j < width; j++) {
-					String setElement = "INSERT INTO `level`(`levelNum`, `element`, `line`, `column`) VALUES ("+level+",'"
-							+ map[j][i] + "', " + (i + 1) + ", " + (j + 1) + ")";
-					Statement st2 = cn.createStatement();
-					st2.executeUpdate(setElement);
+			for (int i = 0; i < width; i++) {
+				String elements = "";
+				
+				System.out.println(elements);
+				for (int j = 0; j < height; j++) {
+					elements+=map[i][j];
 				}
+				System.out.println(elements);
+				String setElement = "INSERT INTO `level2`(`levelNum`, `linenum`,`elements`) VALUES ("+level+ ", " + (i + 1) + ", \"" + elements + "\")";
+				Statement st2 = cn.createStatement();
+				st2.executeUpdate(setElement);
 			}
 			
 		} catch (SQLException e) {
