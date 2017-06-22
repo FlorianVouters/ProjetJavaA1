@@ -26,18 +26,24 @@ public class Sprite {
 	public static int SPRITE_SIZE = 16;
 
 
-	public Sprite(final char consoleImage) {
-
-		this.setConsoleImage(consoleImage);
-		// this.setImageName(imageName);
-	}
-
 	/**
 	 * Instantiates a new sprite.
 	 *
-	 * @param character
-	 *            the character
+	 * @param consoleImage
+	 *            the character identifing the element
 	 */
+	public Sprite(final char consoleImage) {
+
+		this.setConsoleImage(consoleImage);
+		try {
+			this.loadImage();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		// this.setImageName(imageName);
+	}
+
 
 
 	/**
@@ -46,8 +52,7 @@ public class Sprite {
 	 * @return the image
 	 */
 	public final Image getImage() {
-		return null;
-		// return this.image;
+		return this.image;
 	}
 
 	/**
@@ -56,7 +61,7 @@ public class Sprite {
 	 * @throws IOException
 	 *             Signals that an I/O exception has occurred.
 	 */
-	public final void loadImage(char consoleImage) throws IOException {
+	public final void loadImage() throws IOException {
 
 		BufferedImage buffer;
 		
@@ -75,12 +80,12 @@ public class Sprite {
 			switch(getConsoleImage()){
 			case 'W':
 			case 'B':
-				buffer = buffer.getSubimage(0*SPRITE_SIZE,SPRITE_SIZE*4*(LEVEL-1) , SPRITE_SIZE, SPRITE_SIZE);			
+				buffer = buffer.getSubimage(0*SPRITE_SIZE,SPRITE_SIZE*4*(LEVEL-1) , SPRITE_SIZE, SPRITE_SIZE);
 				break;
 			case 'M':
 				buffer = buffer.getSubimage(1*SPRITE_SIZE,SPRITE_SIZE*4*(LEVEL-1) , SPRITE_SIZE, SPRITE_SIZE);			
 				break;
-			case ' ':
+			case '_':
 				buffer = buffer.getSubimage(2*SPRITE_SIZE,SPRITE_SIZE*4*(LEVEL-1) , SPRITE_SIZE, SPRITE_SIZE);			
 				break;
 			case 'O':
@@ -89,10 +94,10 @@ public class Sprite {
 			case 'D':
 				buffer = buffer.getSubimage(4*SPRITE_SIZE,SPRITE_SIZE*4*(LEVEL-1) , SPRITE_SIZE, SPRITE_SIZE);			
 				break;
-			case 'd':
+			case 'E':
 				buffer = buffer.getSubimage(5*SPRITE_SIZE,SPRITE_SIZE*4*(LEVEL-1) , SPRITE_SIZE, SPRITE_SIZE);			
 				break;
-			case 'E':
+			case 'X':
 				buffer = buffer.getSubimage(6*SPRITE_SIZE,SPRITE_SIZE*4*(LEVEL-1) , SPRITE_SIZE, SPRITE_SIZE);			
 				break;
 			case 'A':
@@ -106,7 +111,8 @@ public class Sprite {
 				break;
 				
 			}
-			
+			setImage(buffer);
+			setImageLoaded(true);
 			break;
 		}
 	
@@ -120,8 +126,7 @@ public class Sprite {
 	 * @return the consoleImage
 	 */
 	public final char getConsoleImage() {
-		return ' ';
-		// return this.consoleImage;
+		return this.consoleImage;
 	}
 
 	/**
@@ -131,7 +136,7 @@ public class Sprite {
 	 *            the new image
 	 */
 	private void setImage(final Image image) {
-		// this.image = image;
+		this.image = image;
 	}
 
 	/**
@@ -141,7 +146,7 @@ public class Sprite {
 	 *            the consoleImage to set
 	 */
 	private void setConsoleImage(final char consoleImage) {
-		// this.consoleImage = consoleImage;
+		this.consoleImage = consoleImage;
 	}
 
 	public int getLevel() {
@@ -158,8 +163,7 @@ public class Sprite {
 	 * @return the imageName
 	 */
 	public final String getImageName() {
-		return null;
-		// return this.imageName;
+		return this.imageName;
 	}
 
 	/**
@@ -169,7 +173,7 @@ public class Sprite {
 	 *            the imageName to set
 	 */
 	private void setImageName(final String imageName) {
-		// this.imageName = imageName;
+		this.imageName = imageName;
 	}
 
 	/**
@@ -178,8 +182,7 @@ public class Sprite {
 	 * @return true, if is image loaded
 	 */
 	public final boolean isImageLoaded() {
-		return false;
-		// return this.imageLoaded;
+		return this.imageLoaded;
 	}
 
 	/**
@@ -189,6 +192,6 @@ public class Sprite {
 	 *            the new image loaded
 	 */
 	public final void setImageLoaded(final boolean isImageLoaded) {
-		// this.imageLoaded = isImageLoaded;
+		this.imageLoaded = isImageLoaded;
 	}
 }

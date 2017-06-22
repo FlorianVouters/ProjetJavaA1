@@ -17,8 +17,13 @@ public class MotionfullElementFactory {
 
 	/** The Constant pointEnemy. */
 	private static final DiamondEnemy DiamondEnemy = new DiamondEnemy(MAP);
+	
+	private static final Diamond Diamond = new Diamond(MAP);
 
-	private static MotionfullElement[] motionfullElements = { Character, PointEnemy, DiamondEnemy };
+	private static final Rock Rock = new Rock(MAP);
+	
+
+	private static MotionfullElement[] motionfullElements = { Character, PointEnemy, DiamondEnemy, Diamond, Rock};
 
 	public static void setMap(Map map) {
 		MAP = map;
@@ -37,6 +42,16 @@ public class MotionfullElementFactory {
 	public static MotionfullElement createDiamondEnemy(Map map) {
 		setMap(map);
 		return DiamondEnemy;
+	}
+	
+	public static MotionfullElement createDiamond(Map map) {
+		setMap(map);
+		return Diamond;
+	}
+	
+	public static MotionfullElement createRock(Map map) {
+		setMap(map);
+		return Rock;
 	}
 
 	public static MotionfullElement getFromFileSymbol(final char fileSymbol) {
