@@ -48,38 +48,33 @@ public class ControllerFacadeTest {
 	@Test
 	public void testPlay() {
 		// I have no idea what to test here
-		fail("Not yet implemented");
+		
 	}
 
 	@Test
 	public void testGetView() {
-		fail("Not yet implemented");
 		assertNotNull(controller.getView());
 	}
 
 	@Test
 	public void testSetView() {
-		fail("Not yet implemented");
 		assertNotNull(controller.getView());
 
 	}
 
 	@Test
 	public void testGetModel() {
-		fail("Not yet implemented");
 		assertNotNull(controller.getModel());
 	}
 
 	@Test
 	public void testSetModel() {
 		controller.setModel(model); // would set the instanciated model
-		fail("Not yet implemented");
 		assertNotNull(controller.getModel());
 	}
 
 	@Test
 	public void testGetOrder() {
-		fail("Not yet implemented");
 		assertNotNull(controller.getOrder());
 	}
 
@@ -87,20 +82,17 @@ public class ControllerFacadeTest {
 	public void testSetOrder() {
 		Order expectedOrder = Order.DOWN;
 		controller.setOrder(expectedOrder);
-		fail("Not yet implemented");
 		assertEquals(expectedOrder, this.order);
 		
 	}
 
 	@Test
 	public void testClearOrder() {
-		fail("Not yet implemented");
 		assertEquals(Order.NOP, controller.getOrder());
 	}
 
 	@Test
 	public void testGetOrderPeformer() {
-		fail("Not yet implemented");
 		assertNotNull(controller.getOrderPeformer());
 	}
 
