@@ -14,9 +14,9 @@ public class ElementFactory {
 			case 'E':
 			case 'H':
 			case 'P':
-			case 'R':
+			case 'O':
 				return MotionfullElementFactory.getFromFileSymbol(c);
-			case ' ':
+			case '_':
 			case '|':
 			case 'X':
 			case 'M':

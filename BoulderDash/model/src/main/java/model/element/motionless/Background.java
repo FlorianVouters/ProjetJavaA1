@@ -9,7 +9,7 @@ import model.Sprite;
 public class Background extends MotionlessElement implements INotTangible{
 
 	private static int LEVEL;
-	private static final Sprite BACKGROUND = new Sprite(' ');
+	private static final Sprite BACKGROUND = new Sprite('_');
 	 
 	public Background() {
 		super(BACKGROUND, Permeabilty.PENETRABLE);
