@@ -14,6 +14,7 @@ import model.element.ElementFactory;
 import model.element.motionfull.Enemy;
 import model.element.motionfull.Diamond;
 import model.element.motionfull.MotionfullElement;
+import model.element.motionfull.MotionfullElementFactory;
 import model.element.motionfull.Rock;
 import model.element.motionless.Background;
 import model.element.motionless.MotionlessElementFactory;
@@ -26,7 +27,6 @@ public class Map extends Observable implements IMap {
 	private IElement[][] map; // double array of element which constitute the
 								// map
 	private ArrayList<IElement> elements;
-	private ICAD cad;
 	public int score;
 	private int timer;
 	public int objective;
@@ -40,6 +40,8 @@ public class Map extends Observable implements IMap {
 	private void loadLevel(int level) throws SQLException {
 		this.setHeight(ElementDAO2.getMapHeight(level));
 		this.setWidth(ElementDAO2.getMapWidth(level));
+		map = new IElement[this.getWidth()][this.getHeight()];
+		MotionfullElementFactory.setMap(this);
 
 		char[][] consoleMap = ElementDAO2.getMap(level);
 		for (int y = 0; y < this.getHeight(); y++) {
