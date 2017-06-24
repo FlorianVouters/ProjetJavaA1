@@ -31,32 +31,40 @@ public abstract class MotionfullElement extends Element implements IMotionfullEl
      * Move up.
      */
     public void moveUp(){
-    	   this.setY(this.getY() + 1);
-           this.setHasMoved();
+    	if (this.getMap().getElementByPosition(this.getX(), this.getY() + 1).getPermeability() == Permeabilty.PENETRABLE) {
+    	this.setY(this.getY() + 1);
+    	this.setHasMoved();
+    	}
     }
 
     /**
      * Move left.
      */
     public void moveLeft(){
+    	if (this.getMap().getElementByPosition(this.getX() -1, this.getY()).getPermeability() == Permeabilty.PENETRABLE) {
     	this.setY(this.getX() - 1);
         this.setHasMoved();
+    	}
     }
 
     /**
      * Move down.
      */
     public void moveDown(){
+    	if (this.getMap().getElementByPosition(this.getX(), this.getY() - 1).getPermeability() == Permeabilty.PENETRABLE) {
     	this.setY(this.getY() - 1);
         this.setHasMoved();	
+    	}
     }
 
     /**
      * Move right.
      */
     public void moveRight(){
+    	if (this.getMap().getElementByPosition(this.getX() +1, this.getY()).getPermeability() == Permeabilty.PENETRABLE) {
     	this.setY(this.getX() + 1);
         this.setHasMoved();
+    	}
     }
 
     /**
