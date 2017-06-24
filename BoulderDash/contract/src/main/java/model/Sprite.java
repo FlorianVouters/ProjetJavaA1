@@ -55,6 +55,7 @@ public class Sprite {
 		return this.image;
 	}
 
+
 	/**
 	 * Loads image.
 	 *
@@ -69,8 +70,8 @@ public class Sprite {
 
 		case 'C': 
 		case 'c':
-		case 'X':
-		case 'x':
+		case 'H':
+		case 'h':
 		buffer = ImageIO.read(new File("pics/charspritesheet.png"));
 			break;
 		
@@ -135,7 +136,7 @@ public class Sprite {
 	 * @param image
 	 *            the new image
 	 */
-	private void setImage(final Image image) {
+	public void setImage(final Image image) { //changed to public for debug
 		this.image = image;
 	}
 

@@ -25,11 +25,7 @@ public class Diamond extends MotionfullElement implements IGravitable, IDestruct
 		return this.alive;
 	}
 
-	@Override
-	public Image getImage() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 	@Override
 	public void fall() {

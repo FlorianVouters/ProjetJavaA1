@@ -24,11 +24,6 @@ public class Mud extends MotionlessElement implements IDestructible, INotTangibl
 		return null;
 	}
 
-	@Override
-	public Image getImage() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public void die() {

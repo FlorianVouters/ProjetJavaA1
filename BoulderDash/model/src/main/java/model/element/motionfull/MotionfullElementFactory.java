@@ -7,11 +7,8 @@ public class MotionfullElementFactory {
 	private static Map MAP;
 
 	/** The Constant character. */
-	private static final MainCharacter Character = new MainCharacter(MAP); // must
-																			// be
-																			// set
-																			// before
-
+	private static final MainCharacter Character = new MainCharacter(MAP);
+	
 	/** The Constant pointEnemy. */
 	private static final PointEnemy PointEnemy = new PointEnemy(MAP);
 

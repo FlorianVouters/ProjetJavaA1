@@ -23,11 +23,7 @@ public class Rock extends MotionfullElement implements IGravitable{
 		return null;
 	}
 
-	@Override
-	public Image getImage() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 	@Override
 	public void fall() {
@@ -41,5 +37,9 @@ public class Rock extends MotionfullElement implements IGravitable{
 	public void fallRight(){
 		
 	}
+
+
+
+
 
 }

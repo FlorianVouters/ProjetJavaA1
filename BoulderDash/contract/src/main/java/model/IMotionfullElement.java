@@ -4,7 +4,7 @@ import java.awt.Point;
 
 import fr.exia.showboard.IPawn;
 
-public interface IMotionfullElement extends IElement{ //extends IPAwn so it can be moved on the IBoard
+public interface IMotionfullElement extends IElement{
 	
 	  /**
      * Move up.

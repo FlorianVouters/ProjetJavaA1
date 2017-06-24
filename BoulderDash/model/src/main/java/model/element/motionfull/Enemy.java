@@ -23,11 +23,7 @@ public class Enemy extends MotionfullElement implements IDestructible{
 		return this.alive;
 	}
 
-	@Override
-	public Image getImage() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 	@Override
 	public void die() {

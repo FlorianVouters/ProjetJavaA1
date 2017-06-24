@@ -26,11 +26,6 @@ public class MainCharacter extends MotionfullElement implements IDestructible{
 	}
 
 
-	@Override
-	public Image getImage() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public void die() {

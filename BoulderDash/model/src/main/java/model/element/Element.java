@@ -1,5 +1,6 @@
 package model.element;
 
+import java.awt.Image;
 import java.awt.Point;
 
 import model.IElement;
@@ -99,5 +100,10 @@ public abstract class Element implements IElement {
     @Override
     public Point getPosition(){
     	return this.position;
+    }
+    
+    public Image getImage(){
+    	return this.getSprite().getImage();
+    	
     }
 }

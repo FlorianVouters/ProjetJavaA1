@@ -30,8 +30,7 @@ public class ElementDAO2Test {
 
 	@Test
 	public void testGetMapHeight() {
-		int height = 40;
-		fail("Not yet implemented");
+		int height = 28;
 		try {
 			assertEquals(height, ElementDAO2.getMapHeight(1));
 		} catch (SQLException e) {
@@ -42,8 +41,7 @@ public class ElementDAO2Test {
 
 	@Test
 	public void testGetMapWidth() {
-		int width = 44;
-		fail("Not yet implemented");
+		int width = 48;
 		try {
 			assertEquals(width, ElementDAO2.getMapWidth(1));
 		} catch (SQLException e) {
@@ -54,7 +52,6 @@ public class ElementDAO2Test {
 
 	@Test
 	public void testGetMap() {
-		fail("Not yet implemented");
 		try {
 			assertNotNull(ElementDAO2.getMap(1));
 		} catch (SQLException e) {

@@ -5,14 +5,18 @@ import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.File;
 import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.JOptionPane;
+import javax.swing.RepaintManager;
 import javax.swing.SwingUtilities;
 
 import controller.IOrderPerformer;
 import fr.exia.showboard.BoardFrame;
 import fr.exia.showboard.IPawn;
+import fr.exia.showboard.ISquare;
 import model.IElement;
 import model.IMap;
 import model.Order;
@@ -85,25 +89,27 @@ public class ViewFacade implements IView, Runnable, KeyListener {
 	 */
 	@Override
 	public void keyTyped(KeyEvent e) {
-		// Nope
-
+		 try {
+	            this.getOrderPerformer().orderPerform(keyCodeToUserOrder(e.getKeyCode()));
+	        } catch (final IOException exception) {
+	            exception.printStackTrace();
+	        }
 	}
 
 	@Override
 	public void keyPressed(KeyEvent e) {
-		// TODO Remplir la méthode concernant la pression des touches
+		// Nop
 
 	}
 
 	@Override
 	public void keyReleased(KeyEvent e) {
-		// Nope
+		// Nop
 
 	}
 
 	@Override
 	public void run() {
-		// TODO Fonction run de la vue, c'est le thread de l'IHM
 		final BoardFrame boardFrame = new BoardFrame("BoulderDash");
 		boardFrame.setDimension(new Dimension(this.getMap().getWidth(), this.getMap().getHeight()));
 		boardFrame.setDisplayFrame(closeView);
@@ -114,17 +120,21 @@ public class ViewFacade implements IView, Runnable, KeyListener {
 
 		for (int x = 0; x < this.getMap().getWidth(); x++) {
 			for (int y = 0; y < this.getMap().getHeight(); y++) {
+				this.map.getElementByPosition(x, y).setX(x);
+				this.map.getElementByPosition(x, y).setY(y);
 				IElement temp = this.map.getElementByPosition(x, y);
-				boardFrame.addSquare(this.map.getElementByPosition(x, y),x,y);
-				boardFrame.addPawn((IPawn)this.getMap().getElementByPosition(x, y));
-						/*,this.map.getElementByPosition(x, y).getX() 
-						,this.map.getElementByPosition(x, y).getY());*/
+				
+				
+				boardFrame.addSquare((ISquare)this.map.getElementByPosition(x, y),x,y);
+				//boardFrame.addPawn((IPawn)this.getMap().getElementByPosition(x, y));
+				boardFrame.addPawn((IPawn)this.map.getElementByPosition(x, y));
 			}
 		}
 
-		boardFrame.addPawn(this.getMainCharacter());
+		//boardFrame.addPawn(this.getMainCharacter());
 
 		this.getMap().getObservable().addObserver(boardFrame.getObserver());
+		
 
 		boardFrame.setVisible(true);
 
@@ -151,8 +161,6 @@ public class ViewFacade implements IView, Runnable, KeyListener {
 
 	@Override
 	public void cameraMove() {
-		// TODO CameraMove, cette méthode permet de déplacer la vue en fonction
-		// des déplacements du personnage
 		int x;
 		int y;
 		x = (int) this.getCharacterPosition().getX();
@@ -169,12 +177,6 @@ public class ViewFacade implements IView, Runnable, KeyListener {
 		}
 	}
 
-	/**
-	 * 
-	 * @param keyCode
-	 *            Touche entrée
-	 * @return
-	 */
 	private static Order keyCodeToUserOrder(final int keyCode) {
 		Order userOrder;
 		switch (keyCode) {
