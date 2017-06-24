@@ -23,4 +23,6 @@ public interface IMap {
     
     Observable getObservable();
     
+    void applyPhysics();
+    
 }

@@ -55,6 +55,8 @@ public class ViewFacade implements IView, Runnable, KeyListener {
 
 	private int mapViewSizeY = 15;
 
+	public BoardFrame board;
+
 	/**
 	 * Instantiates a new view facade.
 	 * 
@@ -89,17 +91,17 @@ public class ViewFacade implements IView, Runnable, KeyListener {
 	 */
 	@Override
 	public void keyTyped(KeyEvent e) {
-		 //nop
+		// nop
 	}
 
 	@Override
 	public final void keyPressed(final KeyEvent keyEvent) {
-        try {
-            this.getOrderPerformer().orderPerform(keyCodeToUserOrder(keyEvent.getKeyCode()));
-        } catch (final IOException exception) {
-            exception.printStackTrace();
-        }
-    }
+		try {
+			this.getOrderPerformer().orderPerform(keyCodeToUserOrder(keyEvent.getKeyCode()));
+		} catch (final IOException exception) {
+			exception.printStackTrace();
+		}
+	}
 
 	@Override
 	public void keyReleased(KeyEvent e) {
@@ -112,7 +114,7 @@ public class ViewFacade implements IView, Runnable, KeyListener {
 		final BoardFrame boardFrame = new BoardFrame("BoulderDash");
 		boardFrame.setDimension(new Dimension(this.getMap().getWidth(), this.getMap().getHeight()));
 		boardFrame.setDisplayFrame(closeView);
-		boardFrame.setSize(this.closeView.width *SIZESPRITE*2, this.closeView.height * SIZESPRITE*2);
+		boardFrame.setSize(this.closeView.width * SIZESPRITE * 2, this.closeView.height * SIZESPRITE * 2);
 		boardFrame.addKeyListener(this);
 		boardFrame.setFocusable(true);
 		boardFrame.setFocusTraversalKeysEnabled(false);
@@ -121,21 +123,21 @@ public class ViewFacade implements IView, Runnable, KeyListener {
 			for (int y = 0; y < this.getMap().getHeight(); y++) {
 				this.map.getElementByPosition(x, y).setX(x);
 				this.map.getElementByPosition(x, y).setY(y);
-				
-				
-				boardFrame.addSquare((ISquare)this.map.getElementByPosition(x, y),x,y);
-				//boardFrame.addPawn((IPawn)this.getMap().getElementByPosition(x, y));
-				boardFrame.addPawn((IPawn)this.map.getElementByPosition(x, y));
+
+				boardFrame.addSquare((ISquare) this.map.getElementByPosition(x, y), x, y);
+				// boardFrame.addPawn((IPawn)this.getMap().getElementByPosition(x,
+				// y));
+				boardFrame.addPawn((IPawn) this.map.getElementByPosition(x, y));
 			}
 		}
 
 		boardFrame.addPawn(this.getMainCharacter());
 
 		this.getMap().getObservable().addObserver(boardFrame.getObserver());
-		
 
 		boardFrame.setVisible(true);
 
+		setBoard(boardFrame);
 	}
 
 	public void show() {
@@ -256,6 +258,43 @@ public class ViewFacade implements IView, Runnable, KeyListener {
 
 	public void setViewMapY(int viewMapY) {
 		this.mapViewSizeY = viewMapY;
+	}
+
+	// TODO suppr ça
+	public final void updateboard() {
+		BoardFrame boardFrame = new BoardFrame("BoulderDash");
+		boardFrame.setDimension(new Dimension(this.getMap().getWidth(), this.getMap().getHeight()));
+		boardFrame.setDisplayFrame(closeView);
+		boardFrame.setSize(this.closeView.width * SIZESPRITE * 2, this.closeView.height * SIZESPRITE * 2);
+		boardFrame.addKeyListener(this);
+		boardFrame.setFocusable(true);
+		boardFrame.setFocusTraversalKeysEnabled(false);
+
+		for (int x = 0; x < this.getMap().getWidth(); x++) {
+			for (int y = 0; y < this.getMap().getHeight(); y++) {
+				this.map.getElementByPosition(x, y).setX(x);
+				this.map.getElementByPosition(x, y).setY(y);
+
+				boardFrame.addSquare((ISquare) this.map.getElementByPosition(x, y), x, y);
+				// boardFrame.addPawn((IPawn)this.getMap().getElementByPosition(x,
+				// y));
+				boardFrame.addPawn((IPawn) this.map.getElementByPosition(x, y));
+			}
+		}
+
+		boardFrame.addPawn(this.getMainCharacter());
+
+		this.getMap().getObservable().addObserver(boardFrame.getObserver());
+
+		boardFrame.setVisible(true);
+	}
+
+	public BoardFrame getBoard() {
+		return board;
+	}
+
+	public void setBoard(BoardFrame board) {
+		this.board = board;
 	}
 
 }

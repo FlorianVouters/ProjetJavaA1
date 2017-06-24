@@ -25,6 +25,7 @@ public class ControllerFacade implements IController, IOrderPerformer {
     /**Order to execute */
     private Order order;
     
+    
     private static final int 	speedCharacter = 250;
 
     /**
@@ -59,8 +60,18 @@ public class ControllerFacade implements IController, IOrderPerformer {
      */
     @Override
     public void play() throws SQLException, InterruptedException {
+    	int i=0; //TODO suppr
     	while (this.getModel().getCharacter().isAlive()) {
     		Thread.sleep(speedCharacter);
+    		
+//    		//TODO suppr, debug of the map repaint
+//    		if(i==0)
+//    		this.setOrder(Order.DOWN);
+//    		else
+//    			this.setOrder(Order.RIGHT);
+//    		//
+//    		i++;
+//    		//
     		switch (this.getOrder()) {
     			case UP :
     				System.out.println("go up");
@@ -79,11 +90,16 @@ public class ControllerFacade implements IController, IOrderPerformer {
     				this.getModel().getCharacter().moveLeft();
     			case NOP :
     			default :
-    				System.out.println("nope");
     				this.getModel().getCharacter().doNothing();
     				break;	
     		}
     		this.clearOrder();
+
+    		//
+    		updateBoard();
+    		
+    		//
+    		
 //    		this.getModel().getMap().lookForAndMoveEnemy();
 //    		this.getModel().getMap().applyPhysics();
     		this.getView().cameraMove();
@@ -165,7 +181,23 @@ public class ControllerFacade implements IController, IOrderPerformer {
 	 */
 	@Override
 	public IOrderPerformer getOrderPeformer() {
-		// TODO Auto-generated method stub
 		return this;
 	}
+	
+	
+	//TODO debug of board repaint
+	public void updateBoard(){
+		for (int x = 0; x < this.getModel().getMap().getWidth(); x++) {
+			for (int y = 0; y < this.getModel().getMap().getHeight(); y++) {
+				//go chercher dans le code source si on peut supr un pawn
+				this.getView().getBoard().addSquare(this.getModel().getMap().getElementByPosition(x, y),
+						this.getModel().getMap().getElementByPosition(x, y).getX(),
+						this.getModel().getMap().getElementByPosition(x, y).getY());
+				this.getView().getBoard().addPawn(this.getModel().getMap().getElementByPosition(x, y));
+			}
+			
+		}		
+	}
+	
+	
 }

@@ -60,10 +60,10 @@ public class Map extends Observable implements IMap {
 		Sprite.LEVEL = level;
 	}
 
-	void setElementPosition(IElement element, int x, int y) {
-		this.map[x][y] = element;
+	public void setElementPosition(IElement element, int x, int y) { //TODO should probably be private but changed it for easier debug, might not change it back
 		element.setX(x);
 		element.setY(y);
+		this.map[x][y] = element;
 	}
 
 	public int getHeight() {
