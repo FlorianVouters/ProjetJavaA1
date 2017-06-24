@@ -16,7 +16,9 @@ public abstract class Element implements IElement {
     private Permeabilty permeability;
     
     /**The element's position */
-    Point position;
+    private Point position;
+    
+    public Boolean alive;
 
 	public Element(Sprite sprite, Permeabilty permeability) {
 		this.setSprite(sprite);

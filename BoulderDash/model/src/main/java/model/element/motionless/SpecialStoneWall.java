@@ -12,6 +12,7 @@ public class SpecialStoneWall extends MotionlessElement implements IDestructible
 
 	public SpecialStoneWall() {
 		super(SPECIAL_STONE_WALL, Permeabilty.PENETRABLE);
+		this.alive = true;
 	}
 
 	@Override
@@ -22,14 +23,9 @@ public class SpecialStoneWall extends MotionlessElement implements IDestructible
 
 	@Override
 	public Boolean isAlive() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.alive;
 	}
 
-	@Override
-	public Image getImage() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 }

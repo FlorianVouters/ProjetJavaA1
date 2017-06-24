@@ -14,6 +14,7 @@ public class Wall extends MotionlessElement implements IDestructible, ITangible{
 	
 	public Wall() {
 		super(WALL, Permeabilty.BLOCKING);
+		this.alive = true;
 	}
 
 	@Override
@@ -30,14 +31,9 @@ public class Wall extends MotionlessElement implements IDestructible, ITangible{
 
 	@Override
 	public Boolean isAlive() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.alive;
 	}
 
-	@Override
-	public Image getImage() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 }

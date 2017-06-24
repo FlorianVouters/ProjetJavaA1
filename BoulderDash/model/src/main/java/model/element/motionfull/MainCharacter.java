@@ -18,25 +18,19 @@ public class MainCharacter extends MotionfullElement implements IDestructible{
 	
 	BufferedImage buffer;
 	
-	private static final BufferedImage MAIN_CHARACTER_LEFT = ImageIO.read(new File("pics/charspritesheet.png")).getSubimage(0, 16, 16, 16);
-	
-	private static final BufferedImage MAIN_CHARACTER_RIGHT = ImageIO.read(new File("pics/charspritesheet.png")).getSubimage(0, 48, 16, 16);
-	
-	private static final BufferedImage MAIN_CHARACHTER_DOWN = ImageIO.read(new File("pics/charspritesheet.png")).getSubimage(0, 64, 16, 16);
-	
-	private static final BufferedImage MAIN_CHARACTER_UP = ImageIO.read(new File("pics/charspritesheet.png")).getSubimage(0, 32, 16, 16);
+
 	
 	
 	public MainCharacter(Map map){
 		super(MAIN_CHARACTER, Permeabilty.BLOCKING, map);
+		this.alive =true;
 	}
 
 	
 
 	@Override
 	public Boolean isAlive() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.alive;
 	}
 
 

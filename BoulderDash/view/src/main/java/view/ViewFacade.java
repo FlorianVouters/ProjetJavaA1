@@ -89,18 +89,17 @@ public class ViewFacade implements IView, Runnable, KeyListener {
 	 */
 	@Override
 	public void keyTyped(KeyEvent e) {
-		 try {
-	            this.getOrderPerformer().orderPerform(keyCodeToUserOrder(e.getKeyCode()));
-	        } catch (final IOException exception) {
-	            exception.printStackTrace();
-	        }
+		 //nop
 	}
 
 	@Override
-	public void keyPressed(KeyEvent e) {
-		// Nop
-
-	}
+	public final void keyPressed(final KeyEvent keyEvent) {
+        try {
+            this.getOrderPerformer().orderPerform(keyCodeToUserOrder(keyEvent.getKeyCode()));
+        } catch (final IOException exception) {
+            exception.printStackTrace();
+        }
+    }
 
 	@Override
 	public void keyReleased(KeyEvent e) {
@@ -122,7 +121,6 @@ public class ViewFacade implements IView, Runnable, KeyListener {
 			for (int y = 0; y < this.getMap().getHeight(); y++) {
 				this.map.getElementByPosition(x, y).setX(x);
 				this.map.getElementByPosition(x, y).setY(y);
-				IElement temp = this.map.getElementByPosition(x, y);
 				
 				
 				boardFrame.addSquare((ISquare)this.map.getElementByPosition(x, y),x,y);
@@ -131,7 +129,7 @@ public class ViewFacade implements IView, Runnable, KeyListener {
 			}
 		}
 
-		//boardFrame.addPawn(this.getMainCharacter());
+		boardFrame.addPawn(this.getMainCharacter());
 
 		this.getMap().getObservable().addObserver(boardFrame.getObserver());
 		
@@ -163,8 +161,8 @@ public class ViewFacade implements IView, Runnable, KeyListener {
 	public void cameraMove() {
 		int x;
 		int y;
-		x = (int) this.getCharacterPosition().getX();
-		y = (int) this.getCharacterPosition().getY();
+		x = (int) this.getMainCharacter().getX();
+		y = (int) this.getMainCharacter().getY();
 		if (x < this.getCloseView().x + 5) {
 			this.getCloseView().x--;
 		} else if (x > this.getCloseView().x + 10) {

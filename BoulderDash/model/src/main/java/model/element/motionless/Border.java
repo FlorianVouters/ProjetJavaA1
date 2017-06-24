@@ -23,14 +23,9 @@ public class Border extends MotionlessElement implements ITangible{
 
 	@Override
 	public Boolean isAlive() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.alive;
 	}
 
-	@Override
-	public Image getImage() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
 
 }

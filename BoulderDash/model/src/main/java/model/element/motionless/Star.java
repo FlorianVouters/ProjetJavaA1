@@ -13,6 +13,7 @@ public class Star extends MotionlessElement implements ITangible{
 	
 	public Star() {
 		super(STAR, Permeabilty.BLOCKING);
+		this.alive = true;
 	}
 
 	@Override
@@ -23,14 +24,9 @@ public class Star extends MotionlessElement implements ITangible{
 
 	@Override
 	public Boolean isAlive() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.alive;
 	}
 
-	@Override
-	public Image getImage() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
 
 }

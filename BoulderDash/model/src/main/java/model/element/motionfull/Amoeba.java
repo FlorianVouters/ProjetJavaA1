@@ -12,7 +12,7 @@ public class Amoeba extends Enemy{
 	public Amoeba(Sprite sprite, Map map) {
 		super(sprite, map);
 		this.LEVEL = map.getLevel();
-		// TODO Auto-generated constructor stub
+		this.alive = true;
 	}
 
 	int timer; //multiply at some point and turns into a rock at the end

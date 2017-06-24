@@ -12,18 +12,13 @@ public class ExitDoor extends MotionlessElement implements INotTangible{
 	
 	public ExitDoor(){
 		super(EXIT_DOOR, Permeabilty.PENETRABLE);
+		this.alive = true;
 	}
 
 	@Override
 	public Boolean isAlive() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.alive;
 	}
 
-	@Override
-	public Image getImage() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 }

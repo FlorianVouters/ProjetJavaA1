@@ -12,6 +12,7 @@ public class DiamondEnemy extends Enemy{
 	
 	public DiamondEnemy(Map map) {
 		super(DIAMOND_ENEMY, map);
+		this.alive = true;
 	}
 
 	public void die(){

@@ -69,17 +69,37 @@ public class Sprite {
 		switch(getConsoleImage()){
 
 		case 'C': 
+			buffer = ImageIO.read(new File("pics/charspritesheet.png")).getSubimage(0, 16, 16, 16);
+			setImage(buffer);
+			setImageLoaded(true);
+			break;
 		case 'c':
-		case 'H':
+			buffer = ImageIO.read(new File("pics/charspritesheet.png")).getSubimage(0, 48, 16, 16);
+			setImage(buffer);
+			setImageLoaded(true);
+			break;
 		case 'h':
-		buffer = ImageIO.read(new File("pics/charspritesheet.png"));
+			buffer = ImageIO.read(new File("pics/charspritesheet.png")).getSubimage(0, 64, 16, 16);
+			setImage(buffer);
+			setImageLoaded(true);
+			break;
+		case 'N' :
+			buffer= ImageIO.read(new File("pics/charspritesheet.png")).getSubimage(0, 32, 16, 16);
+			setImage(buffer);
+			setImageLoaded(true);
+			break;
+		case 'H':
+			buffer= ImageIO.read(new File("pics/charspritesheet.png")).getSubimage(0,0, 16, 16);
+			//buffer = ImageIO.read(new File("pics/charspritesheet.png"));
+			setImage(buffer);
+			setImageLoaded(true);
 			break;
 		
 		default:
 			buffer = ImageIO.read(new File("pics/spritesheet.png"));
 			
 			switch(getConsoleImage()){
-			case 'W':
+			case '|':
 			case 'B':
 				buffer = buffer.getSubimage(0*SPRITE_SIZE,SPRITE_SIZE*4*(LEVEL-1) , SPRITE_SIZE, SPRITE_SIZE);
 				break;

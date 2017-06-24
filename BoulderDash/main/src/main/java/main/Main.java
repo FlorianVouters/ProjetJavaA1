@@ -26,14 +26,15 @@ public abstract class Main {
 	 *            the arguments
 	 * @throws SQLException
 	 * @throws IOException
+	 * @throws InterruptedException 
 	 */
-	public static void main(final String[] args) throws IOException, SQLException {
+	public static void main(final String[] args) throws IOException, SQLException, InterruptedException {
 		final ModelFacade model = new ModelFacade(1);
 		final ViewFacade view = new ViewFacade(model.getMap(), model.getCharacter());
 		final ControllerFacade controller = new ControllerFacade(view, model);
-		//view.setOrderPerformer(controller.getOrderPeformer());
+		view.setOrderPerformer(controller.getOrderPeformer());
 
-		//controller.play();
+		controller.play();
 
 	}
 	

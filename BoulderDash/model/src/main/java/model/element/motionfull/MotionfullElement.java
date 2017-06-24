@@ -12,13 +12,14 @@ public abstract class MotionfullElement extends Element implements IMotionfullEl
 
 	
 	Map map;
-	Boolean alive;
+	
 	
 	  public MotionfullElement(Sprite sprite, Permeabilty permeability,Map map, int x, int y) {
 		super(sprite, permeability);
 		this.setMap(map);
 		this.setX(x);
 		this.setY(y);
+		this.alive = true;
 	}
 
 	 public MotionfullElement(Sprite sprite, Permeabilty permeability, Map map) {
@@ -71,7 +72,7 @@ public abstract class MotionfullElement extends Element implements IMotionfullEl
      * Do nothing.
      */
     public void doNothing(){
-    	this.doNothing();
+    	//told ya, nothing
     }
 
    

@@ -16,6 +16,7 @@ public class Diamond extends MotionfullElement implements IGravitable, IDestruct
 	
 	public Diamond(Map map) {
 		super(DIAMOND, Permeabilty.BLOCKING, map);
+		this.alive = true;
 	}
 
 

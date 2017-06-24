@@ -23,7 +23,9 @@ public class ModelFacade implements IModel {
      */
     public ModelFacade(int level) throws SQLException  {
 		this.setMap(new Map(level));
-       this.setCharacter(new MainCharacter(getMap()));
+       this.setCharacter(new MainCharacter(getMap())); // y5 x7 TODO get rid of the hard code
+       this.character.setX(7);
+       this.character.setY(5);
     }
     
     

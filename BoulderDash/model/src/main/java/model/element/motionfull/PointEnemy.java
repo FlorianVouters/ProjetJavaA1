@@ -9,6 +9,7 @@ public class PointEnemy extends Enemy {
 	
 	public PointEnemy(Map map) {
 		super(POINT_ENEMY, map);
+		this.alive = true;
 	}
 
 	@Override

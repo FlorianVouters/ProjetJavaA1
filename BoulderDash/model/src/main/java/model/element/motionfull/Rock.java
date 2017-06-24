@@ -13,14 +13,14 @@ public class Rock extends MotionfullElement implements IGravitable{
 
 	public Rock(Map map) {
 		super(ROCK, Permeabilty.BLOCKING, map);
+		this.alive = true;
 	}
 
 	
 
 	@Override
 	public Boolean isAlive() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.alive;
 	}
 
 	
