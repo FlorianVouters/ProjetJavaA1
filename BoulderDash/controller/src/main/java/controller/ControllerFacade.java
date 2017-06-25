@@ -11,8 +11,8 @@ import view.IView;
 /**
  * <h1>The Class ControllerFacade provides a facade of the Controller component.</h1>
  *
- * @author Jean-Aymeric DIET jadiet@cesi.fr
- * @version 1.0
+ * @author HURTEVENT Nicolas
+ * @version 2.5
  */
 public class ControllerFacade implements IController, IOrderPerformer {
 
@@ -64,14 +64,14 @@ public class ControllerFacade implements IController, IOrderPerformer {
     	while (this.getModel().getCharacter().isAlive()) {
     		Thread.sleep(speedCharacter);
     		
-    		//TODO suppr, debug of the map repaint
-    		if(i==0)
-    		this.setOrder(Order.DOWN);
-    		else if(i<3)
-    			this.setOrder(Order.RIGHT);
-    		//
-    		i++;
-    		//
+//    		//TODO suppr, debug of the map repaint
+//    		if(i==0)
+//    		this.setOrder(Order.DOWN);
+//    		else if(i<3)
+//    			this.setOrder(Order.RIGHT);
+//    		//
+//    		i++;
+//    		//
     		switch (this.getOrder()) {
     			case UP :
     				System.out.println("go up");
