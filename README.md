@@ -25,7 +25,7 @@
 <p>UML is a modeling language which allows the program to be represented in a codified graphic way.</p>
 <p>Here is the component diagram of the program :</p>
 <p><img style="margin-right: 250px; margin-left: 250px;" src="http://image.noelshack.com/fichiers/2017/25/7/1498405233-component.png" alt="" width="566" height="302" /></p>
-<p>The contracts' class diagram</p> <img style="margin-right: 100px; margin-left: 100px; src="http://image.noelshack.com/fichiers/2017/25/7/1498422956-uml-contract.png" alt="" width="1104" height="568" />
+<p>The contracts' class diagram</p> <p><img src="http://image.noelshack.com/fichiers/2017/25/7/1498422956-uml-contract.png" alt="" width="1104" height="568" /></p>
 <p>The view class diagram :</p>
 <p><img style="margin-right: 100px; margin-left: 100px;" src="http://image.noelshack.com/fichiers/2017/25/7/1498405348-view.png" alt="" width="878" height="544" /></p>
 <p>The model class diagrams :</p>
