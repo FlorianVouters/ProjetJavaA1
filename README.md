@@ -43,3 +43,4 @@
 <h3>4.4 Database</h3>
 <p>&nbsp;</p>
 <h3>4.5 Contract</h3>
+<p>The contract makes it possible to link all the other packets between them and thus to make them work together, it is him who regroups all the interfaces of each of the parts, and each part calls upon him if necessary, we defined and finished it first Which allowed us to work on our own to finish this project</p>
