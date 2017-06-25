@@ -35,6 +35,8 @@
 <h3>4.1 Model</h3>
 <p>&nbsp;</p>
 <h3>4.2 Controller</h3>
+<p>The controller needs to to be the game engine, that's it who create the model, and the view, by the fact to launch the view, it starts the CHI.</p>
+<p>It does the main character controll, by waiting a key pressed by the view, and interact with the model to "tell it" what it needs to move, or to do, after that, the controller call the enemy move method and the rocks and diamond falling.</p>
 <p>&nbsp;</p>
 <h3>4.3 View</h3>
 <p>&nbsp;</p>
