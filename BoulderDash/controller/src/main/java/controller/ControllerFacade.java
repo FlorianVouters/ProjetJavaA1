@@ -64,14 +64,14 @@ public class ControllerFacade implements IController, IOrderPerformer {
     	while (this.getModel().getCharacter().isAlive()) {
     		Thread.sleep(speedCharacter);
     		
-//    		//TODO suppr, debug of the map repaint
-//    		if(i==0)
-//    		this.setOrder(Order.DOWN);
-//    		else
-//    			this.setOrder(Order.RIGHT);
-//    		//
-//    		i++;
-//    		//
+    		//TODO suppr, debug of the map repaint
+    		if(i==0)
+    		this.setOrder(Order.DOWN);
+    		else if(i<3)
+    			this.setOrder(Order.RIGHT);
+    		//
+    		i++;
+    		//
     		switch (this.getOrder()) {
     			case UP :
     				System.out.println("go up");
@@ -101,7 +101,7 @@ public class ControllerFacade implements IController, IOrderPerformer {
     		//
     		
 //    		this.getModel().getMap().lookForAndMoveEnemy();
-//    		this.getModel().getMap().applyPhysics();
+    		this.getModel().getMap().applyPhysics();
     		this.getView().cameraMove();
     	}
     	this.getView().displayMessage("Game Over !");
@@ -187,16 +187,23 @@ public class ControllerFacade implements IController, IOrderPerformer {
 	
 	//TODO debug of board repaint
 	public void updateBoard(){
+		
+		
+		
+		//already works-ish by itself
 		for (int x = 0; x < this.getModel().getMap().getWidth(); x++) {
 			for (int y = 0; y < this.getModel().getMap().getHeight(); y++) {
-				//go chercher dans le code source si on peut supr un pawn
 				this.getView().getBoard().addSquare(this.getModel().getMap().getElementByPosition(x, y),
 						this.getModel().getMap().getElementByPosition(x, y).getX(),
 						this.getModel().getMap().getElementByPosition(x, y).getY());
 				this.getView().getBoard().addPawn(this.getModel().getMap().getElementByPosition(x, y));
+				
+				
 			}
 			
-		}		
+		}	
+		//yes I know it spawn ConcurentModif ex sometimes but they don't seem to be a great deal and it's the only way I found
+		this.getView().getBoard().repaint();
 	}
 	
 	
