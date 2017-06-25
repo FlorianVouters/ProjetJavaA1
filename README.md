@@ -33,6 +33,7 @@
 <p>&nbsp;</p>
 <h2 style="text-align: center;">4. Pattern MVC</h2>
 <h3>4.1 Model</h3>
+<p>The model is the central part of the system, it contains all the informations needed for the game: the timer, the score the objective and obviously all the elements which constitute the map. Its sole purpose is to store the data so they can be read and displayed by the view and modified by the controller</p>
 <p>&nbsp;</p>
 <h3>4.2 Controller</h3>
 <p>The controller needs to to be the game engine, that's it who create the model, and the view, by the fact to launch the view, it starts the CHI.</p>
@@ -41,6 +42,7 @@
 <h3>4.3 View</h3>
 <p>&nbsp;</p>
 <h3>4.4 Database</h3>
+<p>The database store all the informations needed to load the level: it contains the height and width of the map as well as the number of diamonds needed to complete the level and of course the map itself as a string a character</p>
 <p>&nbsp;</p>
 <h3>4.5 Contract</h3>
 <p>The contract makes it possible to link all the other packets between them and thus to make them work together, it is him who regroups all the interfaces of each of the parts, and each part calls upon him if necessary, we defined and finished it first Which allowed us to work on our own to finish this project</p>
