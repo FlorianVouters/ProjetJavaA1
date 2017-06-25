@@ -2,6 +2,8 @@ package view;
 
 import static org.junit.Assert.*;
 
+import java.awt.event.KeyEvent;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -49,26 +51,25 @@ public class ViewFacadeTest {
 
 	@Test
 	public void testKeyTyped() {
-		Order expectedOrder = Order.UP;
-//		view.keyTyped(expectedOrder);  TODO
+		int expectedKeyEvent = KeyEvent.VK_RIGHT;
 		fail("Not yet implemented");
-		assertEquals(expectedOrder, Order.UP);
+		assertEquals(expectedKeyEvent, Order.RIGHT);
 	}
 
 	@Test
 	public void testKeyPressed() {
-		Order expectedOrder = Order.UP;
+		int expectedKeyEvent = KeyEvent.VK_RIGHT;
 //		view.keyTyped(expectedOrder);  TODO
 		fail("Not yet implemented");
-		assertEquals(expectedOrder, Order.UP);
+		assertEquals(expectedKeyEvent, Order.RIGHT);
 	}
 
 	@Test
 	public void testKeyReleased() {
-		Order expectedOrder = Order.UP;
+		int expectedKeyEvent = KeyEvent.VK_RIGHT;
 //		view.keyTyped(expectedOrder);    TODO
 		fail("Not yet implemented");
-		assertEquals(expectedOrder, Order.UP);
+		assertEquals(expectedKeyEvent, Order.RIGHT);
 	}
 
 	@Test
