@@ -8,15 +8,18 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import model.Example;
+import model.IElement;
 import model.Permeabilty;
 import model.Sprite;
 
 public class ElementTest {
 	
-	private int id;
-	private String name;
-	private Sprite sprite;
-	private Permeability permeabilty;
+	private Example id;
+	private Example name;
+	private IElement sprite;
+	private IElement permeabilty;
+	private String string;
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -35,52 +38,60 @@ public class ElementTest {
 	}
 
 	@Test
-	public int testGetId() {
-		private final expected = id;
+	public void testGetId() {
+		final Example expected = id;
+		//fail("Not yet implemented");
 		assertEquals(expected, this.id.getId());
 	}
 
 	@Test
-	public String getName() {
-		private final expected = name;
+	public void testGetName() {
+		final Example expected = name;
+		//fail("Not yet implemented");
 		assertEquals(expected, this.name.getName());
 	}
 
 	@Test
-	public void setName(final String name) {
-		private final expected = name;
+	public void testSetName(final String name) {
+		final String expected = name;
 		this.name.getName();
+		//fail("Not yet implemented");
 		assertEquals(expected, this.name.getName());
 	}
 
 	@Test
-	public Sprite getSprite() {
-		private final expected = sprite;
+	public void testGetSprite() {
+		IElement  expected = sprite;
+		//fail("Not yet implemented");
 		assertEquals(expected, this.sprite.getSprite());
 	}
 	
 	@Test
-	public void setSprite(Sprite sprite){
-		private final expected = sprite;
+	public void testSetSprite(Sprite sprite){
+		final Sprite expected = sprite;
 		this.sprite.getSprite();
+		//fail("Not yet implemented");
 		assertEquals(expected, this.sprite.getSprite());
 	}
 
 	@Test
-	public String toString() {
-		assertNotNull();
+	public void testToString() {
+		//fail("Not yet implemented");
+		assertNotNull(string);
 	}
 
 	@Test
-	public Permeabilty getPermeability() {
-		private final expected = permeabilty;
+	public void testGetPermeability() {
+		final IElement expected = permeabilty;
+		//fail("Not yet implemented");
 		assertEquals(expected, this.permeabilty.getPermeability());
 	}
 
 	@Test
-	public void setPermeability(Permeabilty permeability) {
-		private final expected = permeabilty;
+	public void testSetPermeability(Permeabilty permeability) {
+		final IElement expected = permeabilty;
 		this.permeabilty.getPermeability();
+		//fail("Not yet implemented");
 		assertEquals(expected, this.permeabilty.getPermeability());
 	}
 }
