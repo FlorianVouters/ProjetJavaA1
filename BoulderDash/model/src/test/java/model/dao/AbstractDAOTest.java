@@ -49,14 +49,12 @@ public class AbstractDAOTest {
 
 	@Test
 	public void testPrepareCall() {
-		int id = 4;
+		int height = 28;
 	//	fail("Not yet implemented");
 		try {
-			ExampleDAO.getExampleById(id);
+			assertEquals(height, ElementDAO2.getMapHeight(1));
 		} catch (SQLException e) {
-			/*String expected = "Unknown ID";
-			assertEquals(expected, e.getMessage());*/
-			
+					
 			//I don't know what to compare the exception message to since it will depend
 		}
 	}
