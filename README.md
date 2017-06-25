@@ -19,7 +19,10 @@
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p><img style="margin-right: 100px; margin-left: 100px;" src="http://image.noelshack.com/fichiers/2017/25/7/1498400627-pbs.png" alt="" width="913" height="338" /> <img src="http://image.noelshack.com/fichiers/2017/25/7/1498400627-wbs.png" alt="" /></p>
-<p>In this two diagrams, we can see all the tasks we had to do and the deliverables we have deliver at the end of the project.</p>
+<p>In this two diagrams, we can see all the tasks we had to do and the deliverables we have deliver at the end of the project.</p> 
+<p>Here the plannings of everyone in the group</p>
+<p><img src="http://image.noelshack.com/fichiers/2017/25/7/1498419172-nico.png" alt="" width="1015" height="208" /></p>
+<p><img src="http://image.noelshack.com/fichiers/2017/25/7/1498423089-gildas.png" alt="" width="1004" height="205" /></p>
 <h2 style="text-align: center;">3. UML</h2>
 <p>We also had to make the uml of the project.</p>
 <p>UML is a modeling language which allows the program to be represented in a codified graphic way.</p>
@@ -43,9 +46,11 @@
 <p>It carries out the users movements, awaiting a key pressed and sent to him by the view, then interact with the model to "tell it" what it needs to move, or to do, and finaly, orders the enemies to move and the rocks and diamond to fall.</p>
 <p>&nbsp;</p>
 <h3>4.3 View</h3>
-<p>&nbsp;</p>
+<p>&nbsp;The view is the display of the game. It have to reads the model. The package view contain only one class (ViewFacade) whcih create a window, display the sprites and update itself when the model change.</p>
 <h3>4.4 Database</h3>
 <p>The database stores all the information needed to load the level: it contains the height and width of the map as well as the number of diamonds needed to complete the level and of course the map itself as a string a character</p>
 <p>&nbsp;</p>
 <h3>4.5 Contract</h3>
 <p>The contract makes it possible to link all the other packets between them and thus to make them work together, it is him who regroups all the interfaces of each of the parts, and each part calls upon him if necessary, we defined and finished it first Which allowed us to work on our own to finish this project</p>
+<h2 style="text-align: center;">5. Bilan</h2>
+<p>&nbsp;The project was interesting but the view was using the showboard library and this library had some bugs, which don't help us to bring this project to his end. Otherwise, the project was good, interesting but complicated.</p>
