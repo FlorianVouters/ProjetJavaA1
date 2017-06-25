@@ -52,6 +52,8 @@ public class ControllerFacade implements IController, IOrderPerformer {
     
     /**
      * Beggining of the character thread
+     * This officialy start the game, it get the key pressed by the user, and call the moving part of the model
+     * It clean the order key, and move enemy, do the gravity every 250ms
      *
      * @throws SQLException
      *             the SQL exception
@@ -97,6 +99,11 @@ public class ControllerFacade implements IController, IOrderPerformer {
         return this.view;
     }
     
+    /*
+     * Sets the view
+     * 
+     * @param view of the game
+     */
     public void setView(IView view){
     	this.view = view;
     }
