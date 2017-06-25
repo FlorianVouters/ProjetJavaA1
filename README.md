@@ -6,7 +6,7 @@
 <h2 style="text-align: center;">1. Project presentation</h2>
 <p><img style="margin: 50px 300px 50px 300px;" src="http://image.noelshack.com/fichiers/2017/25/7/1498399249-capture.png" alt="" width="441" height="193" align="middle" />For this project, we have to remake an old game which is called BoulderDash.</p>
 <p>The goal of this game is to pick up all the diamonds on the map to open a door that permit us to go into the next level.</p>
-<p>The character have to dig the dirt to make his way. <span id="result_box" class="short_text" lang="en"><span class="">He must be careful not to be crushed by a rock or a diamon and not be touched by an enemy. Some levels don't have diamonds. The players have to generate one by killing an enemy with a rock.</span></span></p>
+<p>The character have to dig the dirt to make his way. <span id="result_box" class="short_text" lang="en"><span class="">He must be careful not to be crushed by a rock or a diamond and not be touched by an enemy. Some levels don't have diamonds. The players have to generate one by killing an enemy with a rock.</span></span></p>
 <p><span class="short_text" lang="en"><span class="">We have to create 5 differents levels which can be access by the code and are saved in a database.</span></span></p>
 <h2 style="text-align: center;"><span class="short_text" lang="en"><span class="">2. Project management</span></span></h2>
 <p>At the start of the project, we made a task list together to know everything we need to do. Here a picture of what it looks like :</p>
@@ -22,5 +22,22 @@
 <p>We had to make the uml of the project.</p>
 <p>UML is a modeling language which can permit you to make differents diagrams of the code of your project. It permit you to have a graphic visual of the program.</p>
 <p>Here is the component diagram of the program :</p>
+<p><img style="margin-right: 250px; margin-left: 250px;" src="http://image.noelshack.com/fichiers/2017/25/7/1498405233-component.png" alt="" width="566" height="302" /></p>
+<p>The view class diagram :</p>
+<p><img style="margin-right: 100px; margin-left: 100px;" src="http://image.noelshack.com/fichiers/2017/25/7/1498405348-view.png" alt="" width="878" height="544" /></p>
+<p>The model and contract class diagrams :</p>
+<p><img src="http://image.noelshack.com/fichiers/2017/25/7/1498405811-model1.png" alt="" width="1048" height="497" /></p>
+<p><img src="http://image.noelshack.com/fichiers/2017/25/7/1498405811-model2.png" alt="" width="1051" height="643" /></p>
+<p>The controller class diagram :</p>
+<p><img style="margin-right: 100px; margin-left: 100px;" src="http://image.noelshack.com/fichiers/2017/25/7/1498407931-controller.png" alt="" width="849" height="384" /></p>
 <p>&nbsp;</p>
+<h2 style="text-align: center;">4. Pattern MVC</h2>
+<h3>4.1 Model</h3>
 <p>&nbsp;</p>
+<h3>4.2 Controller</h3>
+<p>&nbsp;</p>
+<h3>4.3 View</h3>
+<p>&nbsp;</p>
+<h3>4.4 Database</h3>
+<p>&nbsp;</p>
+<h3>4.5 Contract</h3>
