@@ -1,7 +1,26 @@
-# BoulderDash
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f58b1e1620cc443f9575a385932c7c73)](https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Jean-Aymeric/BoulderDash&amp;utm_campaign=Badge_Grade)
-
-*Version 1.0*
-*Author Jean-Aymeric DIET - jadiet@cesi.fr*
-
-Base project to start BoulderDash software
+<h3 style="text-align: right;"><span style="color: #000000;">26/06/2017</span></h3>
+<h3 style="text-align: left;"><span style="color: #000000;">Gildas Cousin | Nicolas Hurtevent | Florian Vouters</span></h3>
+<h1 style="text-align: center;"><span style="text-decoration: underline;"><span style="color: #808080; text-decoration: underline;">Java project : BoulderDash</span></span></h1>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2 style="text-align: center;">1. Project presentation</h2>
+<p><img style="margin: 50px 300px 50px 300px;" src="http://image.noelshack.com/fichiers/2017/25/7/1498399249-capture.png" alt="" width="441" height="193" align="middle" />For this project, we have to remake an old game which is called BoulderDash.</p>
+<p>The goal of this game is to pick up all the diamonds on the map to open a door that permit us to go into the next level.</p>
+<p>The character have to dig the dirt to make his way. <span id="result_box" class="short_text" lang="en"><span class="">He must be careful not to be crushed by a rock or a diamon and not be touched by an enemy. Some levels don't have diamonds. The players have to generate one by killing an enemy with a rock.</span></span></p>
+<p><span class="short_text" lang="en"><span class="">We have to create 5 differents levels which can be access by the code and are saved in a database.</span></span></p>
+<h2 style="text-align: center;"><span class="short_text" lang="en"><span class="">2. Project management</span></span></h2>
+<p>At the start of the project, we made a task list together to know everything we need to do. Here a picture of what it looks like :</p>
+<p><img style="margin-right: 150px; margin-left: 150px;" src="http://image.noelshack.com/fichiers/2017/25/7/1498400281-tasks.png" alt="" width="736" height="730" /></p>
+<p>&nbsp;To manage our project we used some tools. First of all, we used Github to have the code in common. With the help of Github, everyone in the group could work on his own part.</p>
+<p>To communicate, we used two differents tools, Facebook and Discord.</p>
+<p>We have done a WBS and a PBS :</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><img style="margin-right: 100px; margin-left: 100px;" src="http://image.noelshack.com/fichiers/2017/25/7/1498400627-pbs.png" alt="" width="913" height="338" /> <img src="http://image.noelshack.com/fichiers/2017/25/7/1498400627-wbs.png" alt="" /></p>
+<p>In this two diagrams, we can see all the tasks we have to do and the deliverables we have deliver at the end of the project.</p>
+<h2 style="text-align: center;">3. UML</h2>
+<p>We had to make the uml of the project.</p>
+<p>UML is a modeling language which can permit you to make differents diagrams of the code of your project. It permit you to have a graphic visual of the program.</p>
+<p>Here is the component diagram of the program :</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
