@@ -8,6 +8,7 @@ import model.Sprite;
 
 public class SpecialStoneWall extends MotionlessElement implements IDestructible {
 
+	/** The Special Stonewall's sprite*/
 	private static final Sprite SPECIAL_STONE_WALL = new Sprite('S');
 
 	public SpecialStoneWall() {
@@ -15,15 +16,12 @@ public class SpecialStoneWall extends MotionlessElement implements IDestructible
 		this.alive = true;
 	}
 
+	/**
+	 * Sets alive to false
+	 */
 	@Override
 	public void die() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public Boolean isAlive() {
-		return this.alive;
+		this.alive=false;
 	}
 
 	

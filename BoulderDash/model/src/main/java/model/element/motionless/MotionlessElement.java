@@ -10,4 +10,15 @@ public abstract class MotionlessElement extends Element implements IMotionlessEl
 	public MotionlessElement(Sprite sprite, final Permeabilty permeability) {
 		super(sprite, permeability);
 	}
+	
+	/**
+	 * Checks if is alive.
+     *
+     * @return  alive
+     */
+	@Override
+	public Boolean isAlive() {
+		return this.alive;
+	}
+
 }

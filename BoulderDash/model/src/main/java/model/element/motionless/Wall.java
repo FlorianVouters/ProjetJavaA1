@@ -8,8 +8,9 @@ import model.ITangible;
 import model.Permeabilty;
 import model.Sprite;
 
-public class Wall extends MotionlessElement implements IDestructible, ITangible{
+public class Wall extends MotionlessElement implements IDestructible{
 
+	/** The Star's sprite*/
 	private static final Sprite WALL = new Sprite('W');
 	
 	public Wall() {
@@ -17,23 +18,13 @@ public class Wall extends MotionlessElement implements IDestructible, ITangible{
 		this.alive = true;
 	}
 
-	@Override
-	public void checkColision(IElement element1, IElement element2) {
-		// TODO Auto-generated method stub
-		
-	}
-
+	/**
+	 * Sets alive to false
+	 */
 	@Override
 	public void die() {
-		// TODO Auto-generated method stub
-		
+		this.alive=false;
 	}
-
-	@Override
-	public Boolean isAlive() {
-		return this.alive;
-	}
-
 	
 
 }

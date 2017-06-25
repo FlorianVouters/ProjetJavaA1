@@ -7,26 +7,14 @@ import model.ITangible;
 import model.Permeabilty;
 import model.Sprite;
 
-public class Star extends MotionlessElement implements ITangible{
+public class Star extends MotionlessElement {
 
+	/** The Star's sprite*/
 	private static final Sprite STAR = new Sprite('*');
 	
 	public Star() {
 		super(STAR, Permeabilty.BLOCKING);
 		this.alive = true;
 	}
-
-	@Override
-	public void checkColision(IElement element1, IElement element2) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public Boolean isAlive() {
-		return this.alive;
-	}
-
-
 
 }

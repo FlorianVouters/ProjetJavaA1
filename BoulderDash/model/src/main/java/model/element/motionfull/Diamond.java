@@ -19,8 +19,12 @@ public class Diamond extends MotionfullElement implements IGravitable, IDestruct
 		this.alive = true;
 	}
 
-
-
+	
+	/**
+	 * Checks if is alive.
+     *
+     * @return  alive
+     */
 	@Override
 	public Boolean isAlive() {
 		return this.alive;
@@ -30,10 +34,12 @@ public class Diamond extends MotionfullElement implements IGravitable, IDestruct
 
 	@Override
 	public void fall() {
-		// TODO Auto-generated method stub
 		
 	}
-	
+
+	/**
+	 * Decrements the objective
+	 * */
 	public void die(){
 		this.alive=false;
 		this.getMap().setObjective(this.getMap().getObjective()-1);

@@ -7,24 +7,18 @@ import model.ITangible;
 import model.Permeabilty;
 import model.Sprite;
 
-public class Border extends MotionlessElement implements ITangible{
+public class Border extends MotionlessElement{
 	
+	/** The Border's sprite*/
 	private static final Sprite BORDER = new Sprite('|');
 
 	public Border() {
 		super(BORDER, Permeabilty.BLOCKING);
 	}
 
-	@Override
-	public void checkColision(IElement element1, IElement element2) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 
-	@Override
-	public Boolean isAlive() {
-		return this.alive;
-	}
+	
 
 
 

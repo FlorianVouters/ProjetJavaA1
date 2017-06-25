@@ -115,6 +115,12 @@ public abstract class MotionfullElement extends Element implements IMotionfullEl
 		// told ya, nothing
 	}
 
+	
+	/**
+	 * Places a Mud at x,y
+	 * @param x
+	 * @param y
+	 */
 	public void fillEmptySpace(int x, int y) {
 		IElement bg = MotionlessElementFactory.getFromFileSymbol('_');
 		bg.setX(x);
@@ -122,22 +128,33 @@ public abstract class MotionfullElement extends Element implements IMotionfullEl
 		this.getMap().setElementPosition(bg, x, y);
 	}
 
+	/**
+	 * Gets the map
+	 * 
+	 * @return the map
+	 */
 	public Map getMap() {
 		return map;
 	}
 
+	/**
+	 * Sets the map
+	 * 
+	 * @param map
+	 * 			the new map
+	 */
 	public void setMap(Map map) {
 		this.map = map;
 	}
 
+	
+	/**
+	 * Notifies the observers it has changed
+	 * 
+	 */
 	public void setHasMoved() {
 		this.getMap().setMapHasChanged();
 
-	}
-
-	public void applyPhysics() {
-		// not sure it will be here but
-		// will make all object fall
 	}
 
 }

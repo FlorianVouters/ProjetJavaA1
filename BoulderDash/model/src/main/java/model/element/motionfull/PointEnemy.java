@@ -12,6 +12,11 @@ public class PointEnemy extends Enemy {
 		this.alive = true;
 	}
 
+	
+	/**
+	 * Adds 10 points to the score
+	 *  
+	 */
 	@Override
 	public void die(){
 		this.alive= false;

@@ -15,6 +15,9 @@ public class DiamondEnemy extends Enemy{
 		this.alive = true;
 	}
 
+	/**
+	 * Spawns 9 stars, then 9 diamonds in a 1 square radius
+	 * */
 	public void die(){
 		
 		IElement[][] map =this.getMap().getMap();

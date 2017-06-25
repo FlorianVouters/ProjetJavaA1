@@ -6,6 +6,11 @@ import model.element.motionless.MotionlessElementFactory;
 
 public class ElementFactory {
 
+	/**
+	 * Creates the wanted element
+	 * @param c the char identifying the element
+	 * @return the corresponding element
+	 */
 	public static IElement getFromFileSymbol(char c) {
 		switch(c){
 		

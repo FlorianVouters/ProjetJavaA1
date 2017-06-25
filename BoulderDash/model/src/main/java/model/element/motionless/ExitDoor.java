@@ -6,8 +6,9 @@ import model.INotTangible;
 import model.Permeabilty;
 import model.Sprite;
 
-public class ExitDoor extends MotionlessElement implements INotTangible{
+public class ExitDoor extends MotionlessElement {
 	
+	/** The Exit Door's sprite*/
 	private static final Sprite EXIT_DOOR = new Sprite('X');
 	
 	public ExitDoor(){
@@ -15,10 +16,7 @@ public class ExitDoor extends MotionlessElement implements INotTangible{
 		this.alive = true;
 	}
 
-	@Override
-	public Boolean isAlive() {
-		return this.alive;
-	}
+	
 
 
 }

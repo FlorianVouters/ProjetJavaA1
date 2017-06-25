@@ -17,7 +17,11 @@ public class Rock extends MotionfullElement implements IGravitable{
 	}
 
 	
-
+	/**
+	 * Checks if is alive.
+     *
+     * @return  alive
+     */
 	@Override
 	public Boolean isAlive() {
 		return this.alive;

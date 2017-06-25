@@ -27,17 +27,23 @@ public class MainCharacter extends MotionfullElement implements IDestructible{
 	}
 
 	
-
+	/**
+	 * Checks if is alive.
+     *
+     * @return  alive
+     */
 	@Override
 	public Boolean isAlive() {
 		return this.alive;
 	}
 
 
-
+	/**
+	 * Sets alive to false
+	 */
 	@Override
 	public void die() {
-		// TODO Auto-generated method stub
+		this.alive = false;
 		
 	}
 

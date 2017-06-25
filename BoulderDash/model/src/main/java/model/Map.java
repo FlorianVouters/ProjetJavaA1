@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Observable;
 
 import model.dao.ElementDAO2;
+import model.element.Element;
 import model.element.ElementFactory;
 import model.element.motionfull.Enemy;
 import model.element.motionfull.Diamond;
@@ -21,22 +22,39 @@ import model.element.motionless.MotionlessElementFactory;
 
 public class Map extends Observable implements IMap {
 
+	/**The current level*/
 	private int level;
+	
+	/**The height of the map*/
 	private int height; // height of the map
+	
+	/**The width of the map*/
 	private int width; // width of the map
+	
+	/**The double array of elements which constitute the map*/
 	private IElement[][] map; // double array of element which constitute the
 								// map
+	/**Unused list of elements*/
 	private ArrayList<IElement> elements;
+	
+	/**The current score*/
 	public int score;
+	
+	/**Time left till game over*/
 	private int timer;
+	
+	/**Number of diamonds left to collect*/
 	public int objective;
 
+	
 	public Map(int level) throws SQLException {
 		super(); // for observable ?
 		this.setLevel(level);
 		this.loadLevel(getLevel());
 	}
 
+	
+	/**Fetches all the informations needed in the database and stores them*/
 	private void loadLevel(int level) throws SQLException {
 		this.setHeight(ElementDAO2.getMapHeight(level));
 		this.setWidth(ElementDAO2.getMapWidth(level));
@@ -51,78 +69,158 @@ public class Map extends Observable implements IMap {
 		}
 	}
 
+	/**
+	 * Gets the level
+	 * 
+	 * @return level
+	 */
 	public int getLevel() {
 		return level;
 	}
 
+	/**
+	 * Sets the level
+	 * 
+	 * @param level
+	 */
 	public void setLevel(int level) {
 		this.level = level;
 		Sprite.LEVEL = level;
 	}
 
+	/**
+	 * Sets the given element at the given coordinates on the map
+	 * 
+	 * @param element the given element
+	 * @param x the x coordinate
+	 * @param y the y coordinate
+	 */
 	public void setElementPosition(IElement element, int x, int y) { //TODO should probably be private but changed it for easier debug, might not change it back
 		element.setX(x);
 		element.setY(y);
 		this.map[x][y] = element;
 	}
 
+	/**
+	 * Gets the map height
+	 * 
+	 * @return height
+	 */
 	public int getHeight() {
 		return height;
 	}
 
+	/**
+	 * Set the map height
+	 * 
+	 * @param height
+	 * 				the new height
+	 */
 	public void setHeight(int height) {
 		this.height = height;
 	}
 
+	/**
+	 * Gets the map width
+	 * 
+	 * @return width
+	 */
 	public int getWidth() {
 		return width;
 	}
 
+	/**
+	 * Set the map width
+	 * 
+	 * @param width
+	 * 				the new width
+	 */
 	public void setWidth(int width) {
 		this.width = width;
 	}
 
+	/**
+	 * Gets the double array constituting map
+	 * 
+	 * @return map
+	 */
 	public IElement[][] getMap() {
 		return map;
 	}
 
+	/**
+	 * Sets the map
+	 * 
+	 * @param map
+	 * 			the new map
+	 */
 	public void setMap(IElement[][] map) {
 		this.map = map;
 	}
 
+	/**
+	 * Unused, returns a list of all elements on the map
+	 * 
+	 * @return elements
+	 */
 	@Override
 	public List<IElement> getAllElements() throws SQLException {
 		return this.elements;
 	}
 
+	
+	/**
+	 * Returns the element at the given coordinates on the map
+	 * 
+	 * @param x the x coordinate
+	 * @param y the y coordinate
+	 * @return the element at coordinate x,y on the map
+	 */
 	@Override
 	public IElement getElementByPosition(int x, int y) {
 		return map[x][y];
 	}
 
+	/**
+	 * Unused method
+	 * @returns the element with the corresponding ID
+	 */
 	@Override
 	public IElement getElementByID(int ID) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	/**
+	 * Unused method
+	 * @returns the element with the corresponding ID
+	 */
 	@Override
 	public IElement getElementByName(String name) throws SQLException {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	/**Notifies the observers it has changed*/
 	@Override
 	public void setMapHasChanged() {
 		this.setChanged();
 		this.notifyObservers();
 	}
 
+	/**Returns itself*/
 	@Override
 	public Observable getObservable() {
 		return this;
 	}
 
+	/**
+	 * Gets if there's a background (air) at the given location
+	 * 
+	 * @param x the x coordinate
+	 * @param y the y coordiante
+	 * @return whether there's background or not
+	 */
 	public boolean isEmpty(int x, int y) {
 		if (getElementByPosition(x, y).getClass().equals(Background.class)) {
 			return true;
@@ -130,6 +228,11 @@ public class Map extends Observable implements IMap {
 		return false;
 	}
 
+	/**
+	 * AI of the enemies, follow the right wall
+	 * 
+	 * @param element, the enemy to move
+	 */
 	public void moveEnemy(MotionfullElement element) {
 		int x = 0;
 		int y = 0;
@@ -153,6 +256,7 @@ public class Map extends Observable implements IMap {
 		}
 	}
 
+	/**Used to activate the enemies' AI*/
 	public void lookForAndMoveEnemy() {
 		IElement[][] elem = getMap();
 		for (int j = 0; j < elem.length; j++) {
@@ -164,6 +268,12 @@ public class Map extends Observable implements IMap {
 		}
 	}
 
+	/**
+	 * Used to store the levels on the database
+	 * 
+	 * @param fileName name of the .txt
+	 * @throws IOException
+	 */
 	@Deprecated // only used to push the maps in the database
 	public void loadFile(final String fileName) throws IOException {
 		final BufferedReader buffer = new BufferedReader(new InputStreamReader(new FileInputStream(fileName)));
@@ -192,12 +302,24 @@ public class Map extends Observable implements IMap {
 
 	}
 
+	/**
+	 * Applies the game's gravity rules 
+	 */
 	public void applyPhysics() {
 		for (int y = 0; y < getHeight(); y++) {
 			for (int x = 0; x < getWidth(); x++) {
 				if (map[x][y].getClass().equals(Rock.class) || map[x][y].getClass().equals(Diamond.class)) {
 
 					MotionfullElement element = (MotionfullElement.class.cast((map[x][y])));
+					
+					//TODO supp debug
+					Element e = (Element) map[element.getX()][element.getY() + 1];
+					Class buffer =map[element.getX()][element.getY() + 1].getClass();
+					Class buffer2 = Background.class;
+					
+					
+					
+					//
 					if (map[element.getX()][element.getY() - 1].getClass().equals(Background.class)) {
 						element.setY(element.getY() - 1);
 						map[x][y] = MotionlessElementFactory.createBackground(level);
@@ -237,18 +359,38 @@ public class Map extends Observable implements IMap {
 		}
 	}
 
+	/**
+	 * Gets the current score
+	 * 
+	 * @return score
+	 */
 	public int getScore() {
 		return score;
 	}
 
+	/**
+	 * Sets the score
+	 * 
+	 * @param score
+	 */
 	public void setScore(int score) {
 		this.score = score;
 	}
 
+	/**
+	 * Gets the number of diamonds left to collect
+	 * 
+	 * @return objective
+	 */
 	public int getObjective() {
 		return objective;
 	}
 
+	/**
+	 * Sets the number of diamonds left to collect
+	 * 
+	 * @param objective
+	 */
 	public void setObjective(int objective) {
 		this.objective = objective;
 	}

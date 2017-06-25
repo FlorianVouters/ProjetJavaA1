@@ -17,14 +17,20 @@ public class Enemy extends MotionfullElement implements IDestructible{
 	}
 
 	
-
+	/**
+	 * Checks if is alive.
+     *
+     * @return  alive
+     */
 	@Override
 	public Boolean isAlive() {
 		return this.alive;
 	}
 
 	
-
+/**
+ * Awaiting override
+ * */
 	@Override
 	public void die() {
 	}

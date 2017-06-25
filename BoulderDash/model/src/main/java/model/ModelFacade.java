@@ -13,8 +13,10 @@ import model.element.motionfull.MainCharacter;
  */
 public class ModelFacade implements IModel {
 	
+	/** The map*/
 	private Map map;
 	
+	/** The player*/
 	private IMotionfullElement character;
 
     /**
@@ -28,21 +30,42 @@ public class ModelFacade implements IModel {
        this.character.setY(5);
     }
     
-    
+    /**
+     * Gets the map
+     * 
+     * @return map
+     */
 	@Override
 	public Map getMap() {
 		return this.map;
 	}
 	
+	  /**
+     * Sets the map
+     * 
+     * @param map
+     * 			the new map
+     */
 	public void setMap(Map map){
 		this.map = map;
 	}
-
+	
+	/**
+     * Gets the player
+     * 
+     * @return character
+     */
 	@Override
 	public IMotionfullElement getCharacter() {
 		return this.character;
 	}
 
+	  /**
+     * Sets the player
+     * 
+     * @param character
+     * 			the new character
+     */
 	public void setCharacter(IMotionfullElement character){
 		this.character = character;
 	}

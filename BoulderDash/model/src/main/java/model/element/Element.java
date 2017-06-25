@@ -18,6 +18,7 @@ public abstract class Element implements IElement {
     /**The element's position */
     private Point position;
     
+    /**If the element is alive or dead*/
     public Boolean alive;
 
 	public Element(Sprite sprite, Permeabilty permeability) {
@@ -26,44 +27,78 @@ public abstract class Element implements IElement {
 		this.position = new Point();
 	}
 
+	/**
+	 * Unused method
+	 * 
+	 * @return id, the element's ID
+	 * */
 	@Override
 	public int getId() {
 		return 0;
 	}
 
+	/**
+	 * Unused method
+	 * 
+	 * @return name, the element's name
+	 * */
 	@Override //shan't be used
 	public String getName() {
-		return null;
+		return "";
 	}
 
+	/**
+	 * Unused method
+	 * 
+	 * */
 	@Override // shan't be used
 	public void setName(final String name) {
 
 	}
 
+	
+	/**
+	 * Gets the sprite
+	 * 
+	 * @return the spirte
+	 */
 	@Override
 	public Sprite getSprite() {
 		return sprite;
 	}
 	
+	
+	 /**
+     * Sets the sprite.
+     *
+     * @param sprite
+     *            the new sprite
+     */
 	public void setSprite(Sprite sprite){
 		this.sprite = sprite;
 	}
 
-	@Override
-	public String toString() {
-		return null;
-	}
-
+	/**
+	 * Get the permeability
+	 * 
+	 * @return the permeability
+	 */
 	@Override
 	public Permeabilty getPermeability() {
 		return this.permeability;
 	}
 
+	/**
+	 * Sets the permeability
+	 * 
+	 * @param permeability
+	 * 					the new permeability
+	 */
 	public void setPermeability(Permeabilty permeability) {
 		this.permeability = permeability;
 	}
 
+	
 	 /**
      * Gets the x.
      *
@@ -74,13 +109,20 @@ public abstract class Element implements IElement {
     	return this.getPosition().x;
     }
     
+   
+    /**
+     * Sets the x.
+     *
+     * @param x
+     * 			the new x
+     */
     public void setX(int x){
     	this.getPosition().x = x;
     	//check collisions
     }
 
     /**
-     * Gets the y.
+     * Fets the y.
      *
      * @return the y
      */
@@ -89,21 +131,33 @@ public abstract class Element implements IElement {
     	return this.getPosition().y;
     }
 
+    /**
+     * Sets the y.
+     *
+     * @param y
+     * 			the new y
+     */
     public void setY(int y){
     	this.getPosition().y = y;
     	//checkcollisions
     }
     
     
-    /*
-     * (non-Javadoc)
-     * @see fr.exia.showboard.IPawn#getPosition()
+    /**
+     * Gets the position
+     * 
+     * @return position
      */
     @Override
     public Point getPosition(){
     	return this.position;
     }
     
+    /**
+     * Gets the image
+     * 
+     * @return the image
+     */
     public Image getImage(){
     	return this.getSprite().getImage();
     	
