@@ -26,12 +26,18 @@ public class ElementDAO2 extends AbstractDAO {
 	
 	/**Callable statement used to get an element of the map at given coordinates*/
 	public static String getMap = "{call getElement(?,?,?)}";
+
+	/**Callable statement used to get an element of the map at given coordinates*/
+	public static String getMap2 = "{call getMap(?)}";
 	
 	/**Callable statement used to get a whole line map*/
 	public static String getLine = "{call getLine(?,?)}";
 	
 	/**Callable statement used to save a whole line map*/
 	public static String saveLine = "{call saveLine(?,?)}";
+	
+	/**Callable statement used to save a whole line map*/
+	public static String saveMap = "{call saveMap(?,?)}";
 	
 
 	/**
@@ -87,21 +93,31 @@ public class ElementDAO2 extends AbstractDAO {
 		int width = getMapWidth(level);
 		int height = getMapHeight(level);
 		char[][] map = new char[width][height];
-			for(int y =1; y<=height; y++){
-				for(int x=1; x<=width; x++){
-				CallableStatement callStatement = prepareCall(getMap);
+		CallableStatement callStatement = prepareCall(getMap2);
+		callStatement.setInt(1, level);
+			for(int y =0; y<height; y++){
+				for(int x=0; x<width; x++){
+				/*CallableStatement callStatement = prepareCall(getMap);
 				callStatement.setInt(1, level);
 				callStatement.setInt(2, x);
-				callStatement.setInt(3, y);
+				callStatement.setInt(3, y);*/
 				
 				if(callStatement.execute()){
 					ResultSet result = callStatement.getResultSet();
 					if(result.next()){
-					map[x-1][y-1] = result.getString(1).charAt(0);
+						char e = result.getString(1).charAt((y)*width+x);
+					map[x][y] = e;
 					}
 					result.close();
 				}
 			}
+		}
+		
+		for (int i = 0; i < height; i++) {
+			for (int j = 0; j < width; j++) {
+				System.out.print(map[j][i]);
+			}
+			System.out.println();
 		}
 		return map;
 	}
@@ -177,18 +193,17 @@ public class ElementDAO2 extends AbstractDAO {
 			String setNbLigneEtColone ="INSERT INTO `infolevel`(`Level`, `Height`, `Width`) VALUES ("+level+"," + width + ", " + height + ")";
 			st.executeUpdate(setNbLigneEtColone);
 
+			String elements = "";
 			for (int i = 0; i < width; i++) {
-				String elements = "";
-				
-				System.out.println(elements);
+				//System.out.println(elements);
 				for (int j = 0; j < height; j++) {
 					elements+=map[i][j];
 				}
-				System.out.println(elements);
-				String setElement = "INSERT INTO `level2`(`levelNum`, `linenum`,`elements`) VALUES ("+level+ ", " + (i + 1) + ", \"" + elements + "\")";
-				Statement st2 = cn.createStatement();
-				st2.executeUpdate(setElement);
 			}
+			System.out.println(elements);
+			/*String setElement = "INSERT INTO `level2`(`levelNum`, `linenum`,`elements`) VALUES ("+level+ ", " + (i + 1) + ", \"" + elements + "\")";
+			Statement st2 = cn.createStatement();
+			st2.executeUpdate(setElement);*/
 			
 		} catch (SQLException e) {
 			e.printStackTrace();

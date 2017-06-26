@@ -27,6 +27,5 @@
 			<attribute name="javadoc_location" value="jar:file:/C:/Users/Nico/git/ProjetJavaA1/BoulderDash/lib/showboard.doc.jar!/"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Florian/Google Drive/Prosits S2/UE 6/Prosit 2/UE-Java-Jeu-Voiture/src/fr/exia/insanevehicles/showboard.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

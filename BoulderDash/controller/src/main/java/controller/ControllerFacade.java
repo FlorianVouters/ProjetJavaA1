@@ -64,14 +64,14 @@ public class ControllerFacade implements IController, IOrderPerformer {
     	while (this.getModel().getCharacter().isAlive()) {
     		Thread.sleep(speedCharacter);
     		
-    		//TODO suppr, debug of the map repaint
-    		if(i==0)
-    		this.setOrder(Order.DOWN);
-    		else if(i<3)
-    			this.setOrder(Order.RIGHT);
-    		//
-    		i++;
-    		//
+//    		//TODO suppr, debug of the map repaint
+//    		if(i==0)
+//    		this.setOrder(Order.DOWN);
+//    		else if(i<3)
+//    			this.setOrder(Order.RIGHT);
+//    		//
+//    		i++;
+//    		//
     		switch (this.getOrder()) {
     			case UP :
     				System.out.println("go up");
