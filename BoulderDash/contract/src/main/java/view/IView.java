@@ -1,5 +1,7 @@
 package view;
 
+import fr.exia.showboard.BoardFrame;
+
 /**
  * <h1>The Interface IView.</h1>
  *
@@ -17,5 +19,9 @@ public interface IView {
     void displayMessage(String message);
     
     void cameraMove();
+    
+    BoardFrame getBoard();
+    
+    void setBoard(BoardFrame board);
     
 }

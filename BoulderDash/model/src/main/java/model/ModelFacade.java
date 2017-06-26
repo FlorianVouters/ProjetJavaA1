@@ -1,70 +1,75 @@
 package model;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
-import model.dao.ExampleDAO;
+import model.element.motionfull.MainCharacter;
 
 /**
  * <h1>The Class ModelFacade provides a facade of the Model component.</h1>
  *
- * @author Jean-Aymeric DIET jadiet@cesi.fr
- * @version 1.0
  */
 public class ModelFacade implements IModel {
 	
-	private IMap map;
+	/** The map*/
+	private Map map;
+	
+	/** The player*/
+	private IMotionfullElement character;
 
     /**
      * Instantiates a new model facade.
+     * @throws SQLException 
      */
-    public ModelFacade() {
-        super();
+    public ModelFacade(int level) throws SQLException  {
+		this.setMap(new Map(level));
+       this.setCharacter(new MainCharacter(getMap())); // y5 x7 TODO get rid of the hard code
+       this.character.setX(7);
+       this.character.setY(5);
     }
-
+    
+    /**
+     * Gets the map
+     * 
+     * @return map
+     */
 	@Override
-	public IMap getMap() {
-		// TODO Auto-generated method stub
-		return null;
+	public Map getMap() {
+		return this.map;
 	}
-
+	
+	  /**
+     * Sets the map
+     * 
+     * @param map
+     * 			the new map
+     */
+	public void setMap(Map map){
+		this.map = map;
+	}
+	
+	/**
+     * Gets the player
+     * 
+     * @return character
+     */
 	@Override
 	public IMotionfullElement getCharacter() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.character;
 	}
 
-	
-	
-	//to be deleted
-	
-	
-	
-	  /*
-     * (non-Javadoc)
-     * @see model.IModel#getExampleById(int)
+	  /**
+     * Sets the player
+     * 
+     * @param character
+     * 			the new character
      */
-    @Override
-    public Example getExampleById(final int id) throws SQLException {
-        return ExampleDAO.getExampleById(id);
-    }
-
-    /*
-     * (non-Javadoc)
-     * @see model.IModel#getExampleByName(java.lang.String)
-     */
-    @Override
-    public Example getExampleByName(final String name) throws SQLException {
-        return ExampleDAO.getExampleByName(name);
-    }
-
-    /*
-     * (non-Javadoc)
-     * @see model.IModel#getAllExamples()
-     */
-    @Override
-    public List<Example> getAllExamples() throws SQLException {
-        return ExampleDAO.getAllExamples();
-    }
+	public void setCharacter(IMotionfullElement character){
+		this.character = character;
+	}
+	
+	
+	
 
 }

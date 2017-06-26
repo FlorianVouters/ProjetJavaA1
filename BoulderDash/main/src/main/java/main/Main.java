@@ -4,40 +4,40 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 import controller.ControllerFacade;
+import model.IMotionfullElement;
 import model.Map;
 import model.ModelFacade;
 import model.dao.ElementDAO2;
+import model.element.motionfull.MainCharacter;
 import view.ViewFacade;
 
 /**
  * <h1>The Class Main.</h1>
  *
- * @author Jean-Aymeric DIET jadiet@cesi.fr
- * @version 1.0
+ * @author HURTEVENT Nicolas
+ * @version 2.0
  */
 public abstract class Main {
 
 	/**
-     * The main method.
-     *
-     * @param args
-     *            the arguments
-     * @throws SQLException 
-     */
-    public static void main(final String[] args) throws SQLException {
-       /* final ControllerFacade controller = new ControllerFacade(new ViewFacade(), new ModelFacade());
+	 * The main method.
+	 *
+	 * @param args
+	 *            the arguments
+	 * @throws SQLException
+	 * @throws IOException
+	 * @throws InterruptedException 
+	 */
+	public static void main(final String[] args) throws IOException, SQLException, InterruptedException {
+		final ModelFacade model = new ModelFacade(1);
+		final ViewFacade view = new ViewFacade(model.getMap(), model.getCharacter());
+		final ControllerFacade controller = new ControllerFacade(view, model);
+		view.setOrderPerformer(controller.getOrderPeformer());
 
-        try {
-            controller.start();
-        } catch (final SQLException exception) {
-            exception.printStackTrace();
-        }*/
-    	Map map = new Map(1);
-  
-			//map.loadFile("Level1.txt"); //saves the file
-			System.out.println(ElementDAO2.getMapHeight(1));
-			System.out.println(ElementDAO2.getMapWidth(1));
+		controller.play();
 
-    	}
+	}
+	
+	
 
 }

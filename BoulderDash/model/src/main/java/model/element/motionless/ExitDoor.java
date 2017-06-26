@@ -6,24 +6,17 @@ import model.INotTangible;
 import model.Permeabilty;
 import model.Sprite;
 
-public class ExitDoor extends MotionlessElement implements INotTangible{
+public class ExitDoor extends MotionlessElement {
 	
-	private static final Sprite EXIT_DOOR = new Sprite('E', "Exit.jpg");
+	/** The Exit Door's sprite*/
+	private static final Sprite EXIT_DOOR = new Sprite('X');
 	
 	public ExitDoor(){
 		super(EXIT_DOOR, Permeabilty.PENETRABLE);
+		this.alive = true;
 	}
 
-	@Override
-	public Boolean isAlive() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
-	@Override
-	public Image getImage() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 }

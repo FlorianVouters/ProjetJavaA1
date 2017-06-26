@@ -2,6 +2,8 @@ package model.dao;
 
 import static org.junit.Assert.*;
 
+import java.sql.SQLException;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -28,22 +30,34 @@ public class ElementDAO2Test {
 
 	@Test
 	public void testGetMapHeight() {
-		int height = 40;
-		fail("Not yet implemented");
-		assertEquals(height, ElementDAO2.getMapHeight(1));
+		int height = 28;
+		try {
+			assertEquals(height, ElementDAO2.getMapHeight(1));
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Test
 	public void testGetMapWidth() {
-		int width = 44;
-		fail("Not yet implemented");
-		assertEquals(width, ElementDAO2.getMapWidth(1));
+		int width = 48;
+		try {
+			assertEquals(width, ElementDAO2.getMapWidth(1));
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Test
 	public void testGetMap() {
-		fail("Not yet implemented");
-		assertNotNull(ElementDAO2.getMap(1));
+		try {
+			assertNotNull(ElementDAO2.getMap(1));
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }

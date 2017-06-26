@@ -12,7 +12,9 @@ public class ModelFacadeTest {
 
 	private Map map;
 	
-	private IModel character;
+	private IMotionfullElement character;
+	
+	private ModelFacade model;
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -24,6 +26,7 @@ public class ModelFacadeTest {
 
 	@Before
 	public void setUp() throws Exception {
+		model = new ModelFacade(1);
 	}
 
 	@After
@@ -33,15 +36,13 @@ public class ModelFacadeTest {
 	@Test
 	public void testGetMap() {
 		Map expected = map;
-		fail("Not yet implemented");
 		assertEquals(expected, this.map.getMap());
 	}
 
 	@Test
 	public void testGetCharacter() {
-		IModel expected = character;
-		fail("Not yet implemented");
-		assertEquals(expected, this.character.getCharacter());
+		IMotionfullElement expected = character;
+		assertEquals(expected, model.getCharacter());
 	}
 
 }

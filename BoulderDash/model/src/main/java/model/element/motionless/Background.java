@@ -8,23 +8,15 @@ import model.Sprite;
 
 public class Background extends MotionlessElement implements INotTangible{
 
-
-	private static final Sprite BACKGROUND = new Sprite(' ', "Mud.jpg");
+	/** The Background's sprite*/
+	private static final Sprite BACKGROUND = new Sprite('_');
 	 
 	public Background() {
 		super(BACKGROUND, Permeabilty.PENETRABLE);
+		this.alive = true;
 	}
-	 
-	@Override
-	public Boolean isAlive() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Image getImage() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
+	
+	
 
 }
