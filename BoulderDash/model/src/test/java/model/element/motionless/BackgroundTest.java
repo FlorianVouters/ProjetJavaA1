@@ -8,7 +8,12 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import model.Sprite;
+
 public class BackgroundTest {
+	
+	private Background background;
+	private Sprite image;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -27,8 +32,15 @@ public class BackgroundTest {
 	}
 
 	@Test
-	public void testAnimate() {
+	public void testIsAlive() {
 		fail("Not yet implemented");
+		assertNotNull(background);
 	}
 
+	@Test
+	public void testGetImage() {
+		final Sprite expected = image;
+		fail("Not yet implemented");
+		assertEquals(expected, this.image.getImage());
+	}
 }

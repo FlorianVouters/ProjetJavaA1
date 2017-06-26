@@ -8,7 +8,12 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import model.Sprite;
+
 public class SpecialStoneWallTest {
+	
+	private SpecialStoneWall specialStoneWall;
+	private Sprite image;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -27,8 +32,22 @@ public class SpecialStoneWallTest {
 	}
 
 	@Test
-	public void test() {
+	public void testIsAlive() {
 		fail("Not yet implemented");
+		assertNotNull(specialStoneWall);
+	}
+
+	@Test
+	public void testGetImage() {
+		final Sprite expected = image;
+		fail("Not yet implemented");
+		assertEquals(expected, this.image.getImage());
+	}
+
+	@Test
+	public void testDie() {
+		fail("Not yet implemented");
+		//Unknown implementation yet
 	}
 
 }

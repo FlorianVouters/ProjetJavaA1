@@ -1,6 +1,6 @@
 package model.element.motionfull;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.fail;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -27,8 +27,9 @@ public class DiamondEnemyTest {
 	}
 
 	@Test
-	public void testAnimate() {
+	public void testDie() {
 		fail("Not yet implemented");
+		//Unknown implementation yet
 	}
 
 }
